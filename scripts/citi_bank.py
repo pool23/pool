@@ -71,7 +71,7 @@ class ExtractInfo(Citi_bank):
         self.page = page
         self.tab = tab
 
-    def findtables(self):
+    def findtables_tab1(self):
         soup = bs(self.page, "lxml")
         file = open('final.csv','a')
         data = []
@@ -79,7 +79,6 @@ class ExtractInfo(Citi_bank):
 
         for tr in soup.find_all('tr', {"class": self.tab}):
             tds = tr.find_all('td')
-
             row = [elem.text.strip() for elem in tds]
             data.append(row)
 
@@ -118,6 +117,38 @@ class ExtractInfo(Citi_bank):
         #         row = [elem.text.strip().encode('utf-8') for elem in tds]
         #         print(row)
         # //*[@id="cmlink_ProdDisp"]
+    def findtables_tab2(self):
+        soup = bs(self.page, "lxml")
+        data = []
+        for tr in soup.find_all('tr', {"class": self.tab}):
+            tds = tr.find_all('td')
+
+            row = [elem.text.strip() for elem in tds]
+            data.append(row)
+        df = pd.DataFrame.from_records(data)
+        df.drop(df.columns[3], axis=1, inplace=True)
+        df.drop(df.index[8:24], inplace=True)
+        df.drop(df.index[16:48], inplace=True)
+        df.drop(df.index[24:40], inplace=True)
+        df.drop(df.index[32:40], inplace=True)
+        df.drop(df.index[40:], inplace=True)
+        df0 = df[1:8];df0["Years"] = "3 months"
+        df1 = df[9:16];df1["Years"] = "6 months"
+        df2 = df[17:24];df2["Years"] = "1 year"
+        df3 = df[25:32];df3["Years"] = "2 year"
+        df4 = df[33:40];df4["Years"] = "3 year"
+        # df0 =  pd.DataFrame(df0.str.split('-', 1).tolist(), columns=['Minimum Balance', 'Maximum Balance'])
+        dfn = pd.concat([df0,df1, df2, df3, df4])
+        dfn.columns = ['Minimum Balance', 'Maximum Balance', 'APY', 'Interest Rate', "Years"]
+
+        dfn["Date"] = now.strftime("%m-%d-%Y")
+        dfn["Bank Name"] = "Citi Bank"
+        dfn["Tab Name"] = "CERTIFICATES OF DEPOSIT"
+        df_final = dfn.reindex(columns=["Date", "Bank Name", "Tab Name", "Years" ,'Minimum Balance','Maximum Balance', "APY", 'Interest Rate'])
+        df_final.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+
+
+
 
 # os.path.abspath(os.getcwd())
 # os.chdir('../data/input/citi')
@@ -131,16 +162,19 @@ if __name__ == "__main__":
     # obj.unhide()
     # obj.save_page()
     # obj.close_driver() #//*[@id="main-details"]/ul/li[2]
-    tab1 = ['header', 'switch', 'CPrates']
-    # tab2 = []
-    extract = ExtractInfo(open("citi.html",'r'),tab1)
-    extract.findtables()
-    # import configparser as con
-    # conf = os.path.join(os.getcwd()+'\\data\\input\\citi\\','inputfile.conf')
-    # config = con.ConfigParser()
-    # config.read(conf)
-    # print(config.get('links','citi'))
+    # tab1 = ['header', 'switch', 'CPrates']
+    # extract = ExtractInfo(open("citi.html",'r'),tab1)
+    # extract.findtables_tab1()
 
+    # obj = Citi_bank("https://online.citi.com/US/JRS/pands/detail.do?ID=CDRates&JFP_TOKEN=0UYWWGSQ")
+    # obj.start_driver()
+    # obj.select_state()
+    # obj.unhide()
+    # obj.save_page()
+    # obj.close_driver()
+    tab2 = ['header','switch']
+    extract = ExtractInfo(open('citi_tab2.html','r'),tab2)
+    extract.findtables_tab2()
 
 
 #select = driver.find_element_by_xpath('//span[@class="ui-selectmenu-item-header"]/li[@id="RegionalPricingLocation-snapshot-menu-option-1"]')
