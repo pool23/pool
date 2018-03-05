@@ -1,0 +1,38 @@
+,Date,Bank Name,Balance,Interest,APY,Product,Terms
+7,03/05/2018,Bank of America,"Less than $2,500",0.03,0.03,Rewards Savings,
+8,03/05/2018,Bank of America,"$2,500 and over",0.03,0.03,Rewards Savings,
+12,03/05/2018,Bank of America,"Less than $2,500",0.04,0.04,Rewards Savings Gold,
+13,03/05/2018,Bank of America,"$2,500 and over",0.04,0.04,Rewards Savings Gold,
+15,03/05/2018,Bank of America,"Less than $2,500",0.05,0.05,Rewards Savings Platinum,
+16,03/05/2018,Bank of America,"$2,500 and over",0.05,0.05,Rewards Savings Platinum,
+18,03/05/2018,Bank of America,"Less than $2,500",0.06,0.06,Rewards Savings Platinum Honors,
+19,03/05/2018,Bank of America,"$2,500 and over",0.06,0.06,Rewards Savings Platinum Honors,
+22,03/05/2018,Bank of America,"Less than $2,500",0.06,0.06,Banking Rewards for Wealth Management,
+23,03/05/2018,Bank of America,"$2,500 and over",0.06,0.06,Banking Rewards for Wealth Management,
+18,03/05/2018,Bank of America,"Less than $50,000",0.01,0.01,Bank of America Interest Checking,
+19,03/05/2018,Bank of America,"$50,000 - $99,999",0.02,0.02,Bank of America Interest Checking,
+20,03/05/2018,Bank of America,"$100,000 and over",0.02,0.02,Bank of America Interest Checking,
+4,03/05/2018,Bank of America,"Less than $10,000",0.03,0.03,Fixed Term CD/IRA Products,06 - 11 Months
+5,03/05/2018,Bank of America,"Less than $10,000",0.05,0.05,Fixed Term CD/IRA Products,12 - 17 Months
+6,03/05/2018,Bank of America,"Less than $10,000",0.07,0.07,Fixed Term CD/IRA Products,18 - 23 Months
+7,03/05/2018,Bank of America,"Less than $10,000",0.1,0.1,Fixed Term CD/IRA Products,24 - 35 Months
+8,03/05/2018,Bank of America,"Less than $10,000",0.55,0.55,Fixed Term CD/IRA Products,36 - 47 Months
+9,03/05/2018,Bank of America,"Less than $10,000",0.65,0.65,Fixed Term CD/IRA Products,48 - 59 Months
+10,03/05/2018,Bank of America,"Less than $10,000",0.75,0.75,Fixed Term CD/IRA Products,60 - 119 Months
+11,03/05/2018,Bank of America,"Less than $10,000",0.75,0.75,Fixed Term CD/IRA Products,120 Months
+4,03/05/2018,Bank of America,"$10,000 - $99,999",0.03,0.03,Fixed Term CD/IRA Products,06 - 11 Months
+5,03/05/2018,Bank of America,"$10,000 - $99,999",0.05,0.05,Fixed Term CD/IRA Products,12 - 17 Months
+6,03/05/2018,Bank of America,"$10,000 - $99,999",0.07,0.07,Fixed Term CD/IRA Products,18 - 23 Months
+7,03/05/2018,Bank of America,"$10,000 - $99,999",0.10,0.10,Fixed Term CD/IRA Products,24 - 35 Months
+8,03/05/2018,Bank of America,"$10,000 - $99,999",0.55,0.55,Fixed Term CD/IRA Products,36 - 47 Months
+9,03/05/2018,Bank of America,"$10,000 - $99,999",0.65,0.65,Fixed Term CD/IRA Products,48 - 59 Months
+10,03/05/2018,Bank of America,"$10,000 - $99,999",0.75,0.75,Fixed Term CD/IRA Products,60 - 119 Months
+11,03/05/2018,Bank of America,"$10,000 - $99,999",0.75,0.75,Fixed Term CD/IRA Products,120 Months
+4,03/05/2018,Bank of America,"$100,000 and over",0.03,0.03,Fixed Term CD/IRA Products,06 - 11 Months
+5,03/05/2018,Bank of America,"$100,000 and over",0.05,0.05,Fixed Term CD/IRA Products,12 - 17 Months
+6,03/05/2018,Bank of America,"$100,000 and over",0.07,0.07,Fixed Term CD/IRA Products,18 - 23 Months
+7,03/05/2018,Bank of America,"$100,000 and over",0.10,0.10,Fixed Term CD/IRA Products,24 - 35 Months
+8,03/05/2018,Bank of America,"$100,000 and over",0.55,0.55,Fixed Term CD/IRA Products,36 - 47 Months
+9,03/05/2018,Bank of America,"$100,000 and over",0.65,0.65,Fixed Term CD/IRA Products,48 - 59 Months
+10,03/05/2018,Bank of America,"$100,000 and over",0.75,0.75,Fixed Term CD/IRA Products,60 - 119 Months
+11,03/05/2018,Bank of America,"$100,000 and over",0.75,0.75,Fixed Term CD/IRA Products,120 Months
