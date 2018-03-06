@@ -1,0 +1,19 @@
+Date,Bank Name,Purchase price,Loan Amount,Zipcode,Product Name,Rate,APR,Points,Credit Score,Payment Type
+03/06/2018,Bank Of America,"125,000","$200,000",10001,30-year fixed,4.500%,4.695%,0.672,740,principal + interest
+03/06/2018,Bank Of America,"125,000","$200,000",10001,20-year fixed,4.250%,4.518%,0.7020000000000001,740,principal + interest
+03/06/2018,Bank Of America,"125,000","$200,000",10001,15-year fixed,4.000%,4.349%,0.765,740,principal + interest
+03/06/2018,Bank Of America,"125,000","$200,000",10001,10/1 ARM,4.125%,4.552%,0.7170000000000001,740,principal + interest
+03/06/2018,Bank Of America,"125,000","$200,000",10001,7/1 ARM,3.875%,4.535%,0.875,740,principal + interest
+03/06/2018,Bank Of America,"125,000","$200,000",10001,5/1 ARM,3.750%,4.583%,0.802,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,30-year fixed,4.500%,4.695%,0.672,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,20-year fixed,4.250%,4.518%,0.7020000000000001,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,15-year fixed,4.000%,4.349%,0.765,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,10/1 ARM,4.125%,4.552%,0.7170000000000001,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,7/1 ARM,3.875%,4.535%,0.875,740,principal + interest
+03/06/2018,Bank Of America,"375,000","$200,000",10001,5/1 ARM,3.750%,4.583%,0.802,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,30-year fixed,4.500%,4.695%,0.672,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,20-year fixed,4.250%,4.518%,0.7020000000000001,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,15-year fixed,4.000%,4.349%,0.765,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,10/1 ARM,4.125%,4.552%,0.7170000000000001,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,7/1 ARM,3.875%,4.535%,0.875,740,principal + interest
+03/06/2018,Bank Of America,"625,000","$200,000",10001,5/1 ARM,3.750%,4.583%,0.802,740,principal + interest
