@@ -8,6 +8,9 @@ This is a temporary script file.
 import pandas as pd
 import numpy as np
 import datetime
+import warnings
+from maks_lib import output_path
+warnings.simplefilter(action='ignore')
 
 df0=pd.read_excel("DigitalDeposit_MD.xlsx",sheet_name="page-1")
 df1=pd.read_excel("DigitalDeposit_MD.xlsx",sheet_name="page-2")
@@ -90,4 +93,4 @@ result=result.reindex(columns=["Bank Name","Balance","Interest","APY","Product",
 now = datetime.datetime.now()
 result["Date"]=now.strftime("%m/%d/%Y")
 result=result.reindex(columns=["Date","Bank Name","Balance","Interest","APY","Product","Terms"])
-result.to_csv('Bank of America.csv')
+result.to_csv(output_path + "BOA_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
