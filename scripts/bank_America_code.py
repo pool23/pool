@@ -10,11 +10,12 @@ import numpy as np
 import datetime
 import warnings
 from maks_lib import output_path
+from maks_lib import input_path
 warnings.simplefilter(action='ignore')
 
-df0=pd.read_excel("DigitalDeposit_MD.xlsx",sheet_name="page-1")
-df1=pd.read_excel("DigitalDeposit_MD.xlsx",sheet_name="page-2")
-df2=pd.read_excel("DigitalDeposit_MD.xlsx",sheet_name="page-3")
+df0=pd.read_excel(input_path+"DigitalDeposit_MD.xlsx",sheet_name="page-1")
+df1=pd.read_excel(input_path+"DigitalDeposit_MD.xlsx",sheet_name="page-2")
+df2=pd.read_excel(input_path+"DigitalDeposit_MD.xlsx",sheet_name="page-3")
 df01=df0[4:9]
 df01["Product"]="Rewards Savings"
 df01=df01[3:5]
