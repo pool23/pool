@@ -82,4 +82,3 @@ if __name__ == '__main__':
 
     df = df.reindex(columns=["Date","Bank Name","Product Name","Term", "Balance", "Interest Rate", "APY"])
     df.to_csv(output_path+ "WellsF_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-
