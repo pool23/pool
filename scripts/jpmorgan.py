@@ -7,6 +7,10 @@ This is a temporary script file.
 
 import pandas as pd
 import numpy as np
+import datetime
+import warnings
+from maks_lib import output_path
+warnings.simplefilter(action='ignore')
 
 df=pd.read_excel("JP Morgan Rate Sheet.xlsx")
 df1=df[8:14]
@@ -62,3 +66,9 @@ frames = [df1,df2,df3,df4,df5,df7]
 result = pd.concat(frames)
 result["Bank Name"]="JP MORGAN"
 result.to_csv('Final JP MORGAN.csv')
+now = datetime.datetime.now()
+result["Date"]=now.strftime("%m/%d/%Y")
+result=result.reindex(columns=["Date","Consumer Deposit Rates","Interest","APY","Product","Terms(months)"])
+result= result.rename(columns={'Consumer Deposit Rates': 'Balance'})
+result=result.reindex(columns=["Date","Bank Name","Product","Balance","Interest","APY","Terms(months)"])
+result.to_csv(output_path + "JPM_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
