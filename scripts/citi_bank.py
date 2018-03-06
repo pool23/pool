@@ -1,10 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from bs4 import  BeautifulSoup as bs
 import pandas as pd
 import time
-import pyautogui
 import os
 import sys
 import warnings
@@ -20,8 +17,9 @@ warnings.simplefilter(action='ignore')
 
 
 class Citi_bank:
-    def __init__(self, url):
+    def __init__(self, url, tab):
         self.url = url
+        self.tab = tab
 
     def start_driver(self):
         self.driver = webdriver.Firefox()
@@ -43,6 +41,7 @@ class Citi_bank:
         select_btn = self.driver.find_element_by_id("cmlink_GoBtnLocForm")
         select_btn.click()
         time.sleep(3)
+        return "AA"
 
     def get_current_url(self):
         return self.driver.current_url
@@ -54,7 +53,7 @@ class Citi_bank:
         # time.sleep(1)
         # pyautogui.hotkey('enter')
         page = self.driver.page_source
-        with open("citi_tab2.html", 'a')as file:
+        with open("citi_"+self.tab+".html", 'w')as file:
             file.write(page)
 
     def unhide(self):
@@ -73,16 +72,11 @@ class ExtractInfo(Citi_bank):
 
     def findtables_tab1(self):
         soup = bs(self.page, "lxml")
-        file = open('final.csv','a')
         data = []
-
-
         for tr in soup.find_all('tr', {"class": self.tab}):
             tds = tr.find_all('td')
             row = [elem.text.strip() for elem in tds]
             data.append(row)
-
-
         df = pd.DataFrame.from_records(data[1:])
         temp = df.iloc[5:12,3:5].copy(deep = True)
         df.drop(df.columns[[3, 4, 5]], axis=1, inplace=True)
@@ -105,18 +99,9 @@ class ExtractInfo(Citi_bank):
         df["Date"] = now.strftime("%m-%d-%Y")
         df["Bank Name"] = "Citi Bank"
         df["Tab Name"] = "CHECKING & SAVINGS"
-        df = df.reindex(columns= ["Date","Bank Name","Tab Name","Product Type",'Product Name','Balance', 'Interest Rate', 'APY'])
-        df.to_csv(output_path+"CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index =False)
+        dff = df.reindex(columns= ["Date","Bank Name","Tab Name","Product Type",'Product Name','Balance', 'Interest Rate', 'APY'])
+        #dff.to_csv(output_path+"CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index =False)
 
-        file.close()
-
-        # for table in soup.find_all('table'):
-        #     for trs in table.find_all('tr'):
-        #         tds = trs.find_all('td')
-        #
-        #         row = [elem.text.strip().encode('utf-8') for elem in tds]
-        #         print(row)
-        # //*[@id="cmlink_ProdDisp"]
     def findtables_tab2(self):
         soup = bs(self.page, "lxml")
         data = []
@@ -144,54 +129,37 @@ class ExtractInfo(Citi_bank):
         dfn["Date"] = now.strftime("%m-%d-%Y")
         dfn["Bank Name"] = "Citi Bank"
         dfn["Tab Name"] = "CERTIFICATES OF DEPOSIT"
-        df_final = dfn.reindex(columns=["Date", "Bank Name", "Tab Name", "Years" ,'Minimum Balance','Maximum Balance', "APY", 'Interest Rate'])
+        df_fin = dfn.reindex(columns=["Date", "Bank Name", "Tab Name", "Years" ,'Minimum Balance','Maximum Balance', "APY", 'Interest Rate'])
+        df_final = pd.concat([findtables_tab1.dff, df_fin])
         df_final.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
+class MergeCsv:
+    def __init__(self, csv1, csv2 ):
+        self.csv1 = csv1
+        self.csv2 = csv2
+    def concatenate(self):
 
-
-
-# os.path.abspath(os.getcwd())
-# os.chdir('../data/input/citi')
 
 if __name__ == "__main__":
     log.info("Starting scrapping")
-    # obj = Citi_bank("https://online.citi.com/US/JRS/pands/detail.do?ID=CurrentRates&JFP_TOKEN=7JAPCVIC")
-    # obj.start_driver()
-    # obj.get_url()
-    # obj.select_state()
-    # obj.unhide()
-    # obj.save_page()
-    # obj.close_driver() #//*[@id="main-details"]/ul/li[2]
-    # tab1 = ['header', 'switch', 'CPrates']
-    # extract = ExtractInfo(open("citi.html",'r'),tab1)
-    # extract.findtables_tab1()
-
-    # obj = Citi_bank("https://online.citi.com/US/JRS/pands/detail.do?ID=CDRates&JFP_TOKEN=0UYWWGSQ")
-    # obj.start_driver()
-    # obj.select_state()
-    # obj.unhide()
-    # obj.save_page()
-    # obj.close_driver()
-    tab2 = ['header','switch']
-    extract = ExtractInfo(open('citi_tab2.html','r'),tab2)
-    extract.findtables_tab2()
-
-
-#select = driver.find_element_by_xpath('//span[@class="ui-selectmenu-item-header"]/li[@id="RegionalPricingLocation-snapshot-menu-option-1"]')
-#select.click()
-# select = Select(driver.find_element_by_id('RegionalPricingLocation-snapshot'))
-# for element in select.options:
-#     if element.get_attribute("value") == "AA":
-#         #select.select_by_visible_text("AA")
-#         select.select_by_index(1)
-#     print(element.get_attribute("value"))
-#select.select_by_value("AA")
-
-#select = Select(driver.find_element_by_id('RegionalPricingLocation-snapshot'))
-
-#options = [x for x in select.find_elements_by_tag_name("option")]
-#select.select_by_visible_text('AA')
-#select.select_by_value('1')
-#driver.close()
-
-
+    tab1_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CurrentRates&JFP_TOKEN=7JAPCVIC"
+    tab2_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CDRates&JFP_TOKEN=0UYWWGSQ"
+    urls = [tab1_url, tab2_url]
+    tabs = ["tab1", "tab2"]
+    for number in range(len(urls)):
+        obj = Citi_bank(urls[number], tabs[number])
+        obj.start_driver()
+        obj.get_url()
+        state = obj.select_state()
+        obj.save_page()
+        obj.close_driver()
+        time.sleep(5)
+    for scrab in range(len(tabs)):
+        if tabs[scrab] = "tab1" :
+            tab1 = ['header', 'switch', 'CPrates']
+            extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab1)
+            extract.findtables_tab1()
+        else:
+            tab2 = ['header','switch']
+            extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab2)
+            extract.findtables_tab2()
