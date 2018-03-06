@@ -9,70 +9,52 @@ warnings.simplefilter(action='ignore')
 
 now = datetime.datetime.now()
 
-
 class App:
 
-    def __init__(self, url = 'https://www.pnc.com/en/personal-banking/borrowing/home-lending/mortgages/fixed-rate-mortgage.html ',
-                 loan_amount=500000, zipcode='10004'):
-        self.zipcode = zipcode
-        self.loan_amount = loan_amount
+    def __init__(self, url = 'https://www.synchronybank.com/banking/high-yield-savings/ '):
         self.driver = webdriver.Firefox()
         self.driver.get(url)
-        sleep(3)
-        # write log in function
-        self.log_in()
-        sleep(10)
+        sleep(5)
+        self.data_page()
 
-
-
-    def log_in(self):
-        purchase= self.driver.find_element_by_xpath('//*[@id="purchaseType"]/option[1]')
-        purchase.click()
-        loan_amount = self.driver.find_element_by_xpath('//*[@id="purchaseAmount"]')
-        loan_amount.send_keys(self.loan_amount)
-        zip_code = self.driver.find_element_by_xpath('// *[ @ id = "zipCode"]')
-        zip_code.send_keys(self.zipcode)
-        getrate_button = self.driver.find_element_by_xpath('//*[@id="ratesGet"]')
-        getrate_button.click()
 
 
     def data_page(self):
         html = self.driver.execute_script("return document.documentElement.outerHTML")
         soup = bs(html, 'html.parser')
-        pro_name = soup.find_all('div', attrs={'div','columnHeader grid-19 tablet-grid-20 mobile-grid-19'})
-        Int_rate = soup.find_all('div', attrs={'div','rowItem grid-19 tablet-grid-20 mobile-grid-19 bigPrint'})
-        product = []
-        int_rate = []
-        for pro in pro_name:
-            if pro.getText() is not None:
-                #print(pro.getText())
-                product.append(pro.getText().rstrip("\xa0"))
-        for int_r in Int_rate:
-            int_rate.append(int_r.getText())
+        li = soup.find_all('li')
+        min_open = li[29].getText()
+        Pd = soup.find_all('h2', attrs={'class':'heading-level-1'})
+        Pd = Pd[1].getText()
+        li = soup.find_all('span',attrs={'id':['mmaLowApy','mmaMidApy','mmaHighApy']})
+        Apy_li=[]
+        for apy in li:
+            if apy.getText() is not None:
+                Apy_li.append(apy.getText())
 
-        return product, int_rate
-
+        bal = soup.find_all('div', attrs={'class':'deposit-range'})
+        bal_li = []
+        for brange in bal:
+            if brange.getText() is not None:
+                bal_li.append(brange.getText())
+        # print(li[32].getText())
+        # print(li[33].getText())
+        return  Apy_li, Pd, bal_li, min_open
 
 
 
 
 if __name__ == '__main__':
     app = App()
+    Apy_li, Pd, bal_li, min_open = app.data_page()
+    df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'Synchrony','Product Name':Pd,
+                       "Minimum Open Balance":min_open,"Deposite":bal_li,"APY":Apy_li})
+    df = df.reindex(
+        columns=["Date", "Bank Name", "Product Name", "Minimum Open Balance","Deposite", "APY"])
+    df.to_csv(output_path +"Sync_Data_Deposit_High_Yield{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
-    product, int_rate = app.data_page()
-    Int_rate = int_rate[0:4]
-    Apy_rate = int_rate[4:8]
-
-    #data = [(now.strftime("%m/%d/%Y"), "PNC", product, Int_rate, Apy_rate)]
-    df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'PNC','Product Name':product,'Interest Rate': Int_rate,"APY Rate":Apy_rate})
-    df = df.reindex(columns=["Date", "Bank Name", "Product Name", "Interest Rate", "APY Rate"])
-    df.to_csv(output_path + "PNC_Data_Mortgage_500000{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-
-    df1 = pd.read_csv(output_path+"PNC_Data_Mortgage03_06_2018.csv")
-    df2 = pd.read_csv(output_path+"PNC_Data_Mortgage_30000003_06_2018.csv")
-    df3 = pd.read_csv(output_path+"PNC_Data_Mortgage_50000003_06_2018.csv")
+    df1 = pd.read_csv(output_path+"Sync_Data_Deposit03_06_2018.csv")
+    df2 = pd.read_csv(output_path+"Sync_Data_Deposit_High_Yield03_06_2018.csv")
+    df3 = pd.read_csv(output_path+"Sync_Data_Make_Money03_06_2018.csv")
     df = pd.concat([df1, df2, df3])
-    df.to_csv(output_path + "PNC_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-
-
-
+    df.to_csv(output_path + "Sync_Data_Deposit_03_06_2018{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
