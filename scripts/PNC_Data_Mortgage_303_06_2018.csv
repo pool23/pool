@@ -1,0 +1,5 @@
+Date,Bank Name,Product Name,Loan Amount,Zipcode,Term,Interest Rate,APY Rate
+03/06/2018,PNC,30 Yr Fixed,300000,10004,30 Yr,4.375%,4.473%
+03/06/2018,PNC,20 Yr Fixed,300000,10004,20 Yr,4.125%,4.272%
+03/06/2018,PNC,15 Yr Fixed,300000,10004,15 Yr,3.750%,3.916%
+03/06/2018,PNC,10 Yr Fixed,300000,10004,10 Yr,3.625%,3.917%
