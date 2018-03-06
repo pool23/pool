@@ -20,8 +20,7 @@ class App:
         self.driver.get(url)
         sleep(3)
         # write log in function
-        self.log_in()
-        sleep(10)
+
 
 
 
@@ -34,7 +33,7 @@ class App:
         zip_code.send_keys(self.zipcode)
         getrate_button = self.driver.find_element_by_xpath('//*[@id="ratesGet"]')
         getrate_button.click()
-        sleep(5)
+        return self.loan_amount,self.zipcode
 
 
     def data_page(self):
@@ -44,14 +43,19 @@ class App:
         Int_rate = soup.find_all('div', attrs={'div','rowItem grid-19 tablet-grid-20 mobile-grid-19 bigPrint'})
         product = []
         int_rate = []
+        Term = []
         for pro in pro_name:
             if pro.getText() is not None:
                 #print(pro.getText())
                 product.append(pro.getText().rstrip("\xa0"))
+        for pro in pro_name:
+            if pro.getText() is not None:
+                #print(pro.getText())
+                Term.append(pro.getText().rstrip(" Fixed \xa0 "))
         for int_r in Int_rate:
             int_rate.append(int_r.getText())
 
-        return product, int_rate
+        return product, int_rate, Term
 
 
 
@@ -59,16 +63,14 @@ class App:
 
 if __name__ == '__main__':
     app = App()
-
-    product, int_rate = app.data_page()
+    price, zipcode = app.log_in()
+    sleep(5)
+    product, int_rate, Term = app.data_page()
     Int_rate = int_rate[0:4]
     Apy_rate = int_rate[4:8]
 
-    #data = [(now.strftime("%m/%d/%Y"), "PNC", product, Int_rate, Apy_rate)]
-    df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'PNC','Product Name':product,'Interest Rate': Int_rate,"APY Rate":Apy_rate})
-    df = df.reindex(columns=["Date", "Bank Name", "Product Name", "Interest Rate", "APY Rate"])
-
-    df.to_csv(output_path + "PNC_Data_Mortgage_300000{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-
-
-
+    data = [(now.strftime("%m/%d/%Y"), "PNC", product, Int_rate, Apy_rate)]
+    df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'PNC','Product Name':product,'Interest Rate': Int_rate,"APY Rate":Apy_rate,
+                       "Loan Amount":price, "Zipcode":zipcode, "Term":Term})
+    df = df.reindex(columns=["Date", "Bank Name", "Product Name","Loan Amount","Zipcode","Term","" "Interest Rate", "APY Rate"])
+    df.to_csv(output_path + "PNC_Data_Mortgage_3{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
