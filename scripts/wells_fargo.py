@@ -50,11 +50,11 @@ if __name__ == '__main__':
     df[2]["Product Name"] = "Savings Account"
     df[2] = df[2].reindex(columns=["Product Name","Term", "Balance", "Interest Rate", "APY"])
     df[3]["Balance"] = np.NAN
-    df[3]["Product Name"] = "Certificate Of Deposite"
+    df[3]["Product Name"] = "Certificate Of Deposit"
     df[3].drop(columns=["Bonus Interest Rate", "Bonus APYFootnote 11", "Renewal term"], inplace=True)
     df[3] = df[3].reindex(columns=["Product Name","Term", "Balance", "Interest Rate", "APY"])
     df[5]["Balance"] = np.NAN
-    df[5]["Product Name"] = "Certificate Of Deposite"
+    df[5]["Product Name"] = "Certificate Of Deposit"
     df[5].drop(columns=["Bonus Interest Rate", "Bonus APYFootnote 55,Footnote 11"], inplace=True)
     df[5] = df[5].reindex(columns=["Product Name","Term", "Balance", "Interest Rate", "APY"])
 
