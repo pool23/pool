@@ -10,6 +10,7 @@ import logging as log
 from maks_lib import logpath,output_path,input_path
 from maks_lib import log_config
 from maks_lib import output_path
+import numpy as np
 
 now = datetime.datetime.now()
 
@@ -31,16 +32,17 @@ class Citi_bank:
         self.driver.get(self.url)
 
     def select_state(self):
-        time.sleep(10)
+        self.driver.maximize_window()
+        time.sleep(6)
         click1 = self.driver.find_element_by_class_name("ui-selectmenu-item-header")
         click1.click()
-        time.sleep(2)
+        time.sleep(1)
         click2 = self.driver.find_element_by_id("RegionalPricingLocation-snapshot-menu-option-1")
         click2.click()
-        time.sleep(2)
+        time.sleep(1)
         select_btn = self.driver.find_element_by_id("cmlink_GoBtnLocForm")
         select_btn.click()
-        time.sleep(3)
+        time.sleep(2)
         return "AA"
 
     def get_current_url(self):
@@ -99,7 +101,9 @@ class ExtractInfo(Citi_bank):
         df["Date"] = now.strftime("%m-%d-%Y")
         df["Bank Name"] = "Citi Bank"
         df["Tab Name"] = "CHECKING & SAVINGS"
+
         dff = df.reindex(columns= ["Date","Bank Name","Tab Name","Product Type",'Product Name','Balance', 'Interest Rate', 'APY'])
+        return dff
         #dff.to_csv(output_path+"CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index =False)
 
     def findtables_tab2(self):
@@ -117,31 +121,40 @@ class ExtractInfo(Citi_bank):
         df.drop(df.index[24:40], inplace=True)
         df.drop(df.index[32:40], inplace=True)
         df.drop(df.index[40:], inplace=True)
-        df0 = df[1:8];df0["Years"] = "3 months"
-        df1 = df[9:16];df1["Years"] = "6 months"
-        df2 = df[17:24];df2["Years"] = "1 year"
-        df3 = df[25:32];df3["Years"] = "2 year"
-        df4 = df[33:40];df4["Years"] = "3 year"
+        df0 = df[1:8];df0["Tenor"] = "3 months";df0['Product Name']="3 months"
+        df1 = df[9:16];df1["Tenor"] = "6 months";df1['Product Name']="6 months"
+        df2 = df[17:24];df2["Tenor"] = "1 year";df2['Product Name']="1 year"
+        df3 = df[25:32];df3["Tenor"] = "2 year";df3['Product Name']="2 years"
+        df4 = df[33:40];df4["Tenor"] = "3 year";df4['Product Name']="3 years"
+
         # df0 =  pd.DataFrame(df0.str.split('-', 1).tolist(), columns=['Minimum Balance', 'Maximum Balance'])
-        dfn = pd.concat([df0,df1, df2, df3, df4])
-        dfn.columns = ['Minimum Balance', 'Maximum Balance', 'APY', 'Interest Rate', "Years"]
+        dfn = pd.concat([df0, df1, df2, df3, df4])
+        dfn.columns = ['Balance', 'APY', 'Interest Rate', 'Tenor',
+                       'Product Name']
 
         dfn["Date"] = now.strftime("%m-%d-%Y")
         dfn["Bank Name"] = "Citi Bank"
         dfn["Tab Name"] = "CERTIFICATES OF DEPOSIT"
-        df_fin = dfn.reindex(columns=["Date", "Bank Name", "Tab Name", "Years" ,'Minimum Balance','Maximum Balance', "APY", 'Interest Rate'])
-        df_final = pd.concat([findtables_tab1.dff, df_fin])
-        df_final.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+        dfn["Product Type"] = np.NaN
+        df_fin = dfn.reindex(
+            columns=["Date", "Bank Name", "Tab Name", "Product Type",
+                     'Product Name', 'Balance', 'Interest Rate', "APY",
+                     "Tenor"])
+        # df_final = pd.concat([self.dff, df_fin])
+        # df_final.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+        return df_fin
 
 class MergeCsv:
     def __init__(self, csv1, csv2 ):
         self.csv1 = csv1
         self.csv2 = csv2
     def concatenate(self):
+        pass
 
 
 if __name__ == "__main__":
-    log.info("Starting scrapping")
+    #log.info("Starting scrapping")
+    print("Starting scrapping...")
     tab1_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CurrentRates&JFP_TOKEN=7JAPCVIC"
     tab2_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CDRates&JFP_TOKEN=0UYWWGSQ"
     urls = [tab1_url, tab2_url]
@@ -155,11 +168,20 @@ if __name__ == "__main__":
         obj.close_driver()
         time.sleep(5)
     for scrab in range(len(tabs)):
-        if tabs[scrab] = "tab1" :
+        if tabs[scrab] == "tab1":
             tab1 = ['header', 'switch', 'CPrates']
             extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab1)
-            extract.findtables_tab1()
+            t1 = extract.findtables_tab1()
         else:
             tab2 = ['header','switch']
             extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab2)
-            extract.findtables_tab2()
+            t2 = extract.findtables_tab2()
+    df_final = pd.concat([t1,t2])
+    dff = df_final.reindex(columns=["Date", "Bank Name", "Tab Name", "Product Type",
+                              'Product Name', 'Balance', 'Interest Rate',
+                              'APY',"Tenor"])
+    dff.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    #os.remove("citi_tab1.html")
+    #time.sleep(5)
+    #os.remove("citi_tab2.html")
+    print("Finished scrapping!!!")
