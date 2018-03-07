@@ -37,7 +37,7 @@ class Citi_bank:
         click1 = self.driver.find_element_by_class_name("ui-selectmenu-item-header")
         click1.click()
         time.sleep(1)
-        click2 = self.driver.find_element_by_id("RegionalPricingLocation-snapshot-menu-option-1")
+        click2 = self.driver.find_element_by_id("RegionalPricingLocation-snapshot-menu-option-41")
         click2.click()
         time.sleep(1)
         select_btn = self.driver.find_element_by_id("cmlink_GoBtnLocForm")
@@ -99,10 +99,10 @@ class ExtractInfo(Citi_bank):
         df = pd.concat([df_0, df_1, df_2, df_3])
         df.columns = ['Balance', 'APY', 'Interest Rate','Product Name', "Product Type"]
         df["Date"] = now.strftime("%m-%d-%Y")
-        df["Bank Name"] = "Citi Bank"
-        df["Tab Name"] = "CHECKING & SAVINGS"
+        df["Bank Name"] = "CITIGROUP INC"
+        df["Bank_Product"] = "Deposits"
 
-        dff = df.reindex(columns= ["Date","Bank Name","Tab Name","Product Type",'Product Name','Balance', 'Interest Rate', 'APY'])
+        dff = df.reindex(columns= ["Date","Bank Name","Product Type",'Bank_Product','Product Name','Balance', 'Interest Rate', 'APY'])
         return dff
         #dff.to_csv(output_path+"CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index =False)
 
@@ -133,11 +133,11 @@ class ExtractInfo(Citi_bank):
                        'Product Name']
 
         dfn["Date"] = now.strftime("%m-%d-%Y")
-        dfn["Bank Name"] = "Citi Bank"
-        dfn["Tab Name"] = "CERTIFICATES OF DEPOSIT"
-        dfn["Product Type"] = np.NaN
+        dfn["Bank Name"] = "CITIGROUP INC"
+        dfn["Bank_Product"] = "Deposits"
+        dfn["Product Type"] = "CDs"
         df_fin = dfn.reindex(
-            columns=["Date", "Bank Name", "Tab Name", "Product Type",
+            columns=["Date", "Bank Name","Product Type",'Bank_Product',
                      'Product Name', 'Balance', 'Interest Rate', "APY",
                      "Tenor"])
         # df_final = pd.concat([self.dff, df_fin])
@@ -177,11 +177,19 @@ if __name__ == "__main__":
             extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab2)
             t2 = extract.findtables_tab2()
     df_final = pd.concat([t1,t2])
-    dff = df_final.reindex(columns=["Date", "Bank Name", "Tab Name", "Product Type",
-                              'Product Name', 'Balance', 'Interest Rate',
-                              'APY',"Tenor"])
+    #print(df_final)
+    # dff = df_final.reindex(columns=["Date", "Bank Name","Product Type",'Bank_Product',
+    #                           'Product Name', 'Balance', 'Interest Rate',
+    #                           'APY',"Tenor"])
+    df_final.rename(columns={'Date':'Date','Bank Name':'Bank_Name','Product Type':'Bank_Product_Type','Product Name':'Bank_Product_Name','Balance':'Balance',
+                        'Interest Rate':'Product_Interest','APY':'Product_Apy','Tenor':'Product_Term','Bank_Product':"Bank_Product"},inplace=True)
+
+    dff= df_final.reindex(columns=['Date','Bank_Name',"Bank_Product",'Bank_Product_Type','Bank_Product_Name','Balance','Product_Interest',
+                        'Product_Apy','Product_Term'])
+    #print(dff)
     dff.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-    #os.remove("citi_tab1.html")
-    #time.sleep(5)
+    dff.to_csv(output_path + "Consolidate_CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    os.remove("citi_tab1.html")
+    time.sleep(5)
     #os.remove("citi_tab2.html")
     print("Finished scrapping!!!")
