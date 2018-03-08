@@ -181,11 +181,17 @@ if __name__ == "__main__":
     # dff = df_final.reindex(columns=["Date", "Bank Name","Product Type",'Bank_Product',
     #                           'Product Name', 'Balance', 'Interest Rate',
     #                           'APY',"Tenor"])
+    df_final["Bank_Offer_Feature"] = "offline"
+    df_final["Mortgage_Down_Payment"] = np.NaN
+    df_final["Mortgage_Loan"] = np.NaN
+    df_final["Min_Credit_Score_Mortagage"] = np.NaN
+    df_final["Mortgage_Apr"] = np.NaN
+
     df_final.rename(columns={'Date':'Date','Bank Name':'Bank_Name','Product Type':'Bank_Product_Type','Product Name':'Bank_Product_Name','Balance':'Balance',
                         'Interest Rate':'Product_Interest','APY':'Product_Apy','Tenor':'Product_Term','Bank_Product':"Bank_Product"},inplace=True)
 
-    dff= df_final.reindex(columns=['Date','Bank_Name',"Bank_Product",'Bank_Product_Type','Bank_Product_Name','Balance','Product_Interest',
-                        'Product_Apy','Product_Term'])
+    dff= df_final.reindex(columns=['Date','Bank_Name',"Bank_Product",'Bank_Product_Type','Bank_Offer_Feature','Bank_Product_Name','Product_Term','Balance','Product_Interest',
+                        'Product_Apy','Mortgage_Down_Payment','Mortgage_Loan','Min_Credit_Score_Mortagage','Mortgage_Apr'])
     #print(dff)
     dff.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
     dff.to_csv(output_path + "Consolidate_CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)

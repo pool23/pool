@@ -139,17 +139,28 @@ if __name__ == "__main__":
     df['Bank_Product_Type'] = "Mortgage"
     df["Bank_Offer_Feature"] = "offline"
     df['Mortgage_Down_Payment'] = "20%"
+    df['Min_Credit_Score_Mortagage'] = "720+"
+
 
     for val, row in df.iterrows():
         if "ARM" in row["Product_Term"]:
             df.ix[val,"Product_Term"] = "30 Year"
-    dff = df.reindex(columns=["Date", "Bank_Name" , "Bank_Product" , 'Bank_Offer_Feature' ,
-                                    'Bank_Product_Type' , 'Bank_Product_Name' ,
-                                    'Mortgage_Loan' , 'Loan_Type' , 'Product_Term' , 'Mortgage_Down_Payment',
-                                    'Product_Interest' , 'Mortgage_Apr'])
+    dff = df.reindex(columns=["Date", "Bank_Name" , "Bank_Product" ,
+                              'Bank_Product_Type', 'Bank_Offer_Feature' ,
+                              'Bank_Product_Name' , 'Product_Term' , 'Balance',
+                              'Product_Interest','Product_Apy',
+                              'Mortgage_Down_Payment','Mortgage_Loan',
+                              'Min_Credit_Score_Mortagage', 'Mortgage_Apr','Loan_Type'])
+
+    dff_consolidate = df.reindex(columns=["Date", "Bank_Name", "Bank_Product",
+                              'Bank_Product_Type', 'Bank_Offer_Feature',
+                              'Bank_Product_Name', 'Product_Term', 'Balance',
+                              'Product_Interest', 'Product_Apy',
+                              'Mortgage_Down_Payment', 'Mortgage_Loan',
+                              'Min_Credit_Score_Mortagage', 'Mortgage_Apr'])
 
     dff.to_csv(output_path + "CITI_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-    dff.to_csv(output_path + "Consolidate_CITI_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    dff_consolidate.to_csv(output_path + "Consolidate_CITI_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
     for rm in range(len(expected_price)):
         os.remove("Citi_Mortgage_"+expected_price[rm][0]+".html")
