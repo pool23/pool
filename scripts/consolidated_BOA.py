@@ -27,5 +27,5 @@ for index, row in df0.iterrows():
         df.iloc[index,3] = "IRA CDs"
     elif "Wealth" in row['Product']:
         df.iloc[index,3] = "Savings"
-df.to_csv( "Consolidated_BOA_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
+df.to_csv( "Consolidate_BOA_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
     
