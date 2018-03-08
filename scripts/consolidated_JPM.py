@@ -25,4 +25,4 @@ for index, row in df0.iterrows():
         df.iloc[index,3] = "Savings"
     elif "CERTIFICATES" in row['Product']:
         df.iloc[index,3] = "CDs"
-df.to_csv( "HIConsolidated_JPM_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
+df.to_csv( "Consolidate_JPM_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
