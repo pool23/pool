@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import warnings
-#from maks_lib import output_path
+from maks_lib import output_path
 warnings.simplefilter(action='ignore')
 now = datetime.datetime.now()
 df0=pd.read_csv('C:\\Users\\Rupa\\PycharmProjects\\pool-master\\data\\output\\BOA_Data_Deposit_03_07_2018.csv')
@@ -27,5 +27,5 @@ for index, row in df0.iterrows():
         df.iloc[index,3] = "IRA CDs"
     elif "Wealth" in row['Product']:
         df.iloc[index,3] = "Savings"
-df.to_csv( "Consolidate_BOA_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
+df.to_csv( output_path+"Consolidate_BOA_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
     
