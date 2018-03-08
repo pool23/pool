@@ -1,0 +1,123 @@
+Date,Bank_Name,Bank_Product,Bank_Product_Type,Bank_Offer_Feature,Bank_Product_Name,Product_Term,Balance,Product_Interest,Product_Apy,Mortgage_Down_Payment,Mortgage_Loan,Min_Credit_Score_Mortagage,Mortgage_Apr
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.50%,,20%,"$100,000 ",740,4.70%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,4.25%,,20%,"$100,000 ",740,4.52%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,4.00%,,20%,"$100,000 ",740,4.35%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,4.13%,,20%,"$100,000 ",740,4.56%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,3.88%,,20%,"$100,000 ",740,4.55%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,3.75%,,20%,"$100,000 ",740,4.59%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.25%,,20%,"$300,000 ",740,4.40%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,4.13%,,20%,"$300,000 ",740,4.33%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,3.88%,,20%,"$300,000 ",740,4.17%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,4.00%,,20%,"$300,000 ",740,4.45%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,3.75%,,20%,"$300,000 ",740,4.43%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,3.63%,,20%,"$300,000 ",740,4.50%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.38%,,20%,"$500,000 ",740,4.47%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,,,20%,"$500,000 ",740,
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,4.13%,,20%,"$500,000 ",740,4.32%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,,,20%,"$500,000 ",740,
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,4.50%,,20%,"$500,000 ",740,4.76%
+3/7/2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,4.50%,,20%,"$500,000 ",740,4.79%
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet,,$1.00 and above,0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$2,000.00 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$10,000.00 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$50,000.00 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$100,000.00 and above",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,$1.00 and above,0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$2,000.00 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$10,000.00 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$50,000.00 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$100,000.00 and above",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,$1.00 and above,0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet,,"$1.00 - $2,499.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet,,"$2,500.00 and above",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$1.00 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$10,000.00 - $24,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$25,000.00 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$50,000.00 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$100,000.00 - $249,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$250,000.00 - $499,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$500,000.00 - $999,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$1,000,000.00 and above",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$1.00 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$10,000.00 - $24,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$25,000.00 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$50,000.00 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$100,000.00 - $249,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$250,000.00 - $499,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$500,000.00 - $999,999.99",0.01%,0.01%,,,,
+03-07-2018,PNC,Deposits,Savings,offline,Virtual Wallet with Performance Spend ,,"$1,000,000.00 and above",0.01%,0.01%,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_3-month,,"$2,000+",,0.75% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_6-month,,"$2,000+",,1.00% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_9-month,,"$2,000+",,1.25% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_12-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_18-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_24-month,,"$2,000+",,2.10% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_36-month,,"$2,000+",,2.05% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_48-month,,"$2,000+",,2.20% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_60-month,,"$2,000+",,2.50% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_3-month,,"$2,000+",,0.75% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_6-month,,"$2,000+",,1.00% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_9-month,,"$2,000+",,1.25% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_12-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_18-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_24-month,,"$2,000+",,2.10% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_36-month,,"$2,000+",,2.05% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_48-month,,"$2,000+",,2.20% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_60-month,,"$2,000+",,2.50% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_3-month,,"$2,000+",,0.75% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_6-month,,"$2,000+",,1.00% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_9-month,,"$2,000+",,1.25% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_12-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_18-month,,"$2,000+",,1.95% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_24-month,,"$2,000+",,2.10% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_36-month,,"$2,000+",,2.05% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_48-month,,"$2,000+",,2.20% APY*,,,,
+03-07-2018,Synchrony,Mortgage,Deposits,Online,CD_60-month,,"$2,000+",,2.50% APY*,,,,
+03-07-2018,Wells Fargo,Deposits,Checking,offline,Wells Fargo Everyday Checking,,,,,,,,
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.500%,,20%,"$200,000",740,4.695%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,4.250%,,20%,"$200,000",740,4.524%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,4.000%,,20%,"$200,000",740,4.354%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,4.125%,,20%,"$200,000",740,4.562%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,3.875%,,20%,"$200,000",740,4.546%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,3.750%,,20%,"$200,000",740,4.587%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.250%,,20%,"$300,000",740,4.400%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,4.125%,,20%,"$300,000",740,4.332%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,3.875%,,20%,"$300,000",740,4.169%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,4.000%,,20%,"$300,000",740,4.452%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,3.750%,,20%,"$300,000",740,4.428%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,3.625%,,20%,"$300,000",740,4.501%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,30-year fixed,,,4.375%,,20%,"$500,000",740,4.473%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,20-year fixed,,,,,20%,"$500,000",740,
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,15-year fixed,,,4.125%,,20%,"$500,000",740,4.317%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,10/1 ARM,,,,,20%,"$500,000",740,
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,7/1 ARM,,,4.500%,,20%,"$500,000",740,4.763%
+03-07-2018,Bank Of America,Mortgage,Mortgage,offline,5/1 ARM,,,4.500%,,20%,"$500,000",740,4.793%
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,$0 or more,0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,"$0  - $24,999.99",0.03%,0.03%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,"$25,000  - $99,999.99",1.25%,0.34%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,"$100,000  or more",1.25%,0.35%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,"$0  - $99,999.99",0.03%,0.03%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Savings Account,,"$100,000  or more",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposite,9 months,,0.35%,0.35%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposite,19 months,,1.59%,1.60%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposite,39 months,,1.14%,1.15%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposite,58 months,,1.19%,1.20%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,3 months,"$0 - $4,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$5,000 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$10,000 - $24,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$25,000 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$50,000 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$100,000 +",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,6 months,"$0 - $4,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$5,000 - $9,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$10,000 - $24,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$25,000 - $49,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$50,000 - $99,999.99",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$100,000 +",0.01%,0.01%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,1 year,"$0 - $4,999.99",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$5,000 - $9,999.99",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$10,000 - $24,999.99",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$25,000 - $49,999.99",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$50,000 - $99,999.99",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposit,,"$100,000 +",0.05%,0.05%,,,,
+03-07-2018,Wells Fargo,Deposits,Savings,offline,Certificate Of Deposite,24 months,,0.35%,0.73%,,,,
