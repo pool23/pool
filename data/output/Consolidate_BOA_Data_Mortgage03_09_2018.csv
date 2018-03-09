@@ -1,0 +1,17 @@
+Date,Bank_Name,Bank_Product,Bank_Product_Type,Bank_Offer_Feature,Bank_Product_Name,Product_Term,Balance,Product_Interest,Product_Apy,Mortgage_Down_Payment,Mortgage_Loan,Min_Credit_Score_Mortagage,Mortgage_Apr
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,30-year fixed,30,,4.380%,,20%,"$100,000 ",740,4.740%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,20-year fixed,20,,4.250%,,20%,"$100,000 ",740,4.750%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,15-year fixed,15,,4.000%,,20%,"$100,000 ",740,4.660%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,10/1 ARM,30,,4.250%,,20%,"$100,000 ",740,4.810%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,7/1 ARM,30,,4.000%,,20%,"$100,000 ",740,4.750%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,5/1 ARM,30,,4.000%,,20%,"$100,000 ",740,4.830%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,30-year fixed,30,,4.500%,,20%,"$200,000 ",740,4.700%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,20-year fixed,20,,4.250%,,20%,"$200,000 ",740,4.520%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,15-year fixed,15,,4.000%,,20%,"$200,000 ",740,4.350%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,10/1 ARM,30,,4.130%,,20%,"$200,000 ",740,4.550%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,7/1 ARM,30,,3.880%,,20%,"$200,000 ",740,4.540%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,5/1 ARM,30,,3.750%,,20%,"$200,000 ",740,4.580%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,30-year fixed,30,,4.380%,,20%,"$500,000 ",740,4.480%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,15-year fixed,15,,4.130%,,20%,"$500,000 ",740,4.320%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,7/1 ARM,30,,4.380%,,20%,"$500,000 ",740,4.710%
+3/9/2018,BANK OF AMERICA CORP,Mortgages,Mortgages,Offline,5/1 ARM,30,,4.500%,,20%,"$500,000 ",740,4.800%
