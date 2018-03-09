@@ -137,7 +137,7 @@ if __name__ == "__main__":
     df['Bank_Name'] = "CITIGROUP INC"
     df['Bank_Product'] = "Mortgage"
     df['Bank_Product_Type'] = "Mortgage"
-    df["Bank_Offer_Feature"] = "offline"
+    df["Bank_Offer_Feature"] = "Offline"
     df['Mortgage_Down_Payment'] = "20%"
     df['Min_Credit_Score_Mortagage'] = "720+"
 
