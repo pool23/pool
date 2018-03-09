@@ -1,0 +1,147 @@
+Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Min_Loan_Amount,Bank_Offer_Feature,Term_in_Year,Interest_Type,Interest,APR,Mortgage_Loan_Amt,Mortgage_Down_Payment,Credit_Score,Mortgage_Category,Mortgage_Reason,Mortgage_Pymt_Mode
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMF,Fixed Rate Mortgage _ 30-yr,,Online,30.0,Fixed,4.500%,4.528%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMF,Fixed Rate Mortgage _ 30-yr,,Online,30.0,Fixed,4.375%,4.449%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMF,Fixed Rate Mortgage _ 30-yr,,Online,30.0,Fixed,4.250%,4.377%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,25YMF,Fixed Rate Mortgage _ 25-yr,,Online,25.0,Fixed,4.625%,4.625%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,25YMF,Fixed Rate Mortgage _ 25-yr,,Online,25.0,Fixed,4.500%,4.544%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,25YMF,Fixed Rate Mortgage _ 25-yr,,Online,25.0,Fixed,4.375%,4.473%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,20YMF,Fixed Rate Mortgage _ 20-yr,,Online,20.0,Fixed,4.250%,4.296%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,20YMF,Fixed Rate Mortgage _ 20-yr,,Online,20.0,Fixed,4.125%,4.259%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,20YMF,Fixed Rate Mortgage _ 20-yr,,Online,20.0,Fixed,4.000%,4.195%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,15YMF,Fixed Rate Mortgage _ 15-yr,,Online,15.0,Fixed,4.125%,4.125%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,15YMF,Fixed Rate Mortgage _ 15-yr,,Online,15.0,Fixed,4.000%,4.068%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,15YMF,Fixed Rate Mortgage _ 15-yr,,Online,15.0,Fixed,3.875%,4.012%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,10YMF,Fixed Rate Mortgage _ 10-yr,,Online,10.0,Fixed,4.000%,4.088%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,10YMF,Fixed Rate Mortgage _ 10-yr,,Online,10.0,Fixed,3.875%,4.039%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,10YMF,Fixed Rate Mortgage _ 10-yr,,Online,10.0,Fixed,3.750%,3.986%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,4.375%,4.549%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,4.250%,4.479%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,4.125%,4.406%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,4.000%,4.339%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,3.875%,4.273%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 10/1,,Online,30.0,Variable,3.750%,4.239%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,4.500%,4.657%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,4.375%,4.610%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,4.250%,4.556%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,4.125%,4.499%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,4.000%,4.449%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,3.875%,4.399%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 7/1,,Online,30.0,Variable,3.750%,4.378%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,4.375%,4.650%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,4.250%,4.614%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,4.125%,4.579%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,4.000%,4.544%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,3.875%,4.510%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30YMV,Adjustable Rate Mortgage _ 5/1,,Online,30.0,Variable,3.750%,4.496%,"300,000",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMF,30-year fixed,,Offline,30.0,Fixed,4.380%,4.740%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,20YMF,20-year fixed,,Offline,20.0,Fixed,4.250%,4.750%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,15YMF,15-year fixed,,Offline,15.0,Fixed,4.000%,4.660%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,10/1 ARM,,Offline,30.0,Variable,4.250%,4.810%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM,,Offline,30.0,Variable,4.000%,4.750%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,5/1 ARM,,Offline,30.0,Variable,4.000%,4.830%,"$100,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMF,30-year fixed,,Offline,30.0,Fixed,4.500%,4.700%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,20YMF,20-year fixed,,Offline,20.0,Fixed,4.250%,4.520%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,15YMF,15-year fixed,,Offline,15.0,Fixed,4.000%,4.350%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,10/1 ARM,,Offline,30.0,Variable,4.130%,4.550%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM,,Offline,30.0,Variable,3.880%,4.540%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,5/1 ARM,,Offline,30.0,Variable,3.750%,4.580%,"$200,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMF,30-year fixed,,Offline,30.0,Fixed,4.380%,4.480%,"$500,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,15YMF,15-year fixed,,Offline,15.0,Fixed,4.130%,4.320%,"$500,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM,,Offline,30.0,Variable,4.380%,4.710%,"$500,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,BANK OF AMERICA CORP,USD,Bank,Mortgages,Mortgages,30YMV,5/1 ARM,,Offline,30.0,Variable,4.500%,4.800%,"$500,000 ",20%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30Fixed,,offline,30.0,Fixed,4.50%,4.88%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,20YMF,20Fixed,,offline,20.0,Fixed,4.25%,4.73%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,15Fixed,,offline,30.0,Fixed,3.88%,4.43%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,10Fixed,,offline,30.0,Fixed,3.75%,4.55%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10/1 Libor ARM,,offline,30.0,Variable,4.38%,4.92%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7/1 Libor ARM,,offline,30.0,Variable,4.38%,4.96%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5/1 Libor ARM,,offline,30.0,Variable,4.38%,5.00%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,3/1 Libor ARM,,offline,30.0,Variable,4.63%,5.15%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30Fixed,,offline,30.0,Fixed,4.50%,4.73%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,20YMF,20Fixed,,offline,20.0,Fixed,4.25%,4.53%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,15Fixed,,offline,30.0,Fixed,3.88%,4.17%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,10Fixed,,offline,30.0,Fixed,3.75%,4.18%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10/1 Libor ARM,,offline,30.0,Variable,4.38%,4.77%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7/1 Libor ARM,,offline,30.0,Variable,4.38%,4.81%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5/1 Libor ARM,,offline,30.0,Variable,4.38%,4.85%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,3/1 Libor ARM,,offline,30.0,Variable,4.63%,5.00%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30Fixed,,offline,30.0,Fixed,5.00%,5.21%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,15Fixed,,offline,15.0,Fixed,4.63%,4.91%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10/1 Libor ARM,,offline,30.0,Variable,4.63%,5.04%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7/1 Libor ARM,,offline,30.0,Variable,4.63%,5.00%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,CITIGROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5/1 Libor ARM,,offline,30.0,Variable,4.63%,5.08%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_30-yr,, Offline ,30.0,Fixed,4.750%,5.036%,"100,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,20YMF,Mortgage_20-yr,, Offline ,20.0,Fixed,4.500%,4.886%,"100,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,15YMF,Mortgage_15-yr,, Offline ,15.0,Fixed,4.375%,4.847%,"100,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_7/1,, Offline ,30.0,Fixed,4.500%,5.058%,"100,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_5/1,, Offline ,30.0,Fixed,4.875%,5.129%,"100,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_30-yr,, Offline ,30.0,Fixed,4.625%,4.714%,"300,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,20YMF,Mortgage_20-yr,, Offline ,20.0,Fixed,4.375%,4.511%,"300,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,15YMF,Mortgage_15-yr,, Offline ,15.0,Fixed,4.125%,4.260%,"300,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_7/1,, Offline ,30.0,Fixed,4.500%,4.772%,"300,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_30-yr,, Offline ,30.0,Fixed,4.625%,4.678%,"500,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,15YMF,Mortgage_15-yr,, Offline ,15.0,Fixed,4.375%,4.543%,"500,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_7/1,, Offline ,30.0,Fixed,4.000%,4.450%,"500,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Mortgages,Mortgages,30YMF,Mortgage_5/1,, Offline ,30.0,Fixed,4.000%,4.525%,"500,000 ",20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30 Yr Fixed,,Offline,30.0,Fixed,4.63%,4.83%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,20YMF,20 Yr Fixed,,Offline,20.0,Fixed,4.38%,4.65%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,15 Yr Fixed,,Offline,15.0,Fixed,4.00%,4.32%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,10YMF,10 Yr Fixed,,Offline,10.0,Fixed,3.75%,4.29%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,3-1 ARM,,Offline,30.0,Variable,3.88%,4.62%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5-1 ARM,,Offline,30.0,Variable,3.88%,4.55%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7-1 ARM,,Offline,30.0,Variable,4.13%,4.55%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10-1 ARM,,Offline,30.0,Variable,4.25%,4.58%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,FHA 30 YR FIXED,,Offline,30.0,Fixed,4.38%,5.21%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,FHA 5-1 ARM,,Offline,30.0,Variable,3.75%,5.12%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,VA 30 Yr Fixed,,Offline,30.0,Fixed,4.63%,4.97%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,VA 15 Yr Fixed,,Offline,15.0,Fixed,4.13%,4.76%,100000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30 Yr Fixed,,Offline,30.0,Fixed,4.38%,4.51%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,20YMF,20 Yr Fixed,,Offline,20.0,Fixed,4.13%,4.32%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,15 Yr Fixed,,Offline,15.0,Fixed,3.75%,3.95%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,10YMF,10 Yr Fixed,,Offline,10.0,Fixed,3.63%,3.97%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,3-1 ARM,,Offline,30.0,Variable,3.75%,4.51%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5-1 ARM,,Offline,30.0,Variable,3.75%,4.44%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7-1 ARM,,Offline,30.0,Variable,4.00%,4.44%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10-1 ARM,,Offline,30.0,Variable,4.13%,4.44%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,FHA 30 Yr Fixed,,Offline,30.0,Fixed,4.38%,5.20%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,FHA 15 Yr Fixed,,Offline,15.0,Fixed,3.88%,4.93%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,VA 30 Yr Fixed,,Offline,30.0,Fixed,4.38%,4.68%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,VA 15 Yr Fixed,,Offline,15.0,Fixed,4.00%,4.49%,300000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,30 YR FIXEDLoan Details,,Offline,30.0,Fixed,4.13%,4.25%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,15YMF,15 YR FIXEDLoan Details,,Offline,15.0,Fixed,3.88%,4.04%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,5-1 YR ARMLoan Details,,Offline,30.0,Variable,3.13%,4.42%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,7-1 YR ARMLoan Details,,Offline,30.0,Variable,3.38%,4.35%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,10-1 YR ARMLoan Details,,Offline,30.0,Variable,3.75%,4.34%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,FHA 30 YR FIXED,,Offline,30.0,Fixed,4.38%,5.21%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,FHA 5-1 ARM,,Offline,30.0,Variable,3.75%,5.12%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMF,VA 30 YR FIXED,,Offline,30.0,Fixed,4.50%,4.78%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Mortgages,Mortgages,30YMV,VA 5-1 ARM,,Offline,30.0,Variable,4.00%,4.55%,500000,20%,720+,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMF,Agency 30 Year Fixed,,Offline,30.0,Fixed,4.600%,4.6660%,200000,20%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,15YMF,Agency 15 Year Fixed,,Offline,15.0,Fixed,3.900%,4.0172%,200000,20%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMF,Jumbo 30 Year Fixed,,Offline,30.0,Fixed,4.625%,4.6796%,500000,25%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMV,Agency 30 Year 5/1 ARM,,Offline,30.0,Variable,4.200%,4.6183%,200000,20%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMV,Agency 30 Year 7/1 ARM,,Offline,30.0,Variable,3.990%,4.4650%,200000,20%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMF,FHA 30 Year Fixed,,Offline,30.0,Fixed,4.400%,5.4888%,200000,4%,660,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMF,VA 30 Year Fixed,,Offline,30.0,Fixed,4.400%,4.6580%,200000,0%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,15YMF,VA 15 Year Fixed,,Offline,15.0,Fixed,4.500%,4.9251%,200000,0%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,SUNTRUST BANKS INC,USD,Bank,Mortgages,Mortgages,30YMV,VA 30 Year 5/1 ARM,,Offline,30.0,Variable,5.490%,5.0466%,200000,0%,720,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed Rate,,Offline,30.0,Fixed,4.63%,4.68%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed-Rate VA,,Offline,30.0,Fixed,4.63%,4.94%,"$200,000 ",0.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,15YMF,15-Year Fixed Rate,,Offline,15.0,Fixed,4.13%,4.26%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM,,Offline,30.0,Variable,4.25%,4.58%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,5/1 ARM,,Offline,30.0,Variable,4.13%,4.59%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed-Rate Jumbo,,Offline,30.0,Fixed,4.63%,4.63%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,15YMF,15-Year Fixed-Rate Jumbo,,Offline,15.0,Fixed,4.38%,4.39%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,20YMF,20-Year Fixed Rate,,Offline,20.0,Fixed,4.38%,4.49%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM Jumbo,,Offline,30.0,Variable,4.13%,4.46%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,10/1 ARM Jumbo,,Offline,30.0,Variable,4.25%,4.46%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed Rate,,Offline,30.0,Fixed,4.75%,4.78%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,20YMF,20-Year Fixed Rate,,Offline,20.0,Fixed,4.50%,4.55%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,15YMF,15-Year Fixed Rate,,Offline,15.0,Fixed,4.25%,4.32%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,5/1 ARM,,Offline,30.0,Variable,4.25%,4.60%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed-Rate Jumbo,,Offline,30.0,Fixed,4.63%,4.64%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,15YMF,15-Year Fixed-Rate Jumbo,,Offline,15.0,Fixed,4.50%,4.51%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM Jumbo,,Offline,30.0,Variable,4.25%,4.51%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,10/1 ARM Jumbo,,Offline,30.0,Variable,4.38%,4.52%,"$750,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMF,30-Year Fixed-Rate VA,,Offline,30.0,Fixed,4.63%,4.92%,"$200,000 ",0.00%,740,New Purchase,Primary Residence,Principal + Interest
+03/09/2018,US,New York,Wellsfargo,USD,Bank,Mortgages,Mortgages,30YMV,7/1 ARM,,Offline,30.0,Variable,4.38%,4.60%,"$200,000 ",25.00%,740,New Purchase,Primary Residence,Principal + Interest
