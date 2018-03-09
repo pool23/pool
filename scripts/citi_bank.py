@@ -63,9 +63,6 @@ class Citi_bank:
         # time.sleep(3)
         # unhind = self.driver.find_element_by_xpath('//*[@class = "open"]')
         # unhind.click()
-        # time.sleep(2)
-
-
 
 class ExtractInfo(Citi_bank):
     def __init__(self, page,tab):
@@ -84,18 +81,18 @@ class ExtractInfo(Citi_bank):
         df.drop(df.columns[[3, 4, 5]], axis=1, inplace=True)
         df_0 = df[1:4]
         df_0["Product Name"] = df.iloc[0, 0].replace("Footnote 1", "")
-        df_0["Product Type"] = "Checking Account"
+        df_0["Product Type"] = "Checking"
         df_1 = df.iloc[5:12]
         df_1[df_1.columns[1]] = temp[temp.columns[0]]
         df_1[df_1.columns[2]] = temp[temp.columns[1]]
         df_1["Product Name"] = df.iloc[4, 0]
-        df_1["Product Type"] = "Savings Account"
+        df_1["Product Type"] = "Savings"
         df_2 = df.iloc[13:20]
         df_2["Product Name"] = df.iloc[12, 0]
-        df_2["Product Type"] = "Savings Account"
+        df_2["Product Type"] = "Savings"
         df_3 = df.iloc[21:28]
         df_3["Product Name"] = df.iloc[20, 0]
-        df_3["Product Type"] = "Savings Account"
+        df_3["Product Type"] = "Savings"
         df = pd.concat([df_0, df_1, df_2, df_3])
         df.columns = ['Balance', 'APY', 'Interest Rate','Product Name', "Product Type"]
         df["Date"] = now.strftime("%m-%d-%Y")
@@ -121,11 +118,11 @@ class ExtractInfo(Citi_bank):
         df.drop(df.index[24:40], inplace=True)
         df.drop(df.index[32:40], inplace=True)
         df.drop(df.index[40:], inplace=True)
-        df0 = df[1:8];df0["Tenor"] = "3 months";df0['Product Name']="3 months"
-        df1 = df[9:16];df1["Tenor"] = "6 months";df1['Product Name']="6 months"
-        df2 = df[17:24];df2["Tenor"] = "1 year";df2['Product Name']="1 year"
-        df3 = df[25:32];df3["Tenor"] = "2 year";df3['Product Name']="2 years"
-        df4 = df[33:40];df4["Tenor"] = "3 year";df4['Product Name']="3 years"
+        df0 = df[1:8];df0["Tenor"] = "3";df0['Product Name']="3 months"
+        df1 = df[9:16];df1["Tenor"] = "6";df1['Product Name']="6 months"
+        df2 = df[17:24];df2["Tenor"] = "12";df2['Product Name']="1 year"
+        df3 = df[25:32];df3["Tenor"] = "24";df3['Product Name']="2 years"
+        df4 = df[33:40];df4["Tenor"] = "36";df4['Product Name']="3 years"
 
         # df0 =  pd.DataFrame(df0.str.split('-', 1).tolist(), columns=['Minimum Balance', 'Maximum Balance'])
         dfn = pd.concat([df0, df1, df2, df3, df4])
@@ -135,7 +132,7 @@ class ExtractInfo(Citi_bank):
         dfn["Date"] = now.strftime("%m-%d-%Y")
         dfn["Bank Name"] = "CITIGROUP INC"
         dfn["Bank_Product"] = "Deposits"
-        dfn["Product Type"] = "CDs"
+        dfn["Product Type"] = "CD"
         df_fin = dfn.reindex(
             columns=["Date", "Bank Name","Product Type",'Bank_Product',
                      'Product Name', 'Balance', 'Interest Rate', "APY",
@@ -153,7 +150,7 @@ class MergeCsv:
 
 
 if __name__ == "__main__":
-    #log.info("Starting scrapping")
+
     print("Starting scrapping...")
     tab1_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CurrentRates&JFP_TOKEN=7JAPCVIC"
     tab2_url = "https://online.citi.com/US/JRS/pands/detail.do?ID=CDRates&JFP_TOKEN=0UYWWGSQ"
@@ -168,20 +165,22 @@ if __name__ == "__main__":
         obj.close_driver()
         time.sleep(5)
     for scrab in range(len(tabs)):
+        page = open("citi_"+tabs[scrab]+".html",'r')
         if tabs[scrab] == "tab1":
             tab1 = ['header', 'switch', 'CPrates']
-            extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab1)
+            extract = ExtractInfo(page, tab1)
             t1 = extract.findtables_tab1()
         else:
             tab2 = ['header','switch']
-            extract = ExtractInfo(open("citi_"+tabs[scrab]+".html",'r'),tab2)
+            extract = ExtractInfo(page, tab2)
             t2 = extract.findtables_tab2()
+        page.close()
     df_final = pd.concat([t1,t2])
     #print(df_final)
     # dff = df_final.reindex(columns=["Date", "Bank Name","Product Type",'Bank_Product',
     #                           'Product Name', 'Balance', 'Interest Rate',
     #                           'APY',"Tenor"])
-    df_final["Bank_Offer_Feature"] = "offline"
+    df_final["Bank_Offer_Feature"] = "Offline"
     df_final["Mortgage_Down_Payment"] = np.NaN
     df_final["Mortgage_Loan"] = np.NaN
     df_final["Min_Credit_Score_Mortagage"] = np.NaN
@@ -196,6 +195,6 @@ if __name__ == "__main__":
     dff.to_csv(output_path + "CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
     dff.to_csv(output_path + "Consolidate_CITI_Data_Deposit_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
     os.remove("citi_tab1.html")
-    time.sleep(5)
-    #os.remove("citi_tab2.html")
+    time.sleep(2)
+    os.remove("citi_tab2.html")
     print("Finished scrapping!!!")
