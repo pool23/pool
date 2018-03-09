@@ -100,7 +100,10 @@ class ExtractInfo(Citi_mortgage):
         dataset = pd.read_table('test.txt',sep='\t',delimiter=None, header=None)
         #dataset['Expected_Price'] = self.eprice[1]
         dataset['Mortgage_Loan'] = self.dprice
-        dataset["Product_Term"] = dataset.iloc[:,0].str.replace("Fixed","")
+        dataset["Product_Term"] = dataset.iloc[:,0].str.replace("Year Fixed","")
+        for i in range(0, len(dataset)):
+            if "Libor ARM" in dataset.ix[i]['Product_Term']:
+                dataset.ix[i]['Product_Term'] = 30
 
         loan_type = pd.DataFrame(dataset.iloc[:,0].str.split(" ").tolist())
         dataset["Loan_Type"] = loan_type.iloc[:,2].str.replace("ARM","Variable")
