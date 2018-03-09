@@ -145,9 +145,9 @@ if __name__ == "__main__":
     df['Min_Credit_Score_Mortagage'] = "720+"
 
 
-    for val, row in df.iterrows():
-        if "ARM" in row["Product_Term"]:
-            df.ix[val,"Product_Term"] = "30 Year"
+ #   for val, row in df.iterrows():
+#        if "ARM" in row["Product_Term"]:
+#            df.ix[val,"Product_Term"] = "30 Year"
     dff = df.reindex(columns=["Date", "Bank_Name" , "Bank_Product" ,
                               'Bank_Product_Type', 'Bank_Offer_Feature' ,
                               'Bank_Product_Name' , 'Product_Term' , 'Balance',
