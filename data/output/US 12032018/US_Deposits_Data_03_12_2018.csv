@@ -1,0 +1,191 @@
+Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Minm_Balance,Maxm_Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Online Savings,,,Online,,Variable,,1.45%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Money Market,,"5,000",Online,,Variable,,0.90%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Money Market,"5,000",,Online,,Variable,,0.90%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Money Market,"25,000",,Online,,Variable,,1.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,3MCDF,High Yield CDs_3 month,,"5,000",Online,3.0,Fixed,,1.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,6MCDF,High Yield CDs_6 month,,"5,000",Online,6.0,Fixed,,1.50%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,9MCDF,High Yield CDs_9 month,,"5,000",Online,9.0,Fixed,,1.55%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,12MCDF,High Yield CDs_12 month,,"5,000",Online,12.0,Fixed,,1.75%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,18MCDF,High Yield CDs_18 month,,"5,000",Online,18.0,Fixed,,1.80%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,36MCDF,High Yield CDs_3 year,,"5,000",Online,36.0,Fixed,,1.85%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,60MCDF,High Yield CDs_5 year,,"5,000",Online,60.0,Fixed,,2.25%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,3MCDF,High Yield CDs_3 month,"5,000","24,999.99",Online,3.0,Fixed,,1.25%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,6MCDF,High Yield CDs_6 month,"5,000","24,999.99",Online,6.0,Fixed,,1.60%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,9MCDF,High Yield CDs_9 month,"5,000","24,999.99",Online,9.0,Fixed,,1.65%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,12MCDF,High Yield CDs_12 month,"5,000","24,999.99",Online,12.0,Fixed,,1.85%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,18MCDF,High Yield CDs_18 month,"5,000","24,999.99",Online,18.0,Fixed,,1.95%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,36MCDF,High Yield CDs_3 year,"5,000","24,999.99",Online,36.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,60MCDF,High Yield CDs_5 year,"5,000","24,999.99",Online,60.0,Fixed,,2.40%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,3MCDF,High Yield CDs_3 month,"25,000",,Online,3.0,Fixed,,1.50%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,6MCDF,High Yield CDs_6 month,"25,000",,Online,6.0,Fixed,,1.75%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,9MCDF,High Yield CDs_9 month,"25,000",,Online,9.0,Fixed,,1.80%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,12MCDF,High Yield CDs_12 month,"25,000",,Online,12.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,18MCDF,High Yield CDs_18 month,"25,000",,Online,18.0,Fixed,,2.05%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,36MCDF,High Yield CDs_3 year,"25,000",,Online,36.0,Fixed,,2.10%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,60MCDF,High Yield CDs_5 year,"25,000",,Online,60.0,Fixed,,2.50%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,24MCDF,Raise Your Rate CDs_2 year,,"5,000",Online,24.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,48MCDF,Raise Your Rate CDs_4 year,,"5,000",Online,48.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,24MCDF,Raise Your Rate CDs_2 year,"5,000","24,999.99",Online,24.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,48MCDF,Raise Your Rate CDs_4 year,"5,000","24,999.99",Online,48.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,24MCDF,Raise Your Rate CDs_2 year,"25,000",,Online,24.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,48MCDF,Raise Your Rate CDs_4 year,"25,000",,Online,48.0,Fixed,,2.00%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,11MCDF,No Penalty CD_11 month,,"5,000",Online,11.0,Fixed,,1.15%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,11MCDF,No Penalty CD_11 month,"5,000","24,999.99",Online,11.0,Fixed,,1.25%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,CD,11MCDF,No Penalty CD_11 month,"25,000",,Online,11.0,Fixed,,1.50%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,,"15,000",Online,,Variable,,0.10%
+ 2018-03-12,US,New York,ALLY,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,"15,000",,Online,,Variable,,0.60%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings/Minor Savings,,"2,500",Offline,,Variable,0.03%,0.03%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings/Minor Savings,"2,500",,Offline,,Variable,0.03%,0.03%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,,"50,000",Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,"50,000","99,999",Offline,,Variable,0.02%,0.02%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,"100,000",,Offline,,Variable,0.02%,0.02%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,6MCDF,06 - 11 Months,,"10,000",Offline,6.0,Fixed,0.03%,0.03%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,12MCDF,12 - 17 Months,,"10,000",Offline,12.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,36MCDF,36 - 47 Months,,"10,000",Offline,36.0,Fixed,0.55%,0.55%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Money Market,,"10,000.00",Online,,Variable,0.847%,0.850%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Money Market,"10,000.00",,Online,,Variable,1.490%,1.500%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Savings,0,,Online,,Variable,0.995%,1.000%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 IRA Savings Traditional,0,,Online,,Variable,0.995%,1.000%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,6MCDF,360 CDs 12 months,0,1000000,Online,6.0,Fixed,0.399%,0.400%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,12MCDF,360 CDs 12 months,,,Online,12.0,Fixed,1.982%,2.000%
+ 2018-03-12,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,36MCDF,360 CDs 12 months,,,Online,36.0,Fixed,2.276%,2.300%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,,"25,000",Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,"25,000","49,999.99",Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,"50,000",,Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,,"10,000",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"10,000","24,999.99",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"25,000","49,999.99",Offline,,Variable,0.08%,0.08%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"50,000","99,999.99",Offline,,Variable,0.08%,0.08%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"100,000","499,999.99",Offline,,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"500,000","999,999.99",Offline,,Variable,0.13%,0.13%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Citibank Account Package1,"1,000,000",,Offline,,Variable,0.13%,0.13%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,,"10,000",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"10,000","24,999.99",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"25,000","49,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"50,000","99,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"100,000","499,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"500,000","999,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Basic Banking Package,"1,000,000",,Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,,"10,000",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"10,000","24,999.99",Offline,,Variable,0.04%,0.04%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"25,000","49,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"50,000","99,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"100,000","499,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"500,000","999,999.99",Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,Savings,_MSBV,Access Account Package,"1,000,000",,Offline,,Variable,0.06%,0.06%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,,"10,000",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"10,000","24,999.99",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"25,000","49,999.99",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"50,000","99,999.99",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"100,000","499,999.99",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"500,000","999,999.99",Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,3MCDF,3 months,"1,000,000",,Offline,3.0,Fixed,0.05%,0.05%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,,"10,000",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"10,000","24,999.99",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"25,000","49,999.99",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"50,000","99,999.99",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"100,000","499,999.99",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"500,000","999,999.99",Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,6MCDF,6 months,"1,000,000",,Offline,6.0,Fixed,0.07%,0.07%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,,"10,000",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"10,000","24,999.99",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"25,000","49,999.99",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"50,000","99,999.99",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"100,000","499,999.99",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"500,000","999,999.99",Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,12MCDF,1 year,"1,000,000",,Offline,12.0,Fixed,0.25%,0.25%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,,"10,000",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"10,000","24,999.99",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"25,000","49,999.99",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"50,000","99,999.99",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"100,000","499,999.99",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"500,000","999,999.99",Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,24MCDF,2 years,"1,000,000",,Offline,24.0,Fixed,0.50%,0.50%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,,"10,000",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"10,000","24,999.99",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"25,000","49,999.99",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"50,000","99,999.99",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"100,000","499,999.99",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"500,000","999,999.99",Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,CITIGROUP INC,USD,Bank,Deposits,CD,36MCDF,3 years,"1,000,000",,Offline,36.0,Fixed,0.70%,0.70%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Essential Savings,0,,Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"1,000",,Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,,"2,499.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"2,500","9,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"10,000","24,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"25,000","49,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"50,000","99,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"100,000","249,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"250,000","499,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,"500,000","999,999.99",Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Select Savings,1,,Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Balanced Banking,"3,000",,Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Essential Checking,500,,Offline,,Variable,,
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Select Checking,,"2,499.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Select Checking,"2,500","9,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Select Checking,"10,000","24,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Select Checking,"25,000",,Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,,"9,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"10,000","24,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"25,000","49,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"50,000","99,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"100,000","249,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"250,000","499,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"500,000","999,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"1,000,000","1,999,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checking,_MCCV,Signature Advantage Checking,"2,000,000",,Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,,"9,999.99",Offline,,Variable,,0.01%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"10,000","24,999.99",Offline,,Variable,,0.03%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"25,000","49,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"50,000","99,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"100,000","249,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"250,000","499,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"500,000","999,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"1,000,000","1,999,999.99",Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Savings,_MSBV,Signature Advantage Brokerage,"2,000,000",,Offline,,Variable,,0.05%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,3MCDV,CD_3-month,"2,000",,Online,3.0,Variable,,0.75%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,6MCDV,CD_6-month,"2,000",,Online,6.0,Variable,,1.00%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,9MCDV,CD_9-month,"2,000",,Online,9.0,Variable,,1.25%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,12MCDV,CD_12-month,"2,000",,Online,12.0,Variable,,1.95%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,18MCDV,CD_18-month,"2,000",,Online,18.0,Variable,,1.95%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,24MCDV,CD_24-month,"2,000",,Online,24.0,Variable,,2.10%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,36MCDV,CD_36-month,"2,000",,Online,36.0,Variable,,2.05%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,48MCDV,CD_48-month,"2,000",,Online,48.0,Variable,,2.20%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,60MCDV,CD_60-month,"2,000",,Online,60.0,Variable,,2.50%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,Money Market Rates and Terms,,"4,999",Online,,Variable,,1.05%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,Money Market Rates and Terms,"5,000","24,999",Online,,Variable,,1.05%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,Money Market Rates and Terms,"25,000",,Online,,Variable,,1.05%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,HYS Rates and Terms,,"4,999",Online,,Variable,,1.55%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,HYS Rates and Terms,"5,000","24,999",Online,,Variable,,1.55%
+ 2018-03-12,US,New York,SYNCHRONY,USD,Bank,Deposits,Deposits,_MCDV,HYS Rates and Terms,"25,000",,Online,,Variable,,1.55%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Checking,_MCCV,Wells Fargo Everyday Checking,,,Offline,,Variable,,
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Wells Fargo Way2Save,0,,Offline,,Variable,0.01%,0.01%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Platinum Savings - Special Interest,0,"24,999.99",Offline,,Variable,0.03%,0.03%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Platinum Savings - Special Interest,"25,000","99,999.99",Offline,,Variable,1.25%,0.34%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Platinum Savings - Special Interest,"100,000",,Offline,,Variable,1.25%,0.35%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Platinum Savings - Standard Interest,0,"99,999.99",Offline,,Variable,0.03%,0.03%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Platinum Savings - Standard Interest,"100,000",,Offline,,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Special CD,,,Offline,9 months,Variable,0.35%,0.35%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Special CD,,,Offline,19 months,Variable,1.59%,1.60%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Special CD,,,Offline,39 months,Variable,1.14%,1.15%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,Special CD,,,Offline,58 months,Variable,1.19%,1.20%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,0,"4,999.99",Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"5,000","9,999.99",Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"10,000","24,999.99",Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"25,000","49,999.99",Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"50,000","99,999.99",Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"100,000",,Offline,3 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,0,"4,999.99",Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"5,000","9,999.99",Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"10,000","24,999.99",Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"25,000","49,999.99",Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"50,000","99,999.99",Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"100,000",,Offline,6 months,Variable,0.05%,0.05%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,0,"4,999.99",Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"5,000","9,999.99",Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"10,000","24,999.99",Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"25,000","49,999.99",Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"50,000","99,999.99",Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,CD,"100,000",,Offline,12 months,Variable,0.10%,0.10%
+ 2018-03-12,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,_MSBV,,,,Offline,,Variable,,
