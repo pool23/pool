@@ -14,7 +14,7 @@ order= ['Date', 'Bank_Name', 'Bank_Product', 'Bank_Product_Type', 'Bank_Offer_Fe
 bank_name = 'PNC'
 Bank_Product = 'Deposits'
 Bank_Offer_Feature = 'offline'
-locationPath = output_path
+locationPath = output_path+'Consolidate_PNC_Data_Deposits'+str(today)+'.csv'
 
 
 jsoup = BeautifulSoup(resp.content, "html.parser")
@@ -254,7 +254,7 @@ if result is not None:
                 RACDTable.append(['', '', racdSubHeading, ''])
             racdData = tableData2.find_all("tr", attrs={"class": "indent8 rowData"})
             if racdData is not None:
-                for row in racdData:
+                for row in racdData[1:]:
 
                     racdTData = []
                     for id, td in enumerate(row.find_all("td")):
@@ -289,10 +289,14 @@ if result is not None:
             cdTableDF.loc[:, 'Bank_Product_Type'] = 'CD'
             cdTableDF.loc[:, 'Bank_Product'] = Bank_Product
             cdTableDF.loc[:, 'Bank_Offer_Feature'] = Bank_Offer_Feature
+            cdTableDF['Product_Term'] = cdTableDF['Product_Term'].apply(lambda x: re.sub('[^0-9]','',x))
+            # print(cdTableDF['Product_Term'])
             cdTableDF = cdTableDF[order]
+
 
             # # cdTableDF.to_csv("cdTable.csv", index=False)
             racdf = pd.DataFrame(RACDTable[2:], columns=['Product_Term', 'Balance', 'Product_Interest', 'Product_Apy'])
+            racdf['Product_Term'] = racdf['Product_Term'].apply(lambda x: re.sub('[^0-9]', '', x))
             racdf.loc[:, 'Bank_Name'] = 'PNC'
             racdf.loc[:, 'Date'] = today
             racdf.loc[:, 'Bank_Product_Name'] = racdHeading
