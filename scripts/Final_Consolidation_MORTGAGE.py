@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[267]:
+# In[1]:
 
 
 import glob
@@ -18,7 +18,7 @@ now = datetime.datetime.now()
 extension = 'csv'
 
 
-# In[268]:
+# In[2]:
 
 
 all_files = glob.glob(output_path+'*.{}'.format(extension))
@@ -26,7 +26,7 @@ all_mortage_files  = [file for file in all_files if file.split("\\")[-1].startsw
 all_deposite_files = [file for file in all_files if file.split("\\")[-1].startswith("Cons") and file not in all_mortage_files]
 
 
-# In[269]:
+# In[3]:
 
 
 COLUMN_NAMES = list(pd.read_csv(all_mortage_files[0]).columns)
@@ -34,13 +34,13 @@ df_mortgage = pd.DataFrame(columns=COLUMN_NAMES)
 df_deposit = pd.DataFrame(columns=COLUMN_NAMES)
 
 
-# In[270]:
+# In[4]:
 
 
 df_mortgage
 
 
-# In[271]:
+# In[5]:
 
 
 for idx, file in enumerate(all_mortage_files):
@@ -48,7 +48,7 @@ for idx, file in enumerate(all_mortage_files):
     print(pd.read_csv(all_mortage_files[idx]).shape[1])
 
 
-# In[272]:
+# In[6]:
 
 
 for file in all_mortage_files:
@@ -60,40 +60,40 @@ for file in all_mortage_files:
     df_mortgage = pd.concat([df_mortgage, df_temp])
 
 
-# In[273]:
+# In[7]:
 
 
 df_mortgage.shape
 
 
-# In[274]:
+# In[8]:
 
 
 df_mortgage
 
 
-# In[275]:
+# In[9]:
 
 
 df_mortgage.dropna(axis=0, how='all', inplace=True)
 
 
-# In[276]:
+# In[10]:
 
 
 df_mortgage.drop(columns=["Product_Apy"], inplace=True)
 
 
-# In[277]:
+# In[11]:
 
 
 df_mortgage.rename(columns={"Balance": "Min_Loan_Amount", "Product_Term": "Term_in_Year","Product_Interest": "Interest","Mortgage_Loan": "Mortgage_Loan_Amt","Min_Credit_Score_Mortagage":"Credit_Score", "Mortgage_Apr":"APR"}, inplace = True,index=str)
 
 
-# In[278]:
+# In[12]:
 
 
-df_mortgage['Date'] = now.strftime("%m/%d/%Y")
+df_mortgage['Date'] = now.strftime("%Y-%m-%d")
 df_mortgage['Bank_Native_Country'] = "US"
 df_mortgage['State'] = "New York"
 df_mortgage['Bank_Local_Currency'] = "USD"
@@ -108,25 +108,25 @@ df_mortgage['Mortgage_Reason'] = "Primary Residence"
 df_mortgage['Mortgage_Pymt_Mode'] = "Principal + Interest"
 
 
-# In[279]:
+# In[13]:
 
 
 df_mortgage.columns
 
 
-# In[280]:
+# In[14]:
 
 
 arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name', 'Bank_Local_Currency','Bank_Type','Bank_Product', 'Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Min_Loan_Amount','Bank_Offer_Feature','Term_in_Year','Interest_Type','Interest','APR','Mortgage_Loan_Amt','Mortgage_Down_Payment', 'Credit_Score','Mortgage_Category', 'Mortgage_Reason','Mortgage_Pymt_Mode']
 
 
-# In[281]:
+# In[15]:
 
 
 df_mortgage = df_mortgage.reindex(columns= arranged_cols)
 
 
-# In[282]:
+# In[16]:
 
 
 for idx in range(len(df_mortgage.index)):
@@ -134,7 +134,7 @@ for idx in range(len(df_mortgage.index)):
         df_mortgage['Interest_Type'].iloc[idx] = "Variable"
 
 
-# In[283]:
+# In[17]:
 
 
 for idx in range(len(df_mortgage.index)):
@@ -144,7 +144,7 @@ for idx in range(len(df_mortgage.index)):
     #print(df_mortgage['Interest_Type'].iloc[idx])
 
 
-# In[284]:
+# In[18]:
 
 
 df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )

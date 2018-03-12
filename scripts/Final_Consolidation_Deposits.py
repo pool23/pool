@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[114]:
+# In[41]:
 
 
 import glob
@@ -19,7 +19,7 @@ now = datetime.datetime.now()
 extension = 'csv'
 
 
-# In[115]:
+# In[42]:
 
 
 all_files = glob.glob(output_path+'*.{}'.format(extension))
@@ -27,7 +27,7 @@ all_mortage_files  = [file for file in all_files if file.split("\\")[-1].startsw
 all_deposite_files = [file for file in all_files if file.split("\\")[-1].startswith("Cons") and file not in all_mortage_files]
 
 
-# In[116]:
+# In[43]:
 
 
 COLUMN_NAMES = list(pd.read_csv(all_mortage_files[0]).columns)
@@ -35,7 +35,7 @@ df_mortgage = pd.DataFrame(columns=COLUMN_NAMES)
 df_deposit = pd.DataFrame(columns=COLUMN_NAMES)
 
 
-# In[117]:
+# In[44]:
 
 
 for idx, file in enumerate(all_deposite_files):
@@ -43,7 +43,7 @@ for idx, file in enumerate(all_deposite_files):
     print(pd.read_csv(all_deposite_files[idx]).shape[1])
 
 
-# In[118]:
+# In[45]:
 
 
 for file in all_deposite_files:
@@ -55,40 +55,40 @@ for file in all_deposite_files:
     df_deposit = pd.concat([df_deposit, df_temp])
 
 
-# In[119]:
+# In[46]:
 
 
 df_deposit.shape
 
 
-# In[120]:
+# In[47]:
 
 
 df_deposit
 
 
-# In[121]:
+# In[48]:
 
 
 df_deposit.dropna(axis=0, how='all', inplace=True)
 
 
-# In[122]:
+# In[49]:
 
 
 df_deposit.drop(columns=['Mortgage_Down_Payment','Mortgage_Loan', 'Min_Credit_Score_Mortagage', 'Mortgage_Apr'], inplace=True)
 
 
-# In[123]:
+# In[50]:
 
 
 df_deposit.rename(columns={"Product_Term": "Term_in_Months","Product_Interest": "Interest","Product_Apy":"APY"}, inplace = True,index=str)
 
 
-# In[124]:
+# In[51]:
 
 
-df_deposit['Date'] = now.strftime("%m/%d/%Y")
+df_deposit['Date'] = now.strftime("%Y-%m-%d")
 df_deposit['Bank_Native_Country'] = "US"
 df_deposit['State'] = "New York"
 df_deposit['Bank_Local_Currency'] = "USD"
@@ -100,19 +100,19 @@ df_deposit['Minm_Balance'] = np.NAN
 df_deposit['Maxm_Balance'] = np.NAN
 
 
-# In[125]:
+# In[52]:
 
 
 arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name','Bank_Local_Currency', 'Bank_Type','Bank_Product','Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Balance','Minm_Balance','Maxm_Balance','Bank_Offer_Feature','Term_in_Months', 'Interest_Type','Interest', 'APY']
 
 
-# In[126]:
+# In[53]:
 
 
 df_deposit = df_deposit.reindex(columns= arranged_cols)
 
 
-# In[127]:
+# In[54]:
 
 
 for idx in range(len(df_deposit.index)):
@@ -120,7 +120,7 @@ for idx in range(len(df_deposit.index)):
         df_deposit['Interest_Type'].iloc[idx] = "Fixed"
 
 
-# In[128]:
+# In[55]:
 
 
 for idx in range(len(df_deposit.index)):
@@ -142,13 +142,13 @@ for idx in range(len(df_deposit.index)):
     #print(df_mortgage['Interest_Type'].iloc[idx])
 
 
-# In[129]:
+# In[56]:
 
 
 df_deposit.head()
 
 
-# In[130]:
+# In[57]:
 
 
 for idx in range(len(df_deposit.index)):
@@ -162,13 +162,13 @@ for idx in range(len(df_deposit.index)):
         df_deposit['Minm_Balance'].iloc[idx] = df_deposit['Balance'].iloc[idx]
 
 
-# In[131]:
+# In[58]:
 
 
 df_deposit.drop(columns=['Balance'], inplace=True)
 
 
-# In[132]:
+# In[59]:
 
 
 for idx in range(len(df_deposit.index)):
@@ -187,7 +187,7 @@ for idx in range(len(df_deposit.index)):
         df_deposit['Minm_Balance'].iloc[idx] = np.NAN
 
 
-# In[133]:
+# In[60]:
 
 
 df_deposit.to_csv(output_path+"US\\" + "US_Deposits_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
