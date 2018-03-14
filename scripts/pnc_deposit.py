@@ -5,6 +5,7 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup
 import datetime
+import numpy as np
 from maks_lib import output_path
 today = datetime.datetime.now().strftime("%m-%d-%Y")
 resp = requests.get("https://apps.pnc.com/rates/servlet/DepositRatesSearch?productGroup=saving&zipCode=10004")
