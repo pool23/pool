@@ -313,6 +313,7 @@ if result is not None:
             bigdata = bigdata.append(mf, ignore_index=True)
             bigdata = bigdata.append(cdTableDF, ignore_index=True)
             bigdata = bigdata.append(racdf, ignore_index=True)
+            bigdata["Bank_Product_Type"] = "Savings"
             bigdata["Mortgage_Down_Payment"] = np.nan
             bigdata["Mortgage_Loan"] = np.nan
             bigdata["Min_Credit_Score_Mortagage"] = np.nan
