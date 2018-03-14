@@ -146,6 +146,6 @@ for idx in range(len(df_mortgage.index)):
 
 # In[18]:
 
-
+df_mortgage = df_mortgage[df_mortgage.Term_in_Year != 25.0]
 df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
 
