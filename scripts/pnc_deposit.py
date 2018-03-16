@@ -12,7 +12,7 @@ resp = requests.get("https://apps.pnc.com/rates/servlet/DepositRatesSearch?produ
 table = []
 # order = ['Balance', 'Product_Interest', 'Product_Apy', 'Bank_Name', 'Date','Bank_Product_Name', 'Bank_Product_Type']
 order= ['Date', 'Bank_Name', 'Bank_Product', 'Bank_Product_Type', 'Bank_Offer_Feature','Bank_Product_Name', 'Product_Term', 'Balance', 'Product_Interest','Product_Apy']
-bank_name = 'PNC'
+bank_name = 'PNC FINANCIAL SERVICES GROUP INC'
 Bank_Product = 'Deposits'
 Bank_Offer_Feature = 'offline'
 locationPath = output_path+'Consolidate_PNC_Data_Deposits'+str(today)+'.csv'
@@ -284,7 +284,7 @@ if result is not None:
 
 
             cdTableDF = pd.DataFrame(filterList[3:], columns=['Product_Term', '', 'Balance', 'Product_Interest', 'Product_Apy'])
-            cdTableDF.loc[:, 'Bank_Name'] = 'PNC'
+            cdTableDF.loc[:, 'Bank_Name'] = 'PNC FINANCIAL SERVICES GROUP INC'
             cdTableDF.loc[:,'Date'] = today
             cdTableDF.loc[:, 'Bank_Product_Name'] = cd_heading[0].text
             cdTableDF.loc[:, 'Bank_Product_Type'] = 'CD'
