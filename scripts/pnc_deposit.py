@@ -298,7 +298,7 @@ if result is not None:
             # # cdTableDF.to_csv("cdTable.csv", index=False)
             racdf = pd.DataFrame(RACDTable[2:], columns=['Product_Term', 'Balance', 'Product_Interest', 'Product_Apy'])
             racdf['Product_Term'] = racdf['Product_Term'].apply(lambda x: re.sub('[^0-9]', '', x))
-            racdf.loc[:, 'Bank_Name'] = 'PNC'
+            racdf.loc[:, 'Bank_Name'] = 'PNC FINANCIAL SERVICES GROUP INC'
             racdf.loc[:, 'Date'] = today
             racdf.loc[:, 'Bank_Product_Name'] = racdHeading
             racdf.loc[:, 'Bank_Product_Type'] = 'CD'
