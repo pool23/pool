@@ -147,5 +147,11 @@ for idx in range(len(df_mortgage.index)):
 # In[18]:
 
 df_mortgage = df_mortgage[df_mortgage.Term_in_Year != 25.0]
+
+df_ticker = pd.read_csv(input_path+"Bank_Ticker_US.csv")
+result = pd.merge(df_mortgage, df_ticker, how='left', on='Bank_Name')
+arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name','Ticker','Bank_Local_Currency','Bank_Type','Bank_Product', 'Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Min_Loan_Amount','Bank_Offer_Feature','Term_in_Year','Interest_Type','Interest','APR','Mortgage_Loan_Amt','Mortgage_Down_Payment', 'Credit_Score','Mortgage_Category', 'Mortgage_Reason','Mortgage_Pymt_Mode']
+df_mortgage = result.reindex(columns= arranged_cols)
+
 df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
 
