@@ -18,7 +18,7 @@ from maks_lib import logpath
 import logging
 banks = glob.glob("*.py")
 
-log_config(logpath, "UK_BANK_RUNStatus".format(), __doc__)
+log_config(logpath, "US_BANK_RUNStatus".format(), __doc__)
 for bank in banks:
     logging.info("Web-Scrapping Starting for bank: {}\n".format(bank))
     cmd = "python "+ bank
