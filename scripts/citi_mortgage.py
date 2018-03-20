@@ -13,8 +13,10 @@ now = datetime.datetime.now()
 
 warnings.simplefilter(action='ignore')
 
-
+driver = webdriver.Firefox()
+driver.maximize_window()
 class Citi_mortgage:
+    global driver
     def __init__(self, url, eprice, dprice):
         self.url = url
         self.eprice = eprice
@@ -27,35 +29,37 @@ class Citi_mortgage:
         return self.driver.close()
 
     def get_url(self):
-        return self.driver.get(self.url)
+        return driver.get(self.url)
 
     def fillform(self):
         time.sleep(6)
-        self.driver.maximize_window()
-        select = Select(self.driver.find_element_by_id("propertyKind"))
+        select = Select(driver.find_element_by_id("propertyKind"))
         select.select_by_visible_text("Single Family Home")
-        select = Select(self.driver.find_element_by_id("propertyUse"))
+        select = Select(driver.find_element_by_id("propertyUse"))
         select.select_by_value("P")
-        inutelement = self.driver.find_element_by_id("propCity")
+        inutelement = driver.find_element_by_id("propCity")
+        inutelement.clear()
         inutelement.send_keys('New York')
-        select = Select(self.driver.find_element_by_id("propState"))
+        select = Select(driver.find_element_by_id("propState"))
         select.select_by_value("NY")
-        select = Select(self.driver.find_element_by_id("propCounty"))
+        select = Select(driver.find_element_by_id("propCounty"))
         select.select_by_value("36061")
-        inutelement = self.driver.find_element_by_id("purchPrice")
+        inutelement = driver.find_element_by_id("purchPrice")
+        inutelement.clear()
         inutelement.send_keys(self.eprice[1])
-        inutelement = self.driver.find_element_by_id("desiredLoanAmount")
+        inutelement = driver.find_element_by_id("desiredLoanAmount")
+        inutelement.clear()
         inutelement.send_keys(self.dprice[1])
-        self.driver.find_element_by_id("creditScoreGoodLabel").click()
-        self.driver.find_element_by_id("submit-purchase").click()
+        driver.find_element_by_id("creditScoreGoodLabel").click()
+        driver.find_element_by_id("submit-purchase").click()
         time.sleep(15)
 
 
     def get_current_url(self):
-        return self.driver.current_url
+        return driver.current_url
 
     def save_page(self):
-        page = self.driver.page_source
+        page = driver.page_source
         with open("citi_mortgage_"+self.eprice[0]+".html", 'w')as file:
             file.write(page)
 
@@ -107,13 +111,11 @@ if __name__ == "__main__":
     url = "https://online.citi.com/US/nccmi/purchase/ratequote/flow.action?fromLanding=true&selectedOption=CUSTOM&selectedOptionValue=CUSTOMpurChaseLanding&JFP_TOKEN=3GBHQLZG"
     for i in range(len(expected_price)):
         obj = Citi_mortgage(url, expected_price[i], desired_price[i])
-        obj.start_driver()
         obj.get_url()
         obj.fillform()
         obj.save_page()
-        obj.close_driver()
-        time.sleep(3)
-
+        time.sleep(1)
+    driver.close()
     tab1 = ['header-3 rate-card-panel-header-white', 'row rate-card-panel-items tb-hide']
     for i in range(len(expected_price)):
         page = open("citi_mortgage_" + expected_price[i][0] + ".html", 'r')
