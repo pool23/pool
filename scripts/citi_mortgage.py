@@ -102,7 +102,7 @@ class ExtractInfo(Citi_mortgage):
 if __name__ == "__main__":
     print("Starting scraping")
 
-    expected_price = [('case1','120000'),('case2','360000'),('case3','600000')]
+    expected_price = [('case1','125000'),('case2','375000'),('case3','625000')]
     desired_price = [('case1','100000'),('case2','300000'),('case3','500000')]
     url = "https://online.citi.com/US/nccmi/purchase/ratequote/flow.action?fromLanding=true&selectedOption=CUSTOM&selectedOptionValue=CUSTOMpurChaseLanding&JFP_TOKEN=3GBHQLZG"
     for i in range(len(expected_price)):
