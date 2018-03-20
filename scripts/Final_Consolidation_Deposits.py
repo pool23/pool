@@ -193,7 +193,7 @@ df_deposit = df_deposit[((df_deposit.Bank_Product_Type == "CD") & (df_deposit.Te
 
 df_ticker = pd.read_csv(input_path+"Bank_Ticker_US.csv")
 result = pd.merge(df_deposit, df_ticker, how='left', on='Bank_Name')
-arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name','Ticker','Bank_Local_Currency', 'Bank_Type','Bank_Product','Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Balance','Minm_Balance','Maxm_Balance','Bank_Offer_Feature','Term_in_Months', 'Interest_Type','Interest', 'APY']
+arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name','Ticker','Bank_Local_Currency', 'Bank_Type','Bank_Product','Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Minm_Balance','Maxm_Balance','Bank_Offer_Feature','Term_in_Months', 'Interest_Type','Interest', 'APY']
 df_deposit = result.reindex(columns= arranged_cols)
 
 df_deposit.to_csv(output_path+"US\\" + "US_Deposits_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
