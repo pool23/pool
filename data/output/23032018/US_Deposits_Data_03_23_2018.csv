@@ -1,41 +1,4 @@
 Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Minm_Balance,Maxm_Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings,,2500,Offline,,Variable,0.03%,0.03%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings,2500,,Offline,,Variable,0.03%,0.03%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Gold,,2500,Offline,,Variable,0.04%,0.04%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Gold,2500,,Offline,,Variable,0.04%,0.04%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Platinum,,2500,Offline,,Variable,0.05%,0.05%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Platinum,2500,,Offline,,Variable,0.05%,0.05%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Platinum Honors,,2500,Offline,,Variable,0.06%,0.06%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings Platinum Honors,2500,,Offline,,Variable,0.06%,0.06%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Banking Rewards for Wealth Management,,2500,Offline,,Variable,0.06%,0.06%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Banking Rewards for Wealth Management,2500,,Offline,,Variable,0.06%,0.06%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,,50000,Offline,,Variable,0.01%,0.01%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,50000,99999,Offline,,Variable,0.02%,0.02%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,100000,,Offline,,Variable,0.02%,0.02%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,06 - 11 Months,Fixed,0.03%,0.03%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,12 - 17 Months,Fixed,0.05%,0.05%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,18 - 23 Months,Fixed,0.07%,0.07%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,24 - 35 Months,Fixed,0.1%,0.1%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,36 - 47 Months,Fixed,0.55%,0.55%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,48 - 59 Months,Fixed,0.65%,0.65%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,60 - 119 Months,Fixed,0.75%,0.75%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,,10000,Offline,120 Months,Fixed,0.75%,0.75%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,06 - 11 Months,Fixed,0.03%,0.03%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,12 - 17 Months,Fixed,0.05%,0.05%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,18 - 23 Months,Fixed,0.07%,0.07%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,24 - 35 Months,Fixed,0.1%,0.1%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,36 - 47 Months,Fixed,0.55%,0.55%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,48 - 59 Months,Fixed,0.65%,0.65%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,60 - 119 Months,Fixed,0.75%,0.75%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,10000,99999,Offline,120 Months,Fixed,0.75%,0.75%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,06 - 11 Months,Fixed,0.03%,0.03%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,12 - 17 Months,Fixed,0.05%,0.05%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,18 - 23 Months,Fixed,0.07%,0.07%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,24 - 35 Months,Fixed,0.1%,0.1%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,36 - 47 Months,Fixed,0.55%,0.55%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,48 - 59 Months,Fixed,0.65%,0.65%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,60 - 119 Months,Fixed,0.75%,0.75%
-2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,IRA CDs,_MCDF,Fixed Term CD/IRA Products,100000,,Offline,120 Months,Fixed,0.75%,0.75%
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Online Savings,,,Online,,Variable,,1.45%
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Money Market,,5000,Online,,Variable,,0.90%
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,Savings,_MSBV,Money Market,5000,,Online,,Variable,,0.90%
@@ -72,6 +35,14 @@ Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Prod
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,CD,11MCDF,No Penalty CD_11 month,25000,,Online,11.0,Fixed,,1.50%
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,,15000,Online,,Variable,,0.10%
 2018-03-23,US,New York,ALLY,USD,Bank,Deposits,Checking,_MCCV,Interest Checking Account,15000,,Online,,Variable,,0.60%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings/Minor Savings,,2500,Offline,,Variable,0.03%,0.03%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,_MSBV,Rewards Savings/Minor Savings,2500,,Offline,,Variable,0.03%,0.03%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,,50000,Offline,,Variable,0.01%,0.01%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,50000,99999,Offline,,Variable,0.02%,0.02%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checking,_MCCV,Bank of America Interest Checking,100000,,Offline,,Variable,0.02%,0.02%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,6MCDF,06 - 11 Months,,10000,Offline,6.0,Fixed,0.03%,0.03%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,12MCDF,12 - 17 Months,,10000,Offline,12.0,Fixed,0.05%,0.05%
+2018-03-23,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,36MCDF,36 - 47 Months,,10000,Offline,36.0,Fixed,0.55%,0.55%
 2018-03-23,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Money Market,,10000,Online,,Variable,0.847%,0.850%
 2018-03-23,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Money Market,10000,,Online,,Variable,1.490%,1.500%
 2018-03-23,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,_MSBV,360 Savings,0,,Online,,Variable,0.995%,1.000%
