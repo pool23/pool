@@ -153,11 +153,11 @@ result = pd.merge(df_mortgage, df_ticker, how='left', on='Bank_Name')
 arranged_cols = ['Date', 'Bank_Native_Country','State','Bank_Name','Ticker','Bank_Local_Currency','Bank_Type','Bank_Product', 'Bank_Product_Type','Bank_Product_Code','Bank_Product_Name','Min_Loan_Amount','Bank_Offer_Feature','Term_in_Year','Interest_Type','Interest','APR','Mortgage_Loan_Amt','Mortgage_Down_Payment', 'Credit_Score','Mortgage_Category', 'Mortgage_Reason','Mortgage_Pymt_Mode']
 df_mortgage = result.reindex(columns= arranged_cols)
 
-df_mortgage["Mortgage_Loan_Amt"] = df_mortgage["Mortgage_Loan_Amt"].str.replace(",","")
-for idx in range(len(df_deposit.index)):
-    df_mortgage['Mortgage_Loan_Amt'].iloc[idx] = str(df_mortgage['Mortgage_Loan_Amt'].iloc[idx]).split(".")[0]
+
+for idx in range(len(df_mortgage.index)):
+    df_mortgage["Mortgage_Loan_Amt"].iloc[idx] = str(df_mortgage["Mortgage_Loan_Amt"].iloc[idx]).replace(",","")
+    df_mortgage['Mortgage_Loan_Amt'].iloc[idx] = str(df_mortgage['Mortgage_Loan_Amt'].iloc[idx]).lstrip("$")
 df_mortgage['Mortgage_Loan_Amt'] = df_mortgage['Mortgage_Loan_Amt'].str.replace("nan", "")
-df_mortgage['Mortgage_Loan_Amt'] = df_mortgage['Mortgage_Loan_Amt'].str.lstrip("$")
+
 
 df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
-
