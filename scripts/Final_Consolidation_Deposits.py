@@ -88,7 +88,7 @@ df_deposit.rename(columns={"Product_Term": "Term_in_Months","Product_Interest": 
 # In[81]:
 
 
-df_deposit['Date'] = now.strftime("%Y-%m-%d")
+df_deposit['Date'] = " {}".format(now.strftime("%Y-%m-%d"))
 df_deposit['Bank_Native_Country'] = "US"
 df_deposit['State'] = "New York"
 df_deposit['Bank_Local_Currency'] = "USD"
