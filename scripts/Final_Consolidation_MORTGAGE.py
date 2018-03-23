@@ -160,4 +160,4 @@ for idx in range(len(df_mortgage.index)):
 df_mortgage['Mortgage_Loan_Amt'] = df_mortgage['Mortgage_Loan_Amt'].str.replace("nan", "")
 
 
-df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
+df_mortgage.to_csv(output_path+"US\\" + "US_Mortgage_Data_{}.csv".format(now.strftime("%Y_%m_%d")), index=False )
