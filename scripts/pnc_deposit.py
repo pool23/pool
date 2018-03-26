@@ -318,6 +318,7 @@ if result is not None:
             bigdata["Mortgage_Loan"] = np.nan
             bigdata["Min_Credit_Score_Mortagage"] = np.nan
             bigdata["Mortgage_Apr"] = np.nan
+            bigdata['Bank_Product_Type'] = bigdata['Bank_Product_Type'].apply(lambda x:'Savings' if 'money' in x.lower() else x)
 
 
             bigdata.to_csv(locationPath, index= False)
