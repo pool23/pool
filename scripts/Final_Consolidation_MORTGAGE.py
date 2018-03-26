@@ -130,7 +130,7 @@ df_mortgage = df_mortgage.reindex(columns= arranged_cols)
 
 
 for idx in range(len(df_mortgage.index)):
-    if "ARM" in df_mortgage['Bank_Product_Name'].iloc[idx] or "Adjustable Rate" in df_mortgage['Bank_Product_Name'].iloc[idx]:
+    if "ARM" in df_mortgage['Bank_Product_Name'].iloc[idx] or "Adjustable Rate" in df_mortgage['Bank_Product_Name'].iloc[idx] or "/" in str(df_mortgage['Bank_Product_Name'].iloc[idx]):
         df_mortgage['Interest_Type'].iloc[idx] = "Variable"
 
 
