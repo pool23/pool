@@ -111,9 +111,9 @@ def product_name_checker(x):
         return x
 df['Interest'] = np.nan
 df['Date'] = today.strftime('%m-%d-%Y')
-#df['Bank_Native_Country'] = 'US'
-#df['State'] = 'New York'
-#df['Bank_Local_Currency'] = 'USD'
+df['Bank_Native_Country'] = 'US'
+df['State'] = 'New York'
+df['Bank_Local_Currency'] = 'USD'
 df['Bank_Type'] = 'Bank'
 df['Bank_Product'] = 'Deposits'
 df['Interest_Type'] = 'Fixed'
