@@ -13,7 +13,7 @@ Excel_Table = []
 Excel_Table.append(table_headers)
 today = datetime.datetime.now()
 from maks_lib import output_path
-path = output_path+"Consolidate_Nerdwallet_Data_Deposit"+today.strftime('%Y_%m_%d')+".csv"
+path = output_path+"Aggregator_Nerdwallet_Data_Deposit"+today.strftime('%Y_%m_%d')+".csv"
 
 online_bank = [k.lower() for k in ['Synchrony Bank', 'Ally Bank', 'Capital One 360']]
 neededBanks = [k.lower() for k in ["Ally Bank", "Bank of America", "Capital One", "Capital One 360", "Chase", "Citibank", "PNC", "Synchrony Bank", "Wells Fargo", "SunTrust"]]
