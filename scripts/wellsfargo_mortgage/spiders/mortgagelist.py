@@ -89,7 +89,7 @@ class MortgagelistSpider(scrapy.Spider):
         df9["Balance"] = np.NAN
         df9["Product_Interest"] = df9["Interest Rate"]
         df9["Product_Apy"] = np.NAN
-        df9["Mortgage_Down_Payment"] = df9["Down Payment"].str.strip('.0%') + "%"
+        df9["Mortgage_Down_Payment"] = df9["Down Payment"].str.replace('.0%', '') + "%"
         df9["Mortgage_Loan"] = df9["Loan Amount"].str.strip('$')
         df9["Min_Credit_Score_Mortagage"] = "740"
         df9["Mortgage_Apr"] = df9["APY"]
