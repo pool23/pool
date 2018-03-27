@@ -1,0 +1,30 @@
+Date,Bank_Name,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY,Source
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,CD,,360 CD,1,Offline,60,Fixed,,2.65%,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,CD,,Certificate of Deposit,2000,Online,60,Fixed,,2.5%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,25000,Online,60,Fixed,,2.5%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,5000,Online,60,Fixed,,2.4%,nerdwallet.com
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,CD,,360 CD,1,Offline,36,Fixed,,2.3%,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,CD,,Certificate of Deposit,2000,Online,48,Fixed,,2.3%,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,CD,,Certificate of Deposit,2000,Online,36,Fixed,,2.25%,nerdwallet.com
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,CD,,360 CD,1,Offline,24,Fixed,,2.2%,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,CD,,Certificate of Deposit,2000,Online,24,Fixed,,2.2%,nerdwallet.com
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,CD,,360 CD,1,Offline,18,Fixed,,2.1%,nerdwallet.com
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,CD,,360 CD,1,Offline,12,Fixed,,2.05%,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,CD,,Certificate of Deposit,2000,Online,12,Fixed,,2.05%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,25000,Online,12,Fixed,,2.0%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,5000,Online,12,Fixed,,1.85%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,25000,Online,6,Fixed,,1.75%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,5000,Online,6,Fixed,,1.6%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,CD,,High Yield CD,1,Online,6,Fixed,,1.5%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,Checking,,Interest Checking Account,0,Online,,Fixed,,,nerdwallet.com
+ 2018-03-27,CITIGROUP INC,Bank,Deposits,Checking,,Access Account,1500,Offline,,Fixed,,,nerdwallet.com
+ 2018-03-27,CITIGROUP INC,Bank,Deposits,Checking,,Basic Checking,0,Offline,,Fixed,,,nerdwallet.com
+ 2018-03-27,CITIGROUP INC,Bank,Deposits,Checking,,Priority Checking,50000,Offline,,Fixed,,,nerdwallet.com
+ 2018-03-27,SYNCHRONY,Bank,Deposits,Savings,,High Yield Savings Account,1,Online,,Fixed,,1.55%,nerdwallet.com
+ 2018-03-27,CAPITAL ONE,Bank,Deposits,Savings,,360 Money Market Account,10000,Online,,Fixed,,1.5%,nerdwallet.com
+ 2018-03-27,ALLY,Bank,Deposits,Savings,,Online Savings Account,1,Online,,Fixed,,1.45%,nerdwallet.com
+ 2018-03-27,BANK OF AMERICA CORP,Bank,Deposits,Savings,,Rewards Savings Account,1,Offline,,Fixed,,0.03%,nerdwallet.com
+ 2018-03-27,WELLS FARGO,Bank,Deposits,Savings,,Way2Save Savings,1,Offline,,Fixed,,0.01%,nerdwallet.com
+ 2018-03-27,JP MORGAN CHASE & Co.,Bank,Deposits,Savings,,Chase Savings℠,1,Offline,,Fixed,,0.01%,nerdwallet.com
+ 2018-03-27,PNC FINANCIAL SERVICES GROUP INC,Bank,Deposits,Savings,,Savings Account,1,Offline,,Fixed,,0.01%,nerdwallet.com
+ 2018-03-27,PNC FINANCIAL SERVICES GROUP INC,Bank,Deposits,Savings,,Savings Account,2500,Offline,,Fixed,,0.01%,nerdwallet.com
