@@ -211,5 +211,5 @@ df_deposit = result.reindex(columns= arranged_cols)
 # In[94]:
 
 df_deposit = df_deposit[((df_deposit.Bank_Product_Type == "CD") & (df_deposit.Term_in_Months.isin([6.0,12.0,36.0]))) |(df_deposit.Bank_Product_Type != "CD") ]
-df_deposit.to_csv(output_path+"US\\" + "US_Deposits_Data_{}.csv".format(now.strftime("%m_%d_%Y")), index=False )
+df_deposit.to_csv(output_path+"US\\" + "US_Deposits_Data_{}.csv".format(now.strftime("%Y_%m_%d")), index=False )
 
