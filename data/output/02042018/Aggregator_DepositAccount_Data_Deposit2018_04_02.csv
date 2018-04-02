@@ -1,0 +1,36 @@
+Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY,Source
+ 2018-04-02,US,New York,SYNCHRONY,USD,Bank,Deposits,Savings,,High Yield Savings,,Online,,Fixed,,1.55%,DepositsAccount.com
+ 2018-04-02,US,New York,ALLY,USD,Bank,Deposits,Savings,,Online Savings Account,,Online,,Fixed,,1.45%,DepositsAccount.com
+ 2018-04-02,US,New York,ALLY,USD,Bank,Deposits,Checkings,,Interest Checking Account,$15000,Online,,Fixed,,0.60%,DepositsAccount.com
+ 2018-04-02,US,New York,ALLY,USD,Bank,Deposits,CD,,High Yield 9-Month CD,$25000,Online,9.0,Fixed,,1.80%,DepositsAccount.com
+ 2018-04-02,US,New York,SYNCHRONY,USD,Bank,Deposits,CD,,12 Month CD,$2000,Online,12.0,Fixed,,2.05%,DepositsAccount.com
+ 2018-04-02,US,New York,ALLY,USD,Bank,Deposits,CD,,High Yield 12-Month CD,$25000,Online,12.0,Fixed,,2.00%,DepositsAccount.com
+ 2018-04-02,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,,12 Month 360 CD,,Offline,12.0,Fixed,,2.05%,DepositsAccount.com
+ 2018-04-02,US,New York,SYNCHRONY,USD,Bank,Deposits,CD,,36 Month CD,$2000,Online,36.0,Fixed,,2.25%,DepositsAccount.com
+ 2018-04-02,US,New York,ALLY,USD,Bank,Deposits,CD,,High Yield 3 Year CD,$25000,Online,36.0,Fixed,,2.10%,DepositsAccount.com
+ 2018-04-02,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,,36 Month 360 CD,,Offline,36.0,Fixed,,2.30%,DepositsAccount.com
+ 2018-04-02,US,New York,CAPITAL ONE,USD,Bank,Deposits,Savings,,360 Savings Account,,Offline,,Fixed,,1.00%,DepositsAccount.com
+ 2018-04-02,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Savings,,Rewards Savings,,Offline,,Fixed,,0.03%,DepositsAccount.com
+ 2018-04-02,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Deposits,Savings,,Chase Premier Savings - Standard,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,WELLS FARGO,USD,Bank,Deposits,Savings,,Platinum Savings - Standard Interest Rate,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Deposits,Savings,,Standard Savings,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,CAPITAL ONE,USD,Bank,Deposits,Checkings,,360 Checking,,Offline,,Fixed,,0.20%,DepositsAccount.com
+ 2018-04-02,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,Checkings,,Bank of America Interest Checking,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Deposits,Checkings,,Chase Premier Platinum Checking,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Deposits,Checkings,,Performance Interest Checking,$2000,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,WELLS FARGO,USD,Bank,Deposits,Checkings,,Preferred Checking,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,SUNTRUST BANKS INC,USD,Bank,Deposits,Checkings,,Select Checking,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,SYNCHRONY,USD,Bank,Deposits,CD,,9 Month CD,$2000,Online,9.0,Fixed,,1.25%,DepositsAccount.com
+ 2018-04-02,US,New York,WELLS FARGO,USD,Bank,Deposits,CD,,9 Month CD Special,$5000,Offline,9.0,Fixed,,0.70%,DepositsAccount.com
+ 2018-04-02,US,New York,CAPITAL ONE,USD,Bank,Deposits,CD,,9 Month 360 CD,,Offline,9.0,Fixed,,0.60%,DepositsAccount.com
+ 2018-04-02,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Deposits,CD,,9 Month Fixed Term CD Special,$25000,Offline,9.0,Fixed,,0.10%,DepositsAccount.com
+ 2018-04-02,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,,6 - 11 Month CD,$1000,Offline,6.0,Fixed,,0.03%,DepositsAccount.com
+ 2018-04-02,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Deposits,CD,,6-8 Month CD - Standard,$1000-$100000,Offline,6.0,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Deposits,CD,,12 Month CD,$25000,Offline,12.0,Fixed,,0.20%,DepositsAccount.com
+ 2018-04-02,US,New York,WELLS FARGO,USD,Bank,Deposits,CD,,1 Year CD,,Offline,12.0,Fixed,,0.10%,DepositsAccount.com
+ 2018-04-02,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,,12 Month Featured CD,$10000-$25000,Offline,12.0,Fixed,,0.07%,DepositsAccount.com
+ 2018-04-02,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Deposits,CD,,12-14 Month CD - Standard,$1000-$100000,Offline,12.0,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-02,US,New York,WELLS FARGO,USD,Bank,Deposits,CD,,39 Month CD Special,$5000,Offline,39.0,Fixed,,1.30%,DepositsAccount.com
+ 2018-04-02,US,New York,BANK OF AMERICA CORP,USD,Bank,Deposits,CD,,36 - 47 Month CD,$1000,Offline,36.0,Fixed,,0.55%,DepositsAccount.com
+ 2018-04-02,US,New York,PNC FINANCIAL SERVICES GROUP INC,USD,Bank,Deposits,CD,,36 Month Callable CD Special,$10000,Offline,36.0,Fixed,,0.50%,DepositsAccount.com
+ 2018-04-02,US,New York,JP MORGAN CHASE & Co.,USD,Bank,Deposits,CD,,36-41 Month CD - Standard,$1000,Offline,36.0,Fixed,,0.05%,DepositsAccount.com
