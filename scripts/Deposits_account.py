@@ -91,7 +91,7 @@ def termClear(x):
     else:
         return re.sub('[^0-9]','',x) if len(re.sub('[^0-9]','',x))!=0 else np.nan
 
-order = ["Date","Bank_Name", "Bank_Local_Currency", "Bank_Type", "Bank_Product", "Bank_Product_Type", "Bank_Product_Code", "Bank_Product_Name", "Balance", "Bank_Offer_Feature", "Term_in_Months", "Interest_Type", "Interest", "APY", "Source"]
+order = ["Date","Bank_Native_Country", "State","Bank_Name", "Bank_Local_Currency", "Bank_Type", "Bank_Product", "Bank_Product_Type", "Bank_Product_Code", "Bank_Product_Name", "Balance", "Bank_Offer_Feature", "Term_in_Months", "Interest_Type", "Interest", "APY", "Source"]
 
 df = pd.DataFrame(Excel_Table,columns=table_headers)
 
@@ -104,8 +104,8 @@ print(df['Bank_Product_Name'],df['Term_in_Months'])
 # df.to_csv('test.csv', columns=['Bank_Product_Name','Term_in_Months'])
 df['Interest'] = np.nan
 df['Date'] = ' '+today.strftime('%Y-%m-%d')
-#df['Bank_Native_Country'] = 'US'
-#df['State'] = 'New York'
+df['Bank_Native_Country'] = 'US'
+df['State'] = 'New York'
 df['Bank_Local_Currency'] = 'USD'
 df['Bank_Type'] = 'Bank'
 df['Bank_Product'] = 'Deposits'
