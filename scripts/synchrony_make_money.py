@@ -26,12 +26,11 @@ class App:
         min_open = li[29].getText()
         Pd = soup.find_all('h2', attrs={'class':'heading-level-1'})
         Pd = Pd[1].getText()
-        print(Pd)
         li = soup.find_all('span',attrs={'id':['mmaLowApy','mmaMidApy','mmaHighApy']})
         Apy_li=[]
         for apy in li:
             if apy.getText() is not None:
-                Apy_li.append(apy.getText())
+                Apy_li.append(apy.getText().rstrip("APY*"))
 
         bal = soup.find_all('div', attrs={'class':'deposit-range'})
         bal_li = []
@@ -42,14 +41,15 @@ class App:
         # print(li[33].getText())
         return  Apy_li, Pd, bal_li, min_open
 
-
-
+    def browser_close(self):
+        self.driver.close()
 
 if __name__ == '__main__':
     app = App()
     Apy_li, Pd, bal_li, min_open = app.data_page()
+    app.browser_close()
     df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'Synchrony','Product Name':Pd,"APY":Apy_li,
-                       "Minimum Open Balance":min_open,"Balance":bal_li})
+                       "Minimum Open Balance":min_open,"Deposite":bal_li})
     df = df.reindex(
-        columns=["Date", "Bank Name", "Product Name", "Minimum Open Balance","Balance", "APY"])
-    df.to_csv(output_path +"Sync_Data_Make_Money{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+        columns=["Date", "Bank Name", "Product Name", "Minimum Open Balance", "Deposite", "APY"])
+    df.to_csv(output_path +"Sync_Data_Make_Money.csv".format(now.strftime("%m_%d_%Y")), index=False)
