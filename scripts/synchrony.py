@@ -34,19 +34,25 @@ class App:
         term = term[1].getText()
         return Pd, Mini, term, df, min_open
 
+    def browser_close(self):
+        self.driver.close()
+
 if __name__ == '__main__':
     app = App()
     Pd, Mini, term, df, min_open = app.data_page()
+    app.browser_close()
     df_0 = df[0].iloc[0:9, 0:2]
+    print(df_0)
     df_0['Date'] = now.strftime("%m/%d/%Y")
     df_0['Bank Name'] = 'Synchrony'
     df_0['Product Type'] = Pd
     df_0['Product Name'] = 'TERM'
-    df_0['Minimum opening balance'] = min_open
-    df_0['Minimum Deposite'] = Mini
+    df_0['Minimum Open Balance'] = min_open
+    df_0['Deposite'] = Mini
     df_0.rename(columns={"\n\t\tDEPOSIT AMOUNT\n\t\t$2,000+\n\t  ": "APY", "\n\t\t\n\t\t  TERM\n\t\t\n\t  ": "Term"},
                 inplace=True)
-    df_0["Product Name"] = "CD_" + df_0["Term"].str.strip()
-    df_0 = df_0.reindex(columns=["Date", "Bank Name", "Product Name", "Minimum opening balance", "Minimum Deposite", "APY"])
-    df_0.to_csv(output_path + "Sync_Data_Deposit{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
-
+    df_0["Product Name"] = "CD_" + df_0["Term"].str.strip("")
+    df_0["Term"] = "CD_" + df_0["Term"].str.strip("-month")
+    df_0["APY"] = df_0["APY"].str.strip(" APY*")
+    df_0 = df_0.reindex(columns=["Date", "Bank Name", "Product Name", "Minimum Open Balance", "Deposite", "APY"])
+    df_0.to_csv(output_path + "Sync_Data_Deposit.csv".format(now.strftime("%m_%d_%Y")), index=False)
