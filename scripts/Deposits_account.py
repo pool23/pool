@@ -115,7 +115,7 @@ df['Bank_Product_Code'] = np.nan
 # df['Bank_Product_Name'] = df['Bank_Product_Name'].apply(product_name_checker)
 # df = df[order]
 df['Source'] = 'DepositsAccount.com'
-df['Balance'] = df['Balance'].apply(lambda x: x.strip('-').replace('k','000').replace('m','000000'))
+df['Balance'] = df['Balance'].apply(lambda x: re.sub('[^0-9-]','',str(x.replace('k','000').replace('m','000000'))).strip('-'))
 df = df[order]
 df.to_csv(path, index=False)
 
