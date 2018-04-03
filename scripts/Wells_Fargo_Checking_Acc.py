@@ -1,7 +1,7 @@
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 from time import sleep
 from bs4 import BeautifulSoup as bs
-import requests
 import pandas as pd
 from maks_lib import output_path
 import datetime
@@ -11,7 +11,7 @@ now = datetime.datetime.now()
 
 class App:
 
-    def __init__(self, url = 'https://www.wellsfargo.com/checking/everyday/ ', zipcode='10004'):
+    def __init__(self, url='https://www.wellsfargo.com/checking/everyday/ ', zipcode='10004'):
         self.zipcode = zipcode
         self.driver = webdriver.Firefox()
         self.driver.get(url)
@@ -32,18 +32,34 @@ class App:
         soup = bs(page, 'lxml')
         product_name = soup.find('h1', attrs={'class':'c11'})
         product_name = product_name.getText()
-        mini_bal = soup.find('div', attrs={'class':'c89featureList'})
-        balance = mini_bal.find_all('p')
-        min_open_bal = balance[0].getText()
-        m_open_bal = min_open_bal.split("\n")
-        min_open_bal = m_open_bal[2]
-        min_balance = balance[4].getText()
-        return product_name, min_open_bal, min_balance
+        return product_name
+
+    def browser_close(self):
+        self.driver.close()
 
 if __name__ == '__main__':
     app = App()
-    product_name, min_open_bal, min_balance = app.data_page()
+    product_name = app.data_page()
+    app.browser_close()
+    data = [(now.strftime("%m/%d/%Y"), "Wells Fargo", product_name)]
+    df = pd.DataFrame.from_records(data, columns=["Date", "Bank Name", "Product Name"])
+    df.to_csv(output_path + "WellsF_Data_Checking_Acc.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
-    data = [(now.strftime("%m/%d/%Y"), "Wells Fargo", product_name, min_open_bal, min_balance)]
-    df = pd.DataFrame.from_records(data, columns=["Date", "Bank Name", "Product Name", "Minimum Opening Amount", "Minimum Daily Balance"])
-    df.to_csv(output_path + "WellsF_Data_Checking_Acc{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+##########################################################################################################################
+df4 = pd.read_csv("C:\\Users\\Nimmi\\pool\\data\\output\\WellsF_Data_Checking_Acc.csv")
+df4["Date"] = now.strftime("%m-%d-%Y")
+df4["Bank_Name"]="WELLS FARGO"
+df4["Bank_Product"]= "Deposits"
+df4["Bank_Product_Type"] = "Checking"
+df4["Bank_Offer_Feature"] = "Offline"
+df4["Bank_Product_Name"] = df4["Product Name"]
+df4["Product_Term"] = np.NAN
+df4["Balance"] = np.NAN
+df4["Product_Interest"] = np.NAN
+df4["Product_Apy"] = np.NAN
+df4["Mortgage_Down_Payment"] = np.NAN
+df4["Mortgage_Loan"] = np.NAN
+df4["Min_Credit_Score_Mortagage"] = np.NAN
+df4["Mortgage_Apr"] = np.NAN
+df4 = df4.reindex(columns=["Date", "Bank_Name","Bank_Product", "Bank_Product_Type", "Bank_Offer_Feature", "Bank_Product_Name", "Product_Term", "Balance","Product_Interest","Product_Apy","Mortgage_Down_Payment","Mortgage_Loan","Min_Credit_Score_Mortagage", "Mortgage_Apr"])
+df4.to_csv(output_path +"Consolidate_WellsF_Data_Checking_Acc{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
