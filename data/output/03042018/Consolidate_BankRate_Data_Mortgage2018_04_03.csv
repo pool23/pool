@@ -1,0 +1,10 @@
+Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Name,Min_Loan_Amount,Bank_Offer_Feature,Term (Y),Interest_Type,Interest,APR,Mortgage_Loan_Amt,Mortgage_Down_Payment,Mortgage_Category,Mortgage_Reason,Mortgage_Pymt_Mode,Bank_Product_Code
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30 Yr Fixed,,Online,30,Fixed,4.500%,4.525%,300000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,5/1 ARM Adjustable,,Online,30,Variable,4.500%,4.783%,300000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,7/1 ARM Adjustable,,Online,30,Variable,4.375%,4.676%,300000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,10/1 ARM Adjustable,,Online,30,Variable,4.250%,4.520%,300000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,15 Yr Fixed,,Online,15,Fixed,4.000%,4.043%,300000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,30 Yr Fixed,,Online,30,Fixed,4.250%,4.265%,500000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,5/1 ARM Adjustable,,Online,30,Variable,3.490%,4.409%,500000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,7/1 ARM Adjustable,,Online,30,Variable,3.625%,4.312%,500000,20%,New Purchase,Primary Residence,Principal + Interest,
+ 2018-04-03,US,New York,ALLY,USD,Bank,Mortgages,Mortgages,15 Yr Fixed,,Online,15,Fixed,3.875%,3.900%,500000,20%,New Purchase,Primary Residence,Principal + Interest,
