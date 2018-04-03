@@ -1,0 +1,11 @@
+Date,Bank_Native_Country,State,Bank_Name,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY,Source
+ 2018-04-03,US,New York,Ally Bank,USD,Bank,Deposits,Savings,,Ally Bank Savings Account,,Online,,Fixed,1.45%,,us.deposits.org
+ 2018-04-03,US,New York,PNC,USD,Bank,Deposits,Savings,,PNC Money Market Account,100,Offline,,Fixed,0.17%,,us.deposits.org
+ 2018-04-03,US,New York,Citibank,USD,Bank,Deposits,Savings,,Citibank Savings Plus Account,,Offline,,Fixed,0.13%,,us.deposits.org
+ 2018-04-03,US,New York,Wells Fargo,USD,Bank,Deposits,Savings,,Wells Fargo Business Platinum Savings Account,50,Offline,,Fixed,0.06%,,us.deposits.org
+ 2018-04-03,US,New York,Capital One,USD,Bank,Deposits,CD,,Capital One 5 Year CD Rates,,Offline,60.0,Fixed,2.65%,,us.deposits.org
+ 2018-04-03,US,New York,Synchrony Bank,USD,Bank,Deposits,CD,,Synchrony Bank 60 Month CD Rates,"100,000",Online,60.0,Fixed,2.50%,,us.deposits.org
+ 2018-04-03,US,New York,Ally Bank,USD,Bank,Deposits,CD,,Ally Bank 5 Year CD Rates,,Online,60.0,Fixed,2.50%,,us.deposits.org
+ 2018-04-03,US,New York,PNC,USD,Bank,Deposits,CD,,PNC 10 Year CD Rates,,Offline,120.0,Fixed,1.50%,,us.deposits.org
+ 2018-04-03,US,New York,Citibank,USD,Bank,Deposits,CD,,Citibank 5 Year CD Rates,,Offline,60.0,Fixed,0.80%,,us.deposits.org
+ 2018-04-03,US,New York,Wells Fargo,USD,Bank,Deposits,CD,,Wells Fargo 1 Year CD Rates,"2,500",Offline,12.0,Fixed,0.10%,,us.deposits.org
