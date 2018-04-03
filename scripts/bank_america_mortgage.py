@@ -10,12 +10,12 @@ warnings.simplefilter(action='ignore')
 now = datetime.datetime.now()
 
 class App:
-
-    def __init__(self, url = 'https://www.bankofamerica.com/mortgage/mortgage-rates/ ',Pur_pri='125,000', zipcode='10001',
+    def __init__(self, url = 'https://www.bankofamerica.com/mortgage/mortgage-rates/ ',Pur_pri='125,000', zipcode='10004',
                  down_pay = '25,000'):
         self.zipcode = zipcode
         self.down_pay = down_pay
         self.Pur_pri = Pur_pri
+
         self.driver = webdriver.Firefox()
         self.driver.get(url)
         sleep(3)
@@ -32,6 +32,8 @@ class App:
         down.send_keys(self.down_pay)
         zip_input = self.driver.find_element_by_xpath('//*[@id="zip-code-input-medium"]')
         zip_input.send_keys(self.zipcode)
+        update = self.driver.find_element_by_xpath('//*[@id="update-button-medium"]')
+        update.click()
         return self.Pur_pri, self.zipcode
 
 
@@ -45,6 +47,7 @@ class App:
         B = []
         C = []
         D = []
+        E = ["30","20","15","30","30","30"]
         for data in (pd[2]):
             d1 = data.find_all('p')
             for i in d1:
@@ -142,16 +145,20 @@ class App:
             d1 = data.find_all('p')
             for i in d1:
                 D.append(i.getText().lstrip("Points "))
-        return A, B, C, D, loan
+        return A, B, C, D, E, loan
 
+    def browser_close(self):
+        self.driver.close()
 
 if __name__ == '__main__':
     app = App()
     price, zipcode = app.log_in()
     sleep(5)
-    A, B, C, D, loan  = app.data()
+    A, B, C, D, E, loan  = app.data()
+    app.browser_close()
     df = pd.DataFrame({'Date':now.strftime("%m/%d/%Y"),"Bank Name":'Bank Of America','Purchase price':price,
-                       "Loan Amount":loan,"Zipcode":zipcode,"Product Name":A,"Rate":B,"APR":C,"Points":D,"Credit Score":"740","Payment Type":"principal + interest"})
+                       "Loan Amount":loan,"Zipcode":zipcode,"Product Name":A,"Rate":B,"APR":C,"Points":D, "Product term":E,"Credit Score":"740","Payment Type":"principal + interest"})
     df = df.reindex(columns=['Date',"Bank Name","Purchase price",
-                       "Loan Amount","Zipcode","Product Name","Rate","APR","Points","Credit Score","Payment Type"])
-    df.to_csv(output_path + "BOA_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+                       "Loan Amount","Zipcode","Product Name","Rate","APR","Points","Credit Score","Product term","Payment Type"])
+    df["Rate"] = df["Rate"].astype(str)
+    df.to_csv(output_path + "BOA_Data_Mortgage1.csv".format(now.strftime("%m_%d_%Y")), index=False)
