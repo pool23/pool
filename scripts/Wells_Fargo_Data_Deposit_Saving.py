@@ -102,7 +102,7 @@ df5 = df5.reindex(
     columns=["Date", "Bank_Name", "Bank_Product", "Bank_Product_Type", "Bank_Offer_Feature", "Bank_Product_Name",
              "Product_Term", "Balance", "Product_Interest", "Product_Apy", "Mortgage_Down_Payment", "Mortgage_Loan",
              "Min_Credit_Score_Mortagage", "Mortgage_Apr"])
-df5.loc[0:5]["Bank_Product_Type"]="Savings"
+df5.iloc[0:5]["Bank_Product_Type"]="Savings"
 df5.iloc[11:16]["Product_Term"]='3'
 df5.iloc[17:22]["Product_Term"]='6'
 df5.iloc[22:28]["Product_Term"]='12'
