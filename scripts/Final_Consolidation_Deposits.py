@@ -116,10 +116,16 @@ df_deposit = df_deposit.reindex(columns= arranged_cols)
 
 
 for idx in range(len(df_deposit.index)):
+    if "Savings" in df_deposit['Bank_Product_Type'].iloc[idx]:
+        df_deposit['Interest_Type'].iloc[idx] = "Fixed"
+
+for idx in range(len(df_deposit.index)):
     if "CD" in df_deposit['Bank_Product_Type'].iloc[idx]:
         df_deposit['Interest_Type'].iloc[idx] = "Fixed"
 
-
+for idx in range(len(df_deposit.index)):
+    if "Checking" in df_deposit['Bank_Product_Type'].iloc[idx]:
+        df_deposit['Interest_Type'].iloc[idx] = "Fixed"
 # In[85]:
 
 
