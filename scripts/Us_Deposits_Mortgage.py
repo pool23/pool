@@ -7,7 +7,7 @@ from maks_lib import output_path
 Excel_Table =[]
 import datetime
 today = datetime.datetime.now()
-path = output_path + "Consolidate_US_Deposit_Data_Mortgage_"+today.strftime("%m_%d_%Y")+".csv"
+path = output_path + "Aggregator_US_Deposit_Data_Mortgage_"+today.strftime("%m_%d_%Y")+".csv"
 neededUsBanks = {
     "Ally Bank":'ALLY',
     "Bank of America":"BANK OF AMERICA CORP",
