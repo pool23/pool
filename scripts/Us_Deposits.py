@@ -6,7 +6,7 @@ import datetime
 from maks_lib import output_path
 
 today = datetime.datetime.now()
-path = output_path + "Consolidate_Us_Deposit_Data_Deposit_"+today.strftime("%m_%d_%Y")+".csv"
+path = output_path + "Aggregator_Us_Deposit_Data_Deposit_"+today.strftime("%m_%d_%Y")+".csv"
 # path = 'mybanktracker_Data_US_Deposit_'+today.strftime('%m-%d-%Y')+'.csv'
 import re
 
