@@ -8,7 +8,7 @@ import time
 import re
 from tabulate import tabulate
 from maks_lib import output_path
-path = output_path+"Consolidate_BankRate_Data_Mortgage"+today.strftime('%Y_%m_%d')+".csv"
+path = output_path+"Aggregator_BankRate_Data_Mortgage"+today.strftime('%Y_%m_%d')+".csv"
 online_bank = ['Synchrony Bank', 'Ally Bank', 'Capital One 360']
 start_time = time.time()
 neededBanks = {
