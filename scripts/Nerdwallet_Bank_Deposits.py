@@ -95,7 +95,7 @@ for i in range(1,len(pages)+1):
             a = [neededBanks[bank_name], 'Savings', offer['product']['details']['display_name']['value'], offer['details']['minimum_balance']['value'], "Online" if bank_name.lower() in online_bank else 'Offline', 'Term_in_Months', 'Interest', str(float(offer['details']['apy']['value']))+'%']
             Excel_Table.append(a)
 print(tabulate(Excel_Table))
-order = ["Date","Bank_Native_Country", "State","Bank_Name", "Bank_Type", "Bank_Product", "Bank_Product_Type", "Bank_Product_Code", "Bank_Product_Name", "Balance", "Bank_Offer_Feature", "Term_in_Months", "Interest_Type", "Interest", "APY"]
+order = ["Date","Bank_Native_Country", "State","Bank_Name"," Bank_Local_Currency","Bank_Type", "Bank_Product", "Bank_Product_Type", "Bank_Product_Code", "Bank_Product_Name", "Balance", "Bank_Offer_Feature", "Term_in_Months", "Interest_Type", "Interest", "APY"]
 df = pd.DataFrame(Excel_Table[1:], columns=table_headers)
 def termClear(x):
     if 'year' in x.lower():
