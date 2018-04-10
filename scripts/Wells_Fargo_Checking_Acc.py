@@ -42,11 +42,10 @@ if __name__ == '__main__':
     product_name = app.data_page()
     app.browser_close()
     data = [(now.strftime("%m/%d/%Y"), "Wells Fargo", product_name)]
-    df = pd.DataFrame.from_records(data, columns=["Date", "Bank Name", "Product Name"])
-    df.to_csv(output_path + "WellsF_Data_Checking_Acc.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    df4 = pd.DataFrame.from_records(data, columns=["Date", "Bank Name", "Product Name"])
+    df4.to_csv(output_path + "WellsF_Data_Checking_Acc.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
 ##########################################################################################################################
-df4 = pd.read_csv("C:\\Users\\Nimmi\\pool\\data\\output\\WellsF_Data_Checking_Acc.csv")
 df4["Date"] = now.strftime("%m-%d-%Y")
 df4["Bank_Name"]="WELLS FARGO"
 df4["Bank_Product"]= "Deposits"
