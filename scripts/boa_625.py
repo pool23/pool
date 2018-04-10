@@ -166,14 +166,12 @@ if __name__ == '__main__':
 df1 = pd.read_csv(output_path+"BOA_Data_Mortgage1.csv")
 df2 = pd.read_csv(output_path+"BOA_Data_Mortgage_375.csv")
 df3 = pd.read_csv(output_path+"BOA_Data_Mortgage_625.csv")
-df = pd.concat([df1, df2, df3])
-df.to_csv(output_path + "BOA_Data_Mortgage.csv".format(now.strftime("%m_%d_%Y")), index=False)
+df_new = pd.concat([df1, df2, df3])
 
 #######################################################################################################################
-df_new = pd.read_csv("C:\\Users\\Nimmi\\pool\\data\\output\\BOA_Data_Mortgage.csv")
 df2 = df_new[df_new.index != 13]
 df2 = df2.iloc[0:14,:]
-df1 =  df_new.iloc[15:19,:]
+df1 = df_new.iloc[15:19,:]
 df = pd.concat([df2,df1])
 df["Date"] = now.strftime("%m-%d-%Y")
 df["Bank_Name"] = "BANK OF AMERICA CORP"
