@@ -85,28 +85,25 @@ if __name__ == '__main__':
     df4 = pd.read_csv(output_path + "PNC_Data_Mortgage_5lakh_AdjustR.csv")
     df5 = pd.read_csv(output_path + "PNC_Data_Mortgage_5lakh_FHAR.csv")
     df6 = pd.read_csv(output_path + "PNC_Data_Mortgage_5lakh_VHR.csv")
-    df = pd.concat([df1, df2, df3, df4, df5, df6])
-    df.to_csv(output_path + "PNC_Data_Mortgage.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    df2 = pd.concat([df1, df2, df3, df4, df5, df6])
 
 #####################################################################################################################
-
-df2 = pd.read_csv("C:\\Users\\Nimmi\\pool\\data\\output\\PNC_Data_Mortgage.csv")
-df2["Date"] = now.strftime("%m-%d-%Y")
-df2["Bank_Name"]= "PNC FINANCIAL SERVICES GROUP INC"
-df2["Bank_Product"]= "Mortgages"
-df2["Bank_Product_Type"] = "Mortgages"
-df2["Bank_Offer_Feature"] = "Offline"
-df2["Bank_Product_Name"] = df2["Product Name"]
-df2["Product_Term"] = df2["Term"]
-df2["Balance"] = np.NAN
-df2["Product_Interest"] = df2["Interest Rate"]
-df2["Product_Apy"] = np.NAN
-df2["Mortgage_Down_Payment"] = "20%"
-df2["Mortgage_Loan"] = df2["Loan Amount"]
-df2["Min_Credit_Score_Mortagage"] = "720+"
-df2["Mortgage_Apr"] = df2["APY Rate"]
-df2 = df2.reindex(columns=["Date", "Bank_Name","Bank_Product", "Bank_Product_Type", "Bank_Offer_Feature", "Bank_Product_Name", "Product_Term", "Balance","Product_Interest","Product_Apy","Mortgage_Down_Payment","Mortgage_Loan","Min_Credit_Score_Mortagage", "Mortgage_Apr"])
-for i in range(len(df2.index)):
-    df2["Bank_Product_Name"].iloc[i]=str(df2["Bank_Product_Name"].iloc[i].replace("Loan Details", ""))
-df2.to_csv(output_path + "Consolidate_PNC_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
+    df2["Date"] = now.strftime("%m-%d-%Y")
+    df2["Bank_Name"]= "PNC FINANCIAL SERVICES GROUP INC"
+    df2["Bank_Product"]= "Mortgages"
+    df2["Bank_Product_Type"] = "Mortgages"
+    df2["Bank_Offer_Feature"] = "Offline"
+    df2["Bank_Product_Name"] = df2["Product Name"]
+    df2["Product_Term"] = df2["Term"]
+    df2["Balance"] = np.NAN
+    df2["Product_Interest"] = df2["Interest Rate"]
+    df2["Product_Apy"] = np.NAN
+    df2["Mortgage_Down_Payment"] = "20%"
+    df2["Mortgage_Loan"] = df2["Loan Amount"]
+    df2["Min_Credit_Score_Mortagage"] = "720+"
+    df2["Mortgage_Apr"] = df2["APY Rate"]
+    df2 = df2.reindex(columns=["Date", "Bank_Name","Bank_Product", "Bank_Product_Type", "Bank_Offer_Feature", "Bank_Product_Name", "Product_Term", "Balance","Product_Interest","Product_Apy","Mortgage_Down_Payment","Mortgage_Loan","Min_Credit_Score_Mortagage", "Mortgage_Apr"])
+    for i in range(len(df2.index)):
+        df2["Bank_Product_Name"].iloc[i]=str(df2["Bank_Product_Name"].iloc[i].replace("Loan Details", ""))
+    df2.to_csv(output_path + "Consolidate_PNC_Data_Mortgage_{}.csv".format(now.strftime("%m_%d_%Y")), index=False)
 
