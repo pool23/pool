@@ -1,43 +1,44 @@
 Date,Bank_Native_Country,State,Bank_Name,Ticker,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Minm_Balance,Maxm_Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,APY,Source
- 2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,Savings,_MSBF,Savings,0,,Online,,Fixed,,1.55%,bankrate.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Savings,_MSBF,Savings,0,,Online,,Fixed,,1.45%,bankrate.com
  2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Savings,_MSBF,Moneymarket,100,,Offline,,Fixed,,0.04%,bankrate.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Savings,_MSBF,Savings,100,,Offline,,Fixed,,0.03%,bankrate.com
  2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Savings,_MSBF,Savings,25,,Offline,,Fixed,,0.01%,bankrate.com
+ 2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,36MCDF,CD,2000,,Online,36.0,Fixed,,2.35%,bankrate.com
  2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,CD,36MCDF,CD,0,,Online,36.0,Fixed,,2.30%,bankrate.com
+ 2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,12MCDF,CD,2000,,Online,12.0,Fixed,,2.15%,bankrate.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,CD,36MCDF,CD,25000,,Online,36.0,Fixed,,2.10%,bankrate.com
  2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,CD,12MCDF,CD,0,,Online,12.0,Fixed,,2.05%,bankrate.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,CD,12MCDF,CD,25000,,Online,12.0,Fixed,,2.00%,bankrate.com
- 2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,36MCDF,CD,2000,,Online,36.0,Fixed,,2.35%,bankrate.com
- 2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,12MCDF,CD,2000,,Online,12.0,Fixed,,2.15%,bankrate.com
  2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,CD,36MCDF,CD,500,,Offline,36.0,Fixed,,0.70%,bankrate.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,CD,36MCDF,CD,1000,,Offline,36.0,Fixed,,0.55%,bankrate.com
  2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,CD,12MCDF,CD,500,,Offline,12.0,Fixed,,0.25%,bankrate.com
  2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,CD,6MCDF,CD,500,,Offline,6.0,Fixed,,0.07%,bankrate.com
- 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,CD,36MCDF,CD,1000,,Offline,36.0,Fixed,,0.05%,bankrate.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,CD,12MCDF,CD,1000,,Offline,12.0,Fixed,,0.05%,bankrate.com
+ 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,CD,36MCDF,CD,1000,,Offline,36.0,Fixed,,0.05%,bankrate.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,CD,6MCDF,CD,1000,,Offline,6.0,Fixed,,0.03%,bankrate.com
  2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,CD,12MCDF,CD,1000,,Offline,12.0,Fixed,,0.01%,bankrate.com
  2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,CD,6MCDF,CD,1000,,Offline,6.0,Fixed,,0.01%,bankrate.com
- 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checkings,_MCCF,Checkings,,,Offline,,Fixed,,0.01%,bankrate.com
- 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Checkings,_MCCF,Checkings,,,Offline,,Fixed,,0.01%,bankrate.com
- 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Checkings,_MCCF,Checkings,,,Offline,,Fixed,,0.01%,bankrate.com
+ 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checking,_MCCF,Checking,,,Offline,,Fixed,,0.01%,bankrate.com
+ 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Checking,_MCCF,Checking,,,Offline,,Fixed,,0.01%,bankrate.com
+ 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Checking,_MCCF,Checking,,,Offline,,Fixed,,0.01%,bankrate.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,Savings,_MSBF,High Yield Savings,,,Online,,Fixed,,1.55%,DepositsAccount.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Savings,_MSBF,Online Savings Account,,,Online,,Fixed,,1.45%,DepositsAccount.com
- 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checkings,_MCCF,Interest Checking Account,15000,,Online,,Fixed,,0.60%,DepositsAccount.com
+ 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checking,_MCCF,Interest Checking Account,15000,,Online,,Fixed,,0.60%,DepositsAccount.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,12MCDF,12 Month CD,2000,,Online,12.0,Fixed,,2.15%,DepositsAccount.com
  2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,CD,12MCDF,12 Month 360 CD,,,Offline,12.0,Fixed,,2.05%,DepositsAccount.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,36MCDF,36 Month CD,2000,,Online,36.0,Fixed,,2.35%,DepositsAccount.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,CD,36MCDF,High Yield 3 Year CD,25000,,Online,36.0,Fixed,,2.10%,DepositsAccount.com
  2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Savings,_MSBF,360 Savings Account,,,Offline,,Fixed,,1.00%,DepositsAccount.com
+ 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Savings,_MSBF,Citi Savings Account - Citigold,25000,,Offline,,Fixed,,0.10%,DepositsAccount.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Savings,_MSBF,Rewards Savings,,,Offline,,Fixed,,0.03%,DepositsAccount.com
  2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Savings,_MSBF,Chase Premier Savings - Standard,,,Offline,,Fixed,,0.01%,DepositsAccount.com
  2018-04-11,US,New York,PNC FINANCIAL SERVICES GROUP INC,PNC,USD,Bank,Deposits,Savings,_MSBF,Standard Savings,,,Offline,,Fixed,,0.01%,DepositsAccount.com
- 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checkings,_MCCF,360 Checking,,,Offline,,Fixed,,0.20%,DepositsAccount.com
- 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checkings,_MCCF,Bank of America Interest Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
- 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Checkings,_MCCF,Chase Premier Platinum Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
- 2018-04-11,US,New York,PNC FINANCIAL SERVICES GROUP INC,PNC,USD,Bank,Deposits,Checkings,_MCCF,Performance Interest Checking,2000,,Offline,,Fixed,,0.01%,DepositsAccount.com
- 2018-04-11,US,New York,SUNTRUST BANKS INC,STI,USD,Bank,Deposits,Checkings,_MCCF,Select Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checking,_MCCF,360 Checking,,,Offline,,Fixed,,0.20%,DepositsAccount.com
+ 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Checking,_MCCF,Citibank Account Package,25000,,Offline,,Fixed,,0.08%,DepositsAccount.com
+ 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checking,_MCCF,Bank of America Interest Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,Checking,_MCCF,Chase Premier Platinum Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-11,US,New York,PNC FINANCIAL SERVICES GROUP INC,PNC,USD,Bank,Deposits,Checking,_MCCF,Performance Interest Checking,2000,,Offline,,Fixed,,0.01%,DepositsAccount.com
+ 2018-04-11,US,New York,SUNTRUST BANKS INC,STI,USD,Bank,Deposits,Checking,_MCCF,Select Checking,,,Offline,,Fixed,,0.01%,DepositsAccount.com
  2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,CD,6MCDF,6 - 11 Month CD,1000,,Offline,6.0,Fixed,,0.03%,DepositsAccount.com
  2018-04-11,US,New York,JP MORGAN CHASE & Co.,JPM,USD,Bank,Deposits,CD,6MCDF,6-8 Month CD - Standard,1000,100000,Offline,6.0,Fixed,,0.01%,DepositsAccount.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,CD,12MCDF,High Yield 12-Month CD,25000,,Online,12.0,Fixed,,2.00%,DepositsAccount.com
@@ -57,16 +58,16 @@ Date,Bank_Native_Country,State,Bank_Name,Ticker,Bank_Local_Currency,Bank_Type,Ba
  2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Savings,_MSBF,360 Money Market,10000,,Online,,Fixed,,1.5%,mybanktracker.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Savings,_MSBF,Online Savings Account,0,,Online,,Fixed,,1.4500000000000002%,mybanktracker.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,Savings,_MSBF,High Yield Savings,0,,Online,,Fixed,,1.55%,mybanktracker.com
- 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checkings,_MCCF,360 Checking,0,,Online,,Fixed,,0.2%,mybanktracker.com
- 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checkings,_MCCF,360 Checking,50000,,Online,,Fixed,,0.75%,mybanktracker.com
- 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checkings,_MCCF,360 Checking,100000,,Online,,Fixed,,1.0%,mybanktracker.com
- 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checkings,_MCCF,Interest Checking,0,,Online,,Fixed,,0.1%,mybanktracker.com
- 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checkings,_MCCF,Interest Checking,15000,,Online,,Fixed,,0.6%,mybanktracker.com
- 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Checkings,_MCCF,Interest Checking Account,1,,Offline,,Fixed,,0.01%,mybanktracker.com
- 2018-04-11,US,New York,WELLS FARGO,WFC,USD,Bank,Deposits,Checkings,_MCCF,Preferred Package,500,,Offline,,Fixed,,0.01%,mybanktracker.com
- 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checkings,_MCCF,Advantage with Tiered Interest Checking,0,,Offline,,Fixed,,0.01%,mybanktracker.com
- 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checkings,_MCCF,Advantage with Tiered Interest Checking,1000,,Offline,,Fixed,,0.02%,mybanktracker.com
- 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checkings,_MCCF,Advantage with Tiered Interest Checking,10000,,Offline,,Fixed,,0.02%,mybanktracker.com
+ 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checking,_MCCF,360 Checking,0,,Online,,Fixed,,0.2%,mybanktracker.com
+ 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checking,_MCCF,360 Checking,50000,,Online,,Fixed,,0.75%,mybanktracker.com
+ 2018-04-11,US,New York,CAPITAL ONE,COF,USD,Bank,Deposits,Checking,_MCCF,360 Checking,100000,,Online,,Fixed,,1.0%,mybanktracker.com
+ 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checking,_MCCF,Interest Checking,0,,Online,,Fixed,,0.1%,mybanktracker.com
+ 2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,Checking,_MCCF,Interest Checking,15000,,Online,,Fixed,,0.6%,mybanktracker.com
+ 2018-04-11,US,New York,CITIGROUP INC,C,USD,Bank,Deposits,Checking,_MCCF,Interest Checking Account,1,,Offline,,Fixed,,0.01%,mybanktracker.com
+ 2018-04-11,US,New York,WELLS FARGO,WFC,USD,Bank,Deposits,Checking,_MCCF,Preferred Package,500,,Offline,,Fixed,,0.01%,mybanktracker.com
+ 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checking,_MCCF,Advantage with Tiered Interest Checking,0,,Offline,,Fixed,,0.01%,mybanktracker.com
+ 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checking,_MCCF,Advantage with Tiered Interest Checking,1000,,Offline,,Fixed,,0.02%,mybanktracker.com
+ 2018-04-11,US,New York,BANK OF AMERICA CORP,BAC,USD,Bank,Deposits,Checking,_MCCF,Advantage with Tiered Interest Checking,10000,,Offline,,Fixed,,0.02%,mybanktracker.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,12MCDF,12 Month CD for RT,2000,,Online,12.0,Fixed,,2.15%,mybanktracker.com
  2018-04-11,US,New York,SYNCHRONY,SYF,USD,Bank,Deposits,CD,36MCDF,36 Month CD for RT,2000,,Online,36.0,Fixed,,2.35%,mybanktracker.com
  2018-04-11,US,New York,ALLY,ALLY,USD,Bank,Deposits,CD,6MCDF,6 Month CD,0,,Online,6.0,Fixed,,1.5%,mybanktracker.com
