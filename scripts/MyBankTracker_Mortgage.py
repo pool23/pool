@@ -25,7 +25,7 @@ online_bank = [k.lower() for k in ['Synchrony Bank', 'Ally Bank', 'Capital One 3
 
 table_headers = ['Bank_Name', 'Bank_Product_Name', 'Min_Loan_Amount', 'Bank_Offer_Feature', 'Term_in_Year', 'Interest_Type', 'Interest', 'APR', 'Mortgage_Loan_Amt', 'Mortgage_Down_Payment']
 # Excel_Table.append(table_headers)
-cases = [1000000, 3000000, 5000000]
+cases = [100000, 300000, 500000]
 terms = [[1,'30 Year Fixed', 'Fixed',30],[25,'20 Year Fixed', 'Fixed',20],[2,'15 Year Fixed', 'Fixed',15],[3,'10 Year Fixed', 'Fixed',30],[5,'7/1 ARM','Variable',30],[6,'5/1 ARM','Variable',30],[7,'3/1 ARM','Variable',30]]
 for case in cases:
     for term in terms:
