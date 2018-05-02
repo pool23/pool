@@ -50,3 +50,46 @@ a0, a1 = df0.align(df1)
 different = (a0 != a1).any(axis=1)
 comp = a0[different].join(a1[different], lsuffix='_old', rsuffix='_new')
 comp.to_csv('example.csv', index=False)
+
+
+
+
+
+
+
+#-*- coding:utf-8 -*-
+import re
+
+
+old_file = "" #Please enter the path of Old file
+new_file = ""#Please enter the path of New file
+outputFile = "" #Please enter the path of output file
+
+
+table_rows = ''
+old_data_date = ''
+old_data = []
+new_data_date = ''
+new_data = []
+table_found = False
+with open(old_file, 'r') as t1, open(new_file, 'r') as t2:
+    for k in t1.readlines():
+        # print(k)
+        if not table_found:
+            table_rows = k
+            table_found = True
+        old_data_date = k[:k.index(',')]
+        k = re.sub(r'[^\x00-\x7F]', '', k[k.index(',') + 1:])
+        old_data.append(k)
+    for l in t2.readlines():
+        new_data_date = l[:l.index(',')]
+        l = re.sub(r'[^\x00-\x7F]','',l[l.index(',')+1:])
+        new_data.append(l)
+
+# print(table_rows)
+with open(outputFile, 'w') as outFile:
+    outFile.write(table_rows)
+    for line in new_data:
+        if line not in old_data:
+            print(line)
+            outFile.write(new_data_date+','+line)
