@@ -7,8 +7,9 @@ from maks_lib import output_path
 path = output_path+'PNC_Data_Mortgage_complete'+today.strftime('%m_%d_%Y')+'.csv'
 # path = 'PNC_Data_Mortgage_complete'+today.strftime('%m_%d_%Y')+'.csv'
 Excel_Table = []
-
-table_heades = ["Product Name", "Loan Amount", "Zipcode", "Term", "Interest Rate", "APY Rate"]
+import time
+start_time = time.time()
+table_heades = ["Bank_Product_Name", "Mortgage_Loan", "Zipcode", "Product_Term", "Product_Interest", "Mortgage_Apr"]
 # Excel_Table.append(table_heades)
 
 fhaData = {"appType":"purchase","amount":100000,"zipCode":10004,"f1pp":23,"f1pn":"","f1pu":"","f1ap":38,"f1an":"FHA%2B30%2BYR%2BFIXED",
@@ -135,7 +136,16 @@ for d in dataList:
 print(tabulate(Excel_Table))
 df = pd.DataFrame(Excel_Table, columns=table_heades)
 df['Date'] = ' '+today.strftime("%m-%d-%Y")
-df['Bank Name'] = 'PNC'
-order = ["Date", "Bank Name", "Product Name", "Loan Amount", "Zipcode", "Term", "Interest Rate", "APY Rate"]
+df['Bank_Name'] = 'PNC FINANCIAL SERVICES GROUP INC'
+df['Bank_Product'] = 'Mortgages'
+df['Bank_Product_Type'] = 'Mortgages'
+df['Bank_Offer_Feature'] = 'Offline'
+df['Balance'] = None
+df['Product_Apy'] = None
+df['Mortgage_Down_Payment'] = '20%'
+df['Min_Credit_Score_Mortagage'] = '720+'
+
+order = ["Date","Bank_Name","Bank_Product","Bank_Product_Type","Bank_Offer_Feature","Bank_Product_Name","Product_Term","Balance","Product_Interest","Product_Apy","Mortgage_Down_Payment","Mortgage_Loan","Min_Credit_Score_Mortagage","Mortgage_Apr"]
 df = df[order]
 df.to_csv(path, index=False)
+print('Total Execution Time is ',time.time()-start_time,'Seconds')
