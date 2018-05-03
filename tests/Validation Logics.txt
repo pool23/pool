@@ -1,0 +1,138 @@
+# https://frictionlessdata.io/docs/creating-tabular-data-packages-in-python/
+
+# setup codes
+pip install datapackage
+import datapackage
+package = datapackage.Package()
+package.infer('periodic-table/US_Deposits_Data_03_12_2018.csv')
+package.descriptor['name'] = 'period-table'
+package.descriptor['title'] = 'Periodic Table'
+package.descriptor
+dp.save('datapackage.json')
+
+
+# 'Bank Rate' schema definition
+{
+  'profile': 'tabular-data-package',
+  'resources': [{
+    'path': 'US_Deposits_Data_03_12_2018.csv',
+    'profile': 'tabular-data-resource',
+    'name': 'US_Deposits_Data_03_12_2018',
+    'format': 'csv',
+    'mediatype': 'text/csv',
+    'encoding': 'UTF-8',
+    'schema'= {
+
+    'Date': {
+        'type': 'datetime',
+	'required': True,
+            },
+
+    'Bank_Native_Country': {
+        'type': 'list',
+        'allowed': ["US", "UK"],
+        'required': True,
+            },
+
+   # 'State' is a list, and can only contain values from 'allowed'.
+   'State': {
+        'type': 'list',
+        'allowed': ["New York", "London"],
+        'required': True,
+            },
+   # 'Bank Name' is a list, and can only contain values from 'allowed'.
+   'Bank_Name': {
+        'type': 'list',
+        'allowed': ["ALLY", "BANK OF AMERICA CORP", "CAPITAL ONE", "CITIGROUP INC", "JP MORGAN CHASE & Co.","PNC FINANCIAL SERVICES GROUP INC","SUNTRUST BANKS INC","SYNCHRONY","WELLS FARGO"],
+        'required': True,
+            },
+ 
+   # 'Ticker' is a list, and can only contain values from 'allowed'.
+   'Ticker': {
+        'type': 'list',
+        'allowed': ["New York", "London"],
+        'required': True,
+            },
+    # 'Bank_Local_Currency' is a list, and can only contain values from 'allowed'.
+    'Bank_Local_Currency': {
+        'type': 'list',
+        'allowed': ["USD"],
+    },
+  # 'Bank_Type' is a list, and can only contain values from 'allowed'.
+   'Bank_Type': {
+        'type': 'list',
+        'allowed': ["Bank"],
+        'required': True,
+            },
+
+  # 'Bank_Product' is a list, and can only contain values from 'allowed'.
+   'Bank_Product': {
+        'type': 'list',
+        'allowed': ["Deposits", "MORTGAGES"],
+        'required': True,
+            },
+
+  # 'Bank_Product_Type' is a list, and can only contain values from 'allowed'.
+   'Bank_Product_Type': {
+        'type': 'list',
+        'allowed': ["savings","CD","Checking"],
+        'required': True,
+            },
+
+  # 'Bank_Product_Code' is a list, and can only contain values from 'allowed'.
+   'Bank_Product_Code': {
+        'type': 'list',
+        'allowed': ["_MSBV","_MCCV","6MCDF","12MCDF","36MCDF"],
+        'required': True,
+            },
+
+ # 'Minm_Balance' is an integer, and can only contain null.
+   'Minm_Balance': {
+        'type': 'int', 'empty': True}
+	    },
+
+    # 'Maxm_Balance' is an integer, and can only contain null
+   'Maxm_Balance': {
+        'type': 'int', 'empty': True}
+	    },
+
+    # 'Bank_Offer_Feature' is a list, and can only contain values from 'allowed'.
+   'Bank_Offer_Feature': {
+        'type': 'list',
+        'allowed': ["Online","Offline"],
+        'required': True,
+            },
+
+     # 'Term_in_Months' is an integer, and can only contain null
+'Term_in_Months': {
+        'type': 'int', 'empty': True}
+	    },
+
+   # 'Interest_Type' is a list, and can only contain values from 'allowed'.
+   'Bank_Offer_Feature': {
+        'type': 'list',
+        'allowed': ["Fixed","Variable"],
+        'required': True,
+            },
+
+     # 'Interest' is an integer, and can only contain null.Term_in_Months
+'Interest': {
+        'type': 'int', 'empty': True}
+	    },
+
+     # 'APY' is an integer, and can only contain null
+'APY': {
+        'type': 'int', 'empty': True}
+	    },
+
+   # 'Source' is a list, and can only contain values from 'allowed'.
+   'Source': {
+        'type': 'list',
+        'allowed': ["Bank Website","bankrate.com","DepositsAccount.com","nerdwallet.com","us.deposits.org"],
+        'required': True,
+            },
+ 	    }
+
+ 'name': 'periodic-table',
+  'title': 'Periodic Table'
+}
