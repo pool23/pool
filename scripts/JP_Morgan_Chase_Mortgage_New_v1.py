@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.options import Options
 import datetime
 today = datetime.datetime.now()
 from maks_lib import output_path
-path = 'Consolidate_JPMorgan_Data_Mortgage_'+today.strftime('%m_%d_%Y')+'.csv'
+path = output_path+'Consolidate_JPMorgan_Data_Mortgage_'+today.strftime('%m_%d_%Y')+'.csv'
 table_headers = ['Bank_Product_Name', 'Product_Interest', 'Mortgage_Apr','Mortgage_Loan']
 Excel_Data = []
 options = Options()
