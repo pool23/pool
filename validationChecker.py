@@ -54,36 +54,36 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                             if '.' in str(i):
                                 float(i)
                             else:
-                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey, row_name[j+2] if row_name is not None else None])
+                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey, row_name[j] if row_name is not None else None])
                                 continue
 
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j+2,i, validationKey,row_name[j+2] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j+2,i, validationKey,row_name[j] if row_name is not None else None])
                             continue
                     elif _type == 'int':
                         try:
                             if '.' not in str(i):
                                 int(i)
                             else:
-                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                                 continue
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                             continue
                     elif _type == 'string':
                         try:
                             str(i)
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                             continue
                     elif _type == 'date':
                         try:
                             if i is not None:
                                 if str(i).count('-')!=2:
-                                    errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                                    errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                                     continue
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                             continue
                 _allowed = obj.get('allowed',None)
 
@@ -91,19 +91,19 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                     if len(_allowed)!=0:
                         _allowed = [str(allow) for allow in _allowed]
                         if str(i) not in _allowed:
-                            errorData.append(['allowedFieldError', 'Value Not found', j+2,i, validationKey,row_name[j+2] if row_name is not None else None])
+                            errorData.append(['allowedFieldError', 'Value Not found', j+2,i, validationKey,row_name[j] if row_name is not None else None])
                             continue
 
                 _required = obj.get('required', None)
                 if _required is not None:
                     if i is None:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j+2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j+2, i, validationKey,row_name[j] if row_name is not None else None])
                         continue
                     elif len(str(i))==0:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                         continue
                     elif np.nan == i:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
                         continue
 
         elif validationKey =='compare':
@@ -122,9 +122,9 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                             if difference is not None:
                                 if float(difference) < cmpValue:
                                         print(cmpValue)
-                                        errorData.append(['Comparison Error', 'More Than Expected Value', id + 2, c, validation['compare']['compare_with'], row_name[id+2] if row_name is not None else None])
+                                        errorData.append(['Comparison Error', 'More Than Expected Value', id + 2, c, validation['compare']['compare_with'], row_name[id] if row_name is not None else None])
                         except Exception as e:
-                            errorData.append(['Comparison Error', 'Not Possible to compare the give Two values', id + 2, c,validation['compare']['compare_with'], row_name[id+2] if row_name is not None else None])
+                            errorData.append(['Comparison Error', 'Not Possible to compare the give Two values', id + 2, c,validation['compare']['compare_with'], row_name[id] if row_name is not None else None])
             print(compare)
             print(compare_with)
         elif validationKey == 'match':
@@ -135,7 +135,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                 for id, comp in enumerate(zip(name, Ticker)):
                     if list(comp) not in match_list:
                         print(list(comp))
-                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id + 2] if row_name is not None else None])
+                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id] if row_name is not None else None])
             else:
                 print('Match list data not found.')
         else:
