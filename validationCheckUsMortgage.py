@@ -62,7 +62,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                                 continue
 
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j,i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j+2,i, validationKey,row_name[j] if row_name is not None else None])
                             continue
                     elif _type == 'int':
                         try:
@@ -104,7 +104,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                 _required = obj.get('required', None)
                 if _required is not None:
                     if i is None:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j, i, validationKey,row_name[j] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j+2, i, validationKey,row_name[j] if row_name is not None else None])
                         continue
                     elif len(str(i))==0:
                         errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
@@ -142,7 +142,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                 for id, comp in enumerate(zip(name, Ticker)):
                     if list(comp) not in match_list:
                         print(list(comp))
-                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id + 2] if row_name is not None else None])
+                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id] if row_name is not None else None])
             else:
                 print('Match list data not found.')
         else:
