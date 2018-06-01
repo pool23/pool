@@ -2,7 +2,9 @@ import csv
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
-
+from maks_lib import US
+import datetime
+now = datetime.datetime.now()
 
 def csvValidator(inputFilePath, outputFilePath, jsonValidation):
     f = open(inputFilePath, 'r')
@@ -213,8 +215,8 @@ if __name__ == '__main__':
             'strip': [' '],
         },
         'Term_in_Year':{
-            'type': 'int',
-            'allowed': [10,15,20,25,30],
+            'type': 'float',
+            'allowed': [10.0,15.0,20.0,25.0,30.0],
             'required': True
         },
         'Interest_Type':{
@@ -233,10 +235,11 @@ if __name__ == '__main__':
             'strip': ['%'],
         },
         'Mortgage_Loan_Amt':{
-            'type': 'string',
-            'allowed': [100000,200000,300000,500000,750000],
+            'type': 'float',
+            'allowed': [100000.0,200000.0,300000.0,500000.0,750000.0],
             'required': True,
             'replace_with':[['$',''],[',','']],
+            'skip': [''],
             'strip': [' '],
         },
         'Mortgage_Down_Payment':{
@@ -266,8 +269,10 @@ if __name__ == '__main__':
         }
     }
 
-    path = 'C:\\Users\doddsai\\Desktop\\us mortgage validation\\US_Mortgage_Data_03_09_2018.csv'
-    output = 'C:\\Users\\doddsai\\Desktop\\us mortgage validation\\error.csv'
+
+
+    path = US+'US_FINAL_Mortgage_Data_{}.csv'.format(now.strftime("%Y_%m_%d"))
+    output = US+'error_mortgage.csv'
 
     csvValidator(path, output, validation)
 
