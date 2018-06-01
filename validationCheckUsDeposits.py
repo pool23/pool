@@ -2,6 +2,9 @@ import csv
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
+from maks_lib import US
+import datetime
+now = datetime.datetime.now()
 
 
 def csvValidator(inputFilePath, outputFilePath, jsonValidation):
@@ -16,7 +19,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
             column[h].append(v)
     validation = jsonValidation
     row_name = validation.get('row_name', None)
-    table_headers = ['Error Location', 'Error Type', 'Row Number', 'Value', 'Column Name',row_name if row_name is not None else '']
+    table_headers = ['Error Location', 'Error Type', 'Row Number', 'Value', 'Column Name', row_name if row_name is not None else '']
     errorData = []
     errorData.append(table_headers)
 
@@ -27,10 +30,6 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
         if keyFound is not None:
             obj = validation[validationKey]
             for j, i in enumerate(column[validationKey]):
-                replace_with = obj.get('replace_with', None)
-                if replace_with is not None:
-                    for rep in replace_with:
-                        i = i.replace(rep[0],rep[1])
                 _strip = obj.get('strip', None)
                 if _strip is not None:
                     if i is not None:
@@ -58,59 +57,56 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                             if '.' in str(i):
                                 float(i)
                             else:
-                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey, row_name[j] if row_name is not None else None])
+                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey, row_name[j+2] if row_name is not None else None])
                                 continue
 
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j+2,i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j+2,i, validationKey,row_name[j+2] if row_name is not None else None])
                             continue
                     elif _type == 'int':
                         try:
                             if '.' not in str(i):
                                 int(i)
                             else:
-                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                                errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                                 continue
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                             continue
                     elif _type == 'string':
                         try:
                             str(i)
                         except:
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                             continue
                     elif _type == 'date':
                         try:
                             if i is not None:
                                 if str(i).count('-')!=2:
-                                    # print('j', j)
-                                    # print('j =', row_name[j + 2])
-                                    errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                                    errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                                     continue
                         except:
-                            # print('j =' , row_name[j])
-                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['typeFieldError', 'Type Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                             continue
                 _allowed = obj.get('allowed',None)
 
                 if _allowed is not None:
                     if len(_allowed)!=0:
-                        _allowed = [str(allow).strip() for allow in _allowed]
+                        _allowed = [str(allow) for allow in _allowed]
                         if str(i) not in _allowed:
-                            errorData.append(['allowedFieldError', 'Value Not found', j + 2,i, validationKey,row_name[j] if row_name is not None else None])
+                            errorData.append(['allowedFieldError', 'Value Not found', j+2,i, validationKey,row_name[j+2] if row_name is not None else None])
                             continue
 
                 _required = obj.get('required', None)
                 if _required is not None:
                     if i is None:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j+2, i, validationKey,row_name[j] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j+2, i, validationKey,row_name[j+2] if row_name is not None else None])
                         continue
                     elif len(str(i))==0:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                         continue
                     elif np.nan == i:
-                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j] if row_name is not None else None])
+                        errorData.append(['requireFieldError', 'Filed Not Found', j + 2, i, validationKey,row_name[j+2] if row_name is not None else None])
                         continue
 
         elif validationKey =='compare':
@@ -129,9 +125,9 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                             if difference is not None:
                                 if float(difference) < cmpValue:
                                         print(cmpValue)
-                                        errorData.append(['Comparison Error', 'More Than Expected Value', id + 2, c, validation['compare']['compare_with'], row_name[id] if row_name is not None else None])
+                                        errorData.append(['Comparison Error', 'More Than Expected Value', id + 2, c, validation['compare']['compare_with'], row_name[id+2] if row_name is not None else None])
                         except Exception as e:
-                            errorData.append(['Comparison Error', 'Not Possible to compare the give Two values', id + 2, c,validation['compare']['compare_with'], row_name[id] if row_name is not None else None])
+                            errorData.append(['Comparison Error', 'Not Possible to compare the give Two values', id + 2, c,validation['compare']['compare_with'], row_name[id+2] if row_name is not None else None])
             print(compare)
             print(compare_with)
         elif validationKey == 'match':
@@ -142,7 +138,7 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
                 for id, comp in enumerate(zip(name, Ticker)):
                     if list(comp) not in match_list:
                         print(list(comp))
-                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id] if row_name is not None else None])
+                        errorData.append(['Expectation Error', 'Expected data not Found', id + 2, list(comp),[validation['match']['name'],validation['match']['ticker']],row_name[id + 2] if row_name is not None else None])
             else:
                 print('Match list data not found.')
         else:
@@ -154,8 +150,8 @@ def csvValidator(inputFilePath, outputFilePath, jsonValidation):
 
 if __name__ == '__main__':
     validation = {
-        'row_name':'Bank_Name',
-        'Date':{
+        'row_name': 'Bank_Name',
+        'Date': {
             'type': 'date',
             'required': True
         },
@@ -175,15 +171,15 @@ if __name__ == '__main__':
                        'SUNTRUST BANKS INC', 'SYNCHRONY', 'WELLS FARGO'],
             'required':True
         },
-        'Ticker':{
-            'type':'string',
-            'allowed':['ALLY', 'BAC', 'C', 'COF', 'JPM', 'PNC', 'STI', 'SYF', 'WFC'],
-            'required':True
+        'Ticker': {
+            'type': 'string',
+            'allowed': ['ALLY', 'BAC', 'C', 'COF', 'JPM', 'PNC', 'STI', 'SYF', 'WFC'],
+            'required': True
         },
         'Bank_Local_Currency':{
-            'type':'string',
-            'allowed':['USD'],
-            'required':True
+            'type': 'string',
+            'allowed': ['USD'],
+            'required': True
         },
         'Bank_Type':{
             'type':'string',
@@ -209,11 +205,11 @@ if __name__ == '__main__':
             'required': True
         },
         'Minm_Balance':{
-            'type':'int',
+            'type':'float',
             'skip':['']
         },
         'Maxm_Balance': {
-            'type': 'int',
+            'type': 'float',
             'skip': ['']
         },
         'Bank_Offer_Feature':{
@@ -222,8 +218,8 @@ if __name__ == '__main__':
             'required':True
         },
         'Term_in_Months':{
-            'type':'int',
-            'allowed':[6,12,36],
+            'type':'float',
+            'allowed':[6.0, 12.0, 36.0],
             'skip':['']
         },
         'Interest_Type':{
@@ -260,8 +256,10 @@ if __name__ == '__main__':
                            ['CD', '12MCDF'],['CD', '36MCDF']
                                   ]}
          }
-    path = 'C:\\Users\\doddsai\\Desktop\\validationChecker\\US_Deposits_Data_2018_04_24.csv'
-    output = 'C:\\Users\\doddsai\\Desktop\\validationChecker\\error.csv'
+
+    # filename = US_Deposits_Data + "_"+date.csv
+    path = US+'US_FINAL_Deposits_Data_{}.csv'.format(now.strftime("%Y_%m_%d"))
+    output = US+'error_deposit.csv'
     csvValidator(path, output, validation)
 # Interest: Ally, Synchory and SunTrust if available check it, else ignore the errors
 #Interest: for aggregator websites if available check it, else ignore the errors (except us.deposits.org)
