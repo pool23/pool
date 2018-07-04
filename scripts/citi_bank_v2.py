@@ -1,7 +1,3 @@
-'''
-Created on 14-Mar-2018
-@author: sairam
-'''
 import re
 import time
 from selenium import webdriver
