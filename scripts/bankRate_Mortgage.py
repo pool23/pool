@@ -34,7 +34,7 @@ driver = webdriver.Firefox()
 driver.maximize_window()
 cases = [[125000,25000],[375000,75000], [625000,125000]]
 for case in cases:
-    driver.get("https://www.bankrate.com/mortgage.aspx?prods=1,2,387,388,5,449,3,8,6,9,10&fico=740&points=Zero&cs=1")
+    driver.get("https://www.bankrate.com/mortgage.aspx?propertyvalue=362500&loan=316800&perc=20&prods=1,2,387,388,5,449,3,8,6,9,10&fico=740&points=Zero&zipcode=90001&cs=1")
     driver.find_element_by_xpath('//*[@id="purchase-price"]').clear()
     driver.find_element_by_xpath('//*[@id="purchase-price"]').send_keys(case[0])
     driver.find_element_by_tag_name('body').click()
