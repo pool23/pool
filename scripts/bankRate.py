@@ -1,20 +1,26 @@
-import requests
+
 from selenium import webdriver
-import time
 from bs4 import BeautifulSoup
 from tabulate import tabulate
-import pandas as pd
 import numpy as np
 import datetime
-today = datetime.datetime.now()
 import pandas as pd
 import time
 import re
-start_time = time.time()
 from maks_lib import output_path
+
+
+print('Program Execution Started...')
+start_time = time.time()
+today = datetime.datetime.now()
+
+#Csv file location
 path = output_path+"Aggregator_BankRate_Data_Deposit"+today.strftime('%Y_%m_%d')+".csv"
-# path = "Consolidate_BankRate_Data_Deposit"+today.strftime('%Y_%m_%d')+".csv"
+
+#Making Bank_Offer_Feature Online or Offline based on online_banks
 online_bank = ['Synchrony Bank', 'Ally Bank', 'Capital One 360']
+
+#Filtering Banks(Required Banks Only) using neededBanks
 neededBanks = {
     "Ally Bank":'ALLY',
     "Bank of America":"BANK OF AMERICA CORP",
@@ -26,56 +32,67 @@ neededBanks = {
     "PNC":"PNC FINANCIAL SERVICES GROUP INC",
     "Synchrony Bank":"SYNCHRONY",
     "Wells Fargo":"WELLS FARGO",
-    "SunTrust":"SUNTRUST BANKS INC"
+    "SunTrust":"SUNTRUST BANKS INC",
+
 
 }
-print("Execution Started Please Wait....")
+
+#Required Fields for scraping the data
 table_headers = ['Bank_Name', 'Bank_Product_Type', 'Bank_Product_Name', 'Balance', 'Bank_Offer_Feature', 'Term_in_Months', 'Interest', 'APY']
 Excel_Table = []
-# Excel_Table.append(table_headers)
 
+#Create a driver object using selenium Module
 driver = webdriver.Firefox()
 driver.maximize_window()
 
 #=========================Savings==============================================
 try:
     driver.get("https://www.bankrate.com/banking/savings/rates/")
-    driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[2]/div[3]/div/div[1]/div/div/input').clear()
-    driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[2]/div[3]/div/div[1]/div/div/input').send_keys(10004)
+    driver.find_element_by_xpath('//*[@id="csstyle"]/main/section[1]/div[2]/div[3]/div/div[1]/div/div/input').clear()
+
+    driver.find_element_by_xpath('//*[@id="csstyle"]/main/section[1]/div[2]/div[3]/div/div[1]/div/div/input').send_keys(10004)
+    time.sleep(5)
+
     driver.find_element_by_tag_name('body').click()
     time.sleep(5)
-    size = driver.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[3]/div[1]/p/strong').text
-    print(size)
-    for i in range(5):
+    # size = driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[1]/div[3]/div[1]/p/strong').text
+
+    # print(size)
+    while True:
         try:
-            # driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div[2]/button').click()
-            element = driver.find_element_by_css_selector('button.button')#.click()
+
+            # print('jjjj')
+            element = driver.find_element_by_xpath('//*[@id="csstyle"]/main/section[1]/button')#.click()
             driver.execute_script("arguments[0].click();", element)
-            # print('element found')
             time.sleep(3)
         except Exception as e:
             print(e)
-    # resp = requests.get("https://www.bankrate.com/banking/savings/rates/").content
-    # print(driver.page_source)
+            break
+
+
+    #Getting data from pageSource by using BeautifuSoup Module
     jsoup = BeautifulSoup(driver.page_source)
-    trs = jsoup.find('table', attrs={'class':'table --bordered-rows rate-table rate-table-savings'}).find('tbody').find_all('tr')
+    trs = jsoup.find('tbody', attrs={'role':'rowgroup'}).find_all('tr')
     for tr in trs:
-        print('-'.center(100,'-'))
-        # print(tr)
         try:
-            tds = tr.find_all('td')
-            Bank_name = tds[0].find('a', attrs={'data-name':'advertiserlink'})
-            if Bank_name is None:
-                Bank_name = tds[0].find('div', attrs={'class':'rate-table__row-copy --dark-gray'})
-            apy = tds[1].find('a', attrs={'data-name': 'advertiserAPY'})
+            Bank_Name = tr.find('a', attrs={'data-name': 'advertiserlink'}) #div[0].find('div', attrs={'data-name':re.compile('advertiserlink')})
+            if Bank_Name is not None:
+                Bank_Name = Bank_Name.text.strip().split('\n')
+
+            elif tr.find('div', attrs={'class':'+text-size-md track +mg-bottom-xxs +display-block'}) is not None:
+                Bank_Name = tr.find('div', attrs={'class': '+text-size-md track +mg-bottom-xxs +display-block'}).text.strip().split('\n')
+
+            if Bank_Name is None:
+                continue
+            apy = tr.find('a', attrs={'data-name':'advertiserAPY'})#div[1].text.split('%')[0]
             if apy is None:
-                apy = tds[1].find('div', attrs={'class':'numeral --beta'})
-            amount = tds[2].find('div',attrs={'class':'numeral --beta'})
-            Bank_name  = Bank_name.text if Bank_name is not None else None
-            apy = apy.text if apy is not None else None
+                apy = tr.find('span', attrs={'class':'numeral__accent --percentage'}).parent
+            apy = apy.text.strip() if apy is not None else None
+
+            amount = tr.find('span',attrs={'class':'numeral__accent --currency'}).parent
             amount = amount.text if amount is not None else None
-            bank = Bank_name.strip().split('\n')
-            # print(bank)
+
+            bank = Bank_Name
             if len(bank)>=2:
                 bank_name = bank[0].strip()
                 bank_product = bank[1].strip()
@@ -89,12 +106,11 @@ try:
                     Bank_Offer_Feature = 'Online'
                 else:
                     Bank_Offer_Feature = 'Offline'
-                if '|' in bank_product:
+                if bank_product is not None and '|' in bank_product:
                     bank_product = bank_product.split('|')[0].capitalize()
 
                 a = [neededBanks[bank_name], 'Savings', 'Savings' if bank_product is None else bank_product, amount.strip(), Bank_Offer_Feature, None, 'Interest',apy.strip()]
                 Excel_Table.append(a)
-            print('-'.center(100,'-'))
         except Exception as e:
             print(e)
 
@@ -102,16 +118,26 @@ try:
 except Exception as e:
     print(e)
 
-#==============================================CDS===========================================================================================
+
+
+
+# #==============================================CDS===========================================================================================
 try:
     driver.get("https://www.bankrate.com/cd.aspx")
-    driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[1]/div[2]/div[4]/div/div[1]/div/div/input').clear()
-    driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[1]/div[2]/div[4]/div/div[1]/div/div/input').send_keys(10004)
+    driver.find_element_by_css_selector('.awesomplete > input:nth-child(1)').clear()
+    driver.find_element_by_css_selector('.awesomplete > input:nth-child(1)').send_keys(10004)
+    # driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[1]/div[3]/div[4]/div/div[1]/div/div/input').clear()
+    # driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[1]/div[3]/div[4]/div/div[1]/div/div/input').send_keys(10004)
     driver.find_element_by_tag_name('body').click()
     time.sleep(5)
+    driver.find_element_by_css_selector('.tabs__link--all-products').click()
+    time.sleep(5)
+
     for i in range(20):
         try:
-            element = driver.find_element_by_xpath('//*[@id="csstyle"]/div[5]/div[2]/div[2]/button')
+
+            element = driver.find_element_by_css_selector('button.button:nth-child(4)')
+
             # element = driver.find_element_by_css_selector('button.button')#.click()
             driver.execute_script("arguments[0].click();", element)
             # print('element found')
@@ -121,36 +147,39 @@ try:
             break
     time.sleep(3)
     jsoup = BeautifulSoup(driver.page_source)
-    trs = jsoup.find('table', attrs={'class': 'table --bordered-rows rate-table rate-table-cd'}).find('tbody').find_all('tr')
-    print('trs length : ',len(trs))
+    trs = jsoup.find('table', attrs={'class': 'table --bordered-rows --spacing-xs rate-table rate-table-cd'}).find('tbody').find_all('tr')
+    print('-------------------------')
     for tr in trs:
-        # print('-'.center(100,'-'))
-        # print(tr)
         try:
             tds = tr.find_all('td')
-
-
             Bank_name = tds[0].find('a', attrs={'data-name':'advertiserlink'})
+            # print(Bank_name)
             if Bank_name is None:
                 Bank_name = tds[0].find('div', attrs={'class':'rate-table__row-copy --dark-gray'})
+                # print(Bank_name)
             apy = tds[1].find('a', attrs={'data-name': 'advertiserAPY'})
+            # print(apy)
             if apy is None:
                 apy = tds[1].find('div', attrs={'class':'numeral --beta '})
+                # print(apy)
             amount = tds[3].find('div',attrs={'class':'numeral --beta'})
-            Bank_name  = Bank_name.text if Bank_name is not None else None
+            # print(amount)
+            Bank_name = Bank_name.text if Bank_name is not None else None
+            # print(Bank_name)
             apy = apy.text if apy is not None else None
+            # print(apy)
             amount = amount.text if amount is not None else None
+            # print(amount)
             bank = Bank_name.strip().split('\n')
             terms_in_month = tds[2].find('div', attrs={'class':'numeral --beta'}).text
-            # print('terms_in_month = ',terms_in_month)
-            # print(bank)
+            # print(terms_in_month)
+
             if len(bank)>=2:
                 bank_name = bank[0]
                 bank_product = bank[1]
             else:
                 bank_name = bank[0]
                 bank_product = None
-            # print([bank_name,bank_product, apy, amount])
 
             if bank_name.strip() in neededBanks:
                 if bank_name.strip() in online_bank:
@@ -161,64 +190,81 @@ try:
                      Bank_Offer_Feature, terms_in_month.strip() if terms_in_month is not None else None, 'Interest',
                      apy.strip() if apy is not None else None]
                 Excel_Table.append(a)
-            print('-'.center(100,'-'))
+
         except Exception as e:
             print(e)
-    print(len(trs))
+
 except Exception as e:
     print(e)
 
-#=======================================Savings==========================================================
-
+# #=======================================Checkings==========================================================
 try:
-    driver.get("https://www.bankrate.com/funnel/checking-account/checking-account-results.aspx?prods=31&local=true&market=2")
-    jsoup = BeautifulSoup(driver.page_source)
-    trs = jsoup.find('div', attrs={'data-ri-table-group':'Interest Checking'}).find_all('ul')
-    for ul in trs:
-        Bank_Name = ul.find('li', attrs={'class':'rtLender'}).find('a')
-        if Bank_Name is not None:
-            Bank_Name = Bank_Name.text
-        else:
-            Bank_Name = ul.find('li', attrs={'class': 'rtLender'}).find('div').text
-        # print(Bank_Name)
-        Apy = ul.find('span', attrs={'class':'fieldValue rate'}).text
-        print([Bank_Name, Apy])
 
+    driver.get("https://www.bankrate.com/banking/checking/rates/")
+    time.sleep(15)
+    driver.find_element_by_css_selector('.gearbox-input').clear()
+    driver.find_element_by_css_selector('.gearbox-input').send_keys(10004)
+    driver.find_element_by_tag_name('body').click()
+    time.sleep(15)
+    while True:
+        try:
+            element = driver.find_element_by_css_selector('.--secondary')#.click()
+            driver.execute_script("arguments[0].click();", element)
+            time.sleep(3)
+        except Exception as e:
+            print(e)
+            break
+
+    jsoup = BeautifulSoup(driver.page_source)
+    trs = jsoup.find('div', attrs={'class':re.compile('table')}).find('tbody').find_all('tr')
+    print(len(trs))
+    for tr in trs:
+        print('-'.center(100, '-'))
+        div  = tr.find_all('div', attrs={'class':re.compile('grid-cell')})
+        Bank_Name = div[0].find('div', attrs={'data-name':re.compile('advertiserlink')})
+        if Bank_Name is not None:
+            Bank_Name = Bank_Name.text.strip().split('\n')[0]
+        elif div[0].find('div', attrs={'class':'rate-table__row-copy --dark-gray'}) is not None:
+            Bank_Name = div[0].find('div', attrs={'class': 'rate-table__row-copy --dark-gray'}).text.strip().split('\n')[0]
+
+        print(Bank_Name)
+        # Bank_Name = ul.find('li', attrs={'class':'rtLender'}).find('a')
+        # if Bank_Name is not None:
+        #     Bank_Name = Bank_Name.text
+        # else:
+        #     Bank_Name = ul.find('li', attrs={'class': 'rtLender'}).find('div').text
+        # print(Bank_Name)
+        Apy = div[1].text.split('%')[0]
+        print(Apy)
+        #
+        #
+        if Bank_Name is None:
+            continue
         if Bank_Name.strip() in neededBanks:
-            if Bank_name.strip() in online_bank:
+            if Bank_Name.strip() in online_bank:
                 Bank_Offer_Feature = 'Online'
             else:
                 Bank_Offer_Feature = 'Offline'
-            a = [neededBanks[Bank_Name.strip()], 'Checkings', 'Checkings', None, Bank_Offer_Feature, None, None,
+            a = [neededBanks[Bank_Name.strip()], 'Checking', 'Checking', None, Bank_Offer_Feature, None, None,
                  Apy.strip() if Apy is not None else None]
+            print(a)
             Excel_Table.append(a)
-    print(len(trs))
-    # print(driver.page_source)
+
 except Exception as e:
     print(e)
 
+try:
+    #Close the drive
+    driver.close()
+except Exception as e:
+    print(e)
 
-driver.close()
-
+# #--------------------------------------Moving Data to CSV File using Pandas----------------------------------
+# #Arrange all fileds based on required format
 order = ["Date", "Bank_Native_Country", "State", "Bank_Name", "Bank_Local_Currency", "Bank_Type", "Bank_Product", "Bank_Product_Type", "Bank_Product_Code", "Bank_Product_Name", "Balance", "Bank_Offer_Feature", "Term_in_Months", "Interest_Type", "Interest", "APY", "Source"]
-# driver.close()
 print(tabulate(Excel_Table))
-df = pd.DataFrame(Excel_Table, columns=table_headers)
-df['Interest'] = np.nan
-df['Date'] = ' '+today.strftime('%Y-%m-%d')
-df['Bank_Native_Country'] = 'US'
-df['State'] = 'New York'
-df['Bank_Local_Currency'] = 'USD'
-df['Bank_Type'] = 'Bank'
-df['Bank_Product'] = 'Deposits'
-df['Interest_Type'] = 'Fixed'
-df['Bank_Product_Code'] = np.nan
-# df['Term_in_Months'] = np.nan
-# df['Bank_Offer_Feature'] = 'Offline'
-df['Balance'] = df['Balance'].apply(lambda x:re.sub('[^0-9,.]','',x) if x is not None else None)
-df['Bank_Product_Name'] = df['Bank_Product_Name'].apply(lambda x:re.sub('[^0-9A-Za-z|]','',x) if x is not None else x)
 
-df['Source'] = 'bankrate.com'
+# #Formating Years into Months
 def getMonths(x):
     if x is not None:
         if 'm' in x.lower():
@@ -229,17 +275,22 @@ def getMonths(x):
         else:
             return x
 
+df = pd.DataFrame(Excel_Table, columns=table_headers)
+df['Interest'] = np.nan
+df['Date'] = ' '+today.strftime('%Y-%m-%d')
+df['Bank_Native_Country'] = 'US'
+df['State'] = 'New York'
+df['Bank_Local_Currency'] = 'USD'
+df['Bank_Type'] = 'Bank'
+df['Bank_Product'] = 'Deposits'
+df['Interest_Type'] = 'Fixed'
+df['Bank_Product_Code'] = np.nan
+df['Balance'] = df['Balance'].apply(lambda x:re.sub('[^0-9,.]','',x) if x is not None else None)
+df['Bank_Product_Name'] = df['Bank_Product_Name'].apply(lambda x:re.sub('[^0-9A-Za-z|]','',x) if x is not None else x)
+df['Source'] = 'Bankrate.com'
 df['Term_in_Months'] = df['Term_in_Months'].apply(getMonths)
-# df['dummy'] = df['Term_in_Months'].apply(lambda x:'CD - '+str(x)+' Months' if x is not None else None)
-# df['Bank_Product_Name'] = np.where(df['Bank_Product_Name'] is None, 'hi')
-# df['Bank_Product_Name'] = df['Term_in_Months'].apply(lambda x:'CD - '+str(x)+' Months' if x is not None else None)
-# df['Bank_Product_Name'] = df['Term_in_Months'].apply(lambda x:'CD - '+ if x is not None else None)
-# df['Bank_Product_Name'] = df['Balance'].apply(lambda x: 'Checkings' if x is None)
-# df['Bank_Product_Name'] = np.where( ( (df['Bank_Product_Name'] is None) & (df['Term_in_Months'] is not None ) ) | ( (df['Bank_Product_Name'] is None) & (df['Term_in_Months'] is not None ) ), df['Term_in_Months'], df['Term_in_Months'])
-
 df = df[order]
-df.to_csv(path, index=False)
-print('Exection Completed.')
-print('Total Execution Time:',time.time()-start_time,' Seconds')
+df.to_csv(path, index=False) #Moving data to csv File
 
-# df['points'] = np.where( ( (df['gender'] == 'male') & (df['pet1'] == df['pet2'] ) ) | ( (df['gender'] == 'female') & (df['pet1'].isin(['cat','dog'] ) ) ), 5, 0)
+print('Total Execution Time:',time.time()-start_time,' Seconds') #Display total time taken to Execute the program
+print('Execution Completed.')
