@@ -1,0 +1,9 @@
+Date,Bank_Native_Country,State,Bank_Name,Ticker,Bank_Local_Currency,Bank_Type,Bank_Product,Bank_Product_Type,Bank_Product_Code,Bank_Product_Name,Minm_Balance,Maxm_Balance,Bank_Offer_Feature,Term_in_Months,Interest_Type,Interest,AER,Source
+ 2018-06-05,UK,London,Virgin Money Plc.,VM,GBP,Bank,Deposits,Savings,_MSBF,Double Take E-Saver Issue 6,1.0,250000.0,Online,,Fixed,1.3%,1.3%,moneysupermarket.com
+ 2018-06-05,UK,London,Virgin Money Plc.,VM,GBP,Bank,Deposits,Savings,_MSBF,Double Take E-Saver Issue 6,1.0,250000.0,Online,,Fixed,1.3%,1.3%,moneysupermarket.com
+ 2018-06-05,UK,London,Virgin Money Plc.,VM,GBP,Bank,Deposits,Savings,_MSBF,Easy Access Saver Issue 31,1.0,250000.0,Offline,,Fixed,1.01%,1.01%,moneysupermarket.com
+ 2018-06-05,UK,London,Virgin Money Plc.,VM,GBP,Bank,Deposits,Savings,_MSBF,Easy Access Saver Issue 31,1.0,250000.0,Offline,,Fixed,1.01%,1.01%,moneysupermarket.com
+ 2018-06-05,UK,London,Royal Bank Of Scotland,RBS,GBP,Bank,Deposits,Current,_MCCF,Reward Account,,,Offline,,Fixed,0.00%,0.00%,moneysupermarket.com
+ 2018-06-05,UK,London,Royal Bank Of Scotland,RBS,GBP,Bank,Deposits,Current,_MCCF,Reward Platinum Account,,,Offline,,Fixed,0.00%,0.00%,moneysupermarket.com
+ 2018-06-05,UK,London,Royal Bank Of Scotland,RBS,GBP,Bank,Deposits,Current,_MCCF,Reward Silver Account,,,Offline,,Fixed,0.00%,0.00%,moneysupermarket.com
+ 2018-06-05,UK,London,Royal Bank Of Scotland,RBS,GBP,Bank,Deposits,Current,_MCCF,Select Account,,,Offline,,Fixed,0.00%,0.00%,moneysupermarket.com
