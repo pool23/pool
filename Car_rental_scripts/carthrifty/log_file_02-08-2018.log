@@ -1,0 +1,48 @@
+
+Purpose     : Extract data from comparefirst
+        #####################     Change log   ###############################
+        ##------------------------------------------------------------------##
+        ##  Author              ##Date                ##Current Version     ##
+        ##------------------------------------------------------------------##
+        ## Moody's Analytics    ##11th July, 2018     ##V1.0                ##
+        ##------------------------------------------------------------------##
+        ######################################################################
+        Date              Version     Author      Description
+        11th July, 2018   v 1.0       Sairam      Data Extraction
+
+
+2018-08-02 15:45:11,445 - 41 - INFO      - Program Execution Started Time15:45:11.445770
+2018-08-02 15:46:49,309 - 66 - INFO      - {'Rank': 5, 'Airport name': 'John F. Kennedy International Airport', 'Location': 'New York, New York', 'Code': 'JFK', 'Short Name': '(jfk)'}is Done
+2018-08-02 15:46:54,174 - 66 - INFO      - {'Rank': 1, 'Airport name': 'Hartsfield–Jackson Atlanta International Airport', 'Location': 'Atlanta, Georgia', 'Code': 'ATL', 'Short Name': '(atl)'}is Done
+2018-08-02 15:46:57,452 - 66 - INFO      - {'Rank': 2, 'Airport name': "Chicago O'Hare International Airport", 'Location': 'Chicago, Illinois', 'Code': 'ORD', 'Short Name': '(ord)'}is Done
+2018-08-02 15:46:57,483 - 66 - INFO      - {'Rank': 4, 'Airport name': 'Dallas/Fort Worth International Airport', 'Location': 'Dallas–Fort Worth Metroplex, Texas', 'Code': 'DFW', 'Short Name': '(DFW)'}is Done
+2018-08-02 15:46:59,448 - 66 - INFO      - {'Rank': 3, 'Airport name': 'Los Angeles International Airport', 'Location': 'Los Angeles, California', 'Code': 'LAX', 'Short Name': 'Los Angeles'}is Done
+2018-08-02 15:48:38,123 - 66 - INFO      - {'Rank': 6, 'Airport name': 'Denver International Airport', 'Location': 'Denver, Colorado', 'Code': 'DEN', 'Short Name': '(den)'}is Done
+2018-08-02 15:48:43,743 - 66 - INFO      - {'Rank': 7, 'Airport name': 'San Francisco International Airport', 'Location': 'San Francisco, California', 'Code': 'SFO', 'Short Name': '(sfo)'}is Done
+2018-08-02 15:48:53,530 - 66 - INFO      - {'Rank': 10, 'Airport name': 'Miami International Airport', 'Location': 'Miami, Florida', 'Code': 'MIA', 'Short Name': '(mia)'}is Done
+2018-08-02 15:48:54,900 - 66 - INFO      - {'Rank': 8, 'Airport name': 'McCarran International Airport', 'Location': 'Las Vegas, Nevada', 'Code': 'LAS', 'Short Name': '(las)'}is Done
+2018-08-02 15:50:04,123 - 66 - INFO      - {'Rank': 9, 'Airport name': 'Charlotte Douglas International Airport', 'Location': 'Charlotte, North Carolina', 'Code': 'CLT', 'Short Name': '(clt)'}is Done
+2018-08-02 15:50:36,001 - 66 - INFO      - {'Rank': 13, 'Airport name': 'Seattle–Tacoma International Airport', 'Location': 'SeaTac, Washington', 'Code': 'SEA', 'Short Name': '(sea)'}is Done
+2018-08-02 15:51:00,054 - 66 - INFO      - {'Rank': 11, 'Airport name': 'Phoenix Sky Harbor International Airport', 'Location': 'Phoenix, Arizona', 'Code': 'PHX', 'Short Name': '(phx)'}is Done
+2018-08-02 15:51:15,080 - 66 - INFO      - {'Rank': 12, 'Airport name': 'George Bush Intercontinental Airport', 'Location': 'Houston, Texas', 'Code': 'IAH', 'Short Name': '(iah)'}is Done
+2018-08-02 15:51:22,261 - 66 - INFO      - {'Rank': 14, 'Airport name': 'Orlando International Airport', 'Location': 'Orlando, Florida', 'Code': 'MCO', 'Short Name': '(mco)'}is Done
+2018-08-02 15:52:13,917 - 66 - INFO      - {'Rank': 15, 'Airport name': 'Newark Liberty International Airport', 'Location': 'Newark, New Jersey', 'Code': 'EWR', 'Short Name': '(ewr)'}is Done
+2018-08-02 15:52:46,198 - 66 - INFO      - {'Rank': 16, 'Airport name': 'Minneapolis–Saint Paul International Airport', 'Location': 'Minneapolis–Saint Paul, Minnesota', 'Code': 'MSP', 'Short Name': '(msp)'}is Done
+2018-08-02 15:53:08,177 - 66 - INFO      - {'Rank': 17, 'Airport name': 'Logan International Airport', 'Location': 'Boston, Massachusetts', 'Code': 'BOS', 'Short Name': '(bos)'}is Done
+2018-08-02 15:53:24,204 - 66 - INFO      - {'Rank': 18, 'Airport name': 'Detroit Metropolitan Airport', 'Location': 'Romulus, Michigan', 'Code': 'DTW', 'Short Name': '(dtw)'}is Done
+2018-08-02 15:53:34,702 - 66 - INFO      - {'Rank': 19, 'Airport name': 'Philadelphia International Airport', 'Location': 'Philadelphia, Pennsylvania', 'Code': 'PHL', 'Short Name': '(phl)'}is Done
+2018-08-02 15:54:23,852 - 66 - INFO      - {'Rank': 20, 'Airport name': 'LaGuardia Airport', 'Location': 'New York, New York', 'Code': 'LGA', 'Short Name': '(lga)'}is Done
+2018-08-02 15:54:57,286 - 66 - INFO      - {'Rank': 23, 'Airport name': 'Ronald Reagan Washington National Airport', 'Location': 'Arlington, Virginia', 'Code': 'DCA', 'Short Name': '(dca)'}is Done
+2018-08-02 15:55:06,012 - 66 - INFO      - {'Rank': 21, 'Airport name': 'Fort Lauderdale–Hollywood International Airport', 'Location': 'Fort Lauderdale, Florida', 'Code': 'FLL', 'Short Name': '(fll)'}is Done
+2018-08-02 15:55:28,040 - 66 - INFO      - {'Rank': 22, 'Airport name': 'Baltimore–Washington International Airport', 'Location': 'Linthicum, Maryland', 'Code': 'BWI', 'Short Name': '(bwl)'}is Done
+2018-08-02 15:55:47,864 - 66 - INFO      - {'Rank': 24, 'Airport name': 'Chicago Midway International Airport', 'Location': 'Chicago, Illinois', 'Code': 'MDW', 'Short Name': '(mdw)'}is Done
+2018-08-02 15:56:53,536 - 66 - INFO      - {'Rank': 26, 'Airport name': 'Washington Dulles International Airport', 'Location': 'Dulles, Virginia', 'Code': 'IAD', 'Short Name': '(iad)'}is Done
+2018-08-02 15:56:53,676 - 66 - INFO      - {'Rank': 25, 'Airport name': 'Salt Lake City International Airport', 'Location': 'Salt Lake City, Utah', 'Code': 'SLC', 'Short Name': '(slc)'}is Done
+2018-08-02 15:57:23,753 - 66 - INFO      - {'Rank': 28, 'Airport name': 'Daniel K. Inouye International Airport', 'Location': 'Honolulu, Hawaii', 'Code': 'HNL', 'Short Name': '(hnl)'}is Done
+2018-08-02 15:57:33,649 - 66 - INFO      - {'Rank': 29, 'Airport name': 'Tampa International Airport', 'Location': 'Tampa, Florida', 'Code': 'TPA', 'Short Name': '(tpa)'}is Done
+2018-08-02 15:57:43,258 - 66 - INFO      - {'Rank': 27, 'Airport name': 'San Diego International Airport', 'Location': 'San Diego, California', 'Code': 'SAN', 'Short Name': '(san)'}is Done
+2018-08-02 15:58:18,258 - 66 - INFO      - {'Rank': 30, 'Airport name': 'Portland International Airport', 'Location': 'Portland, Oregon', 'Code': 'PDX', 'Short Name': '(pdx)'}is Done
+2018-08-02 15:58:18,259 - 88 - INFO      - Missed data ['CLT']
+2018-08-02 15:58:18,259 - 89 - INFO      - Total Locations = 30 and missed location
+2018-08-02 15:58:19,005 - 103 - INFO      - File Name : sample.xlsx
+2018-08-02 15:58:19,005 - 104 - INFO      - Total Execution Time is 13.126000761985779 Min
