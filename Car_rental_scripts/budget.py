@@ -2,10 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-import time
 import pandas as pd
+import time
 import datetime
 
 start_date_list = []
@@ -58,20 +57,18 @@ air_port = []
 sold_out =[]
 driver = webdriver.Firefox()
 file = ['ATL', 'ORD', 'LAX', 'DFW', 'JFK', 'DEN', 'SFO', 'LAS', 'CLT', 'MIA', 'PHX', 'SEA', 'MCO', 'EWR', 'MSP', 'BOS',
-        'DTW', 'PHL', 'LGA', 'FLL', 'BWI', 'DCA', 'MDW', 'SLC', 'IAD', 'SAN', 'HNL', 'TPA', 'PDX']
-for i in file:
-    for j in [todate, todate1]:
+        'DTW', 'PHL', 'LGA', 'FLL', 'BWI', 'DCA', 'MDW', 'SLC', 'IAD', 'SAN', 'HNL', 'TPA', 'PDX', 'IAH']
+for j in [todate, todate1]:
+    for i in file:
         start_date = datetime.datetime.today().replace(day=cd1).strftime('%m/%d/%Y')
         # to_date = datetime.datetime.today().replace(day = cd1)
         to_date = datetime.datetime.today().replace(day=j).strftime('%m/%d/%Y')
         i = i.strip()
         driver.get('https://www.budget.com/en/home')
-        time.sleep(10)
         driver.find_element_by_xpath('//*[@id="PicLoc_value"]').clear()
         h_val = driver.find_element_by_xpath('//*[@id="PicLoc_value"]')
         h_val.send_keys(i)
-        time.sleep(15)
-        wait = WebDriverWait(driver, 20)
+        wait = WebDriverWait(driver, 10)
         wait.until(EC.visibility_of_element_located(
             (By.XPATH, '//*[@id="PicLoc_dropdown"]/div[3]/div[1]/div[2]/div/div/span/span[1]')))
         # print(c)
@@ -82,16 +79,16 @@ for i in file:
         driver.find_element_by_xpath('//*[@id="to"]').clear()
         date_pick_start = driver.find_element_by_xpath('//*[@id="from"]').send_keys(start_date)
         date_pick_end = driver.find_element_by_xpath('//*[@id="to"]').send_keys(to_date)
-        wait = WebDriverWait(driver, 20)
+        wait = WebDriverWait(driver, 10)
         wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="to"]')))
         driver.find_element_by_xpath('//*[@id="to"]').send_keys(Keys.RETURN)
-        wait = WebDriverWait(driver, 20)
+        wait = WebDriverWait(driver, 10)
         wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="res-home-select-car"]')))
         driver.find_element_by_xpath('//*[@id="res-home-select-car"]').click()
         try:
-            time.sleep(20)
+            time.sleep(10)
             try:
-                wait = WebDriverWait(driver, 20)
+                wait = WebDriverWait(driver, 10)
                 wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "ftrcartxt")))
                 car_name = driver.find_element_by_css_selector('#reservation-partial > div > div > div.vehicle-availability > section:nth-child(7) > div.step2dtl > div > div.col-sm-5.ftrcardtl > div > h3')
                 print(car_name.get_attribute('innerHTML'))
@@ -142,7 +139,7 @@ for i in file:
                         p_now.append(link.find_element_by_tag_name('price').get_attribute('innerText'))
                     except:
                         p_now.append('NAN')
-                wait = WebDriverWait(driver, 20)
+                wait = WebDriverWait(driver, 10)
                 wait.until(EC.visibility_of_element_located((By.XPATH, ".//p[@class ='featurecartxt similar-car']")))
                 v_n = [link.find_element_by_xpath(".//p[@class ='featurecartxt similar-car']").text for link in
                        driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
@@ -205,6 +202,7 @@ for i in file:
             print(len(start_date_list))
             print(len(to_date_list))
             print(len(sold_out))
+    driver.delete_all_cookies()
 with open('budget.csv', 'a') as f:
     df = pd.DataFrame({'Scrape_Date': datetime.datetime.today().strftime('%d/%m/%Y'), 'Location_Code': port,
                        'Class_Name': carname, 'Sold_Out': sold_out,
@@ -222,6 +220,6 @@ h=["Scrape_Date", "Pickup_Date", "Return_Date", "Location", "Airport_Name", "Sel
                  "Location_Code","Sold_Out", "Class_Name", "Vehicle_Name", 'Pay_Now_Amount', 'Pay_Later_Amount']
 df1 = pd.DataFrame(df.values, columns=h)
 df1.to_excel('budget.xlsx', index=False)
-
+driver.close()
 
 
