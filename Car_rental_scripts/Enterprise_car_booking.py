@@ -15,7 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 car_data_headers = ['Date', 'pickup_date', 'return_date','Location', 'Airport name','selected_location', 'Location Code',
                     'className', 'vehicleName', 'payNowAmount', 'payNowAmountUnit',
-                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit']
+                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit','sitename']
 car_data = []
 
 startTime = time.time()
@@ -216,7 +216,7 @@ for i in airport:
                 print(per_day_later)
                 data = [datetime.now().strftime('%m/%d/%Y'), pickip_date, return_date, i[1], i[2], i[2], i[1], car_class.text,
                         car_name.text,None, None, None, None, per_day_later, per_day_later_unit,
-                        pay_later_total, pay_later_total_unit]
+                        pay_later_total, pay_later_total_unit,'Enterprise']
                 car_data.append(data)
 
             time.sleep(5)
