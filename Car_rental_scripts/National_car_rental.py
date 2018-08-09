@@ -12,7 +12,7 @@ warnings.simplefilter(action='ignore')
 
 car_data_headers = ['Date', 'pickup_date', 'return_date','Location', 'Airport name','selected_location', 'Location Code',
                     'className', 'vehicleName', 'payNowAmount', 'payNowAmountUnit',
-                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterTotalAmount','payLaterAmountUnit','payLaterTotalUnit']
+                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit']
 car_data = []
 startTime = time.time()
 browser = webdriver.Firefox()
@@ -93,10 +93,3 @@ df = pd.DataFrame(car_data,columns=car_data_headers)
 print(df)
 df.to_excel('national_car.xlsx', index=False)
 print('Time = ', (time.time()-startTime)/60)
-
-
-
-
-
-
-
