@@ -12,7 +12,7 @@ warnings.simplefilter(action='ignore')
 
 car_data_headers = ['Date', 'pickup_date', 'return_date','Location', 'Airport name','selected_location', 'Location Code',
                     'className', 'vehicleName', 'payNowAmount', 'payNowAmountUnit',
-                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit']
+                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit','sitename']
 car_data = []
 startTime = time.time()
 browser = webdriver.Firefox()
@@ -79,7 +79,7 @@ for i in airport:
                 print(pay_later_total)
                 print(pay_later_total_unit)
                 data = [datetime.now().strftime('%m/%d/%Y'), pickup_date, return_date, i[1], i[2], i[2], i[1],car_class.text,
-                        car_name.text, None, None, None, None, per_day_later,per_day_later_unit,pay_later_total, pay_later_total_unit]
+                        car_name.text, None, None, None, None, per_day_later,per_day_later_unit,pay_later_total, pay_later_total_unit,'National']
                 car_data.append(data)
         except Exception as e:
             print(e)
