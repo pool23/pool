@@ -21,13 +21,13 @@ warnings.simplefilter(action='ignore')
 
 car_data_headers = ['Date', 'pickup_date', 'return_date','Location', 'Airport name','selected_location', 'Location Code',
                     'className', 'vehicleName', 'payNowAmount', 'payNowAmountUnit',
-                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit']
+                'payNowTotalAmount','payNowTotalUnit','payLaterAmount','payLaterAmountUnit','payLaterTotalAmount','payLaterTotalUnit','sitename']
 car_data = []
 
 startTime = time.time()
 
 airport = [["Hartsfield–Jackson Atlanta International Airport","Atlanta, Georgia","ATL"],["Chicago O'Hare International Airport","Chicago, Illinois","ORD"],["Los Angeles International Airport","Los Angeles, California","LAX"],["Dallas/Fort Worth International Airport","Dallas–Fort Worth Metroplex, Texas","DFW"],["John F. Kennedy International Airport","New York, New York","JFK"],["Denver International Airport","Denver, Colorado","DEN"],["San Francisco International Airport","San Francisco, California","SFO"],["McCarran International Airport","Las Vegas, Nevada","LAS"],["Charlotte Douglas International Airport","Charlotte, North Carolina","CLT"],["Miami International Airport","Miami, Florida","MIA"],["Phoenix Sky Harbor International Airport","Phoenix, Arizona","PHX"],["George Bush Intercontinental Airport","Houston, Texas","IAH"],["Seattle–Tacoma International Airport","SeaTac, Washington","SEA"],["Orlando International Airport","Orlando, Florida","MCO"],["Newark Liberty International Airport","Newark, New Jersey","EWR"],["Minneapolis–Saint Paul International Airport","Minneapolis–Saint Paul, Minnesota","MSP"],["Logan International Airport","Boston, Massachusetts","BOS"],["Detroit Metropolitan Airport","Romulus, Michigan","DTW"],["Philadelphia International Airport","Philadelphia, Pennsylvania","PHL"],["LaGuardia Airport","New York, New York","LGA"],["Fort Lauderdale–Hollywood International Airport","Fort Lauderdale, Florida","FLL"],["Baltimore–Washington International Airport","Linthicum, Maryland","BWI"],["Ronald Reagan Washington National Airport","Arlington, Virginia","DCA"],["Chicago Midway International Airport","Chicago, Illinois","MDW"],["Salt Lake City International Airport","Salt Lake City, Utah","SLC"],["Washington Dulles International Airport","Dulles, Virginia","IAD"],["San Diego International Airport","San Diego, California","SAN"],["Daniel K. Inouye International Airport","Honolulu, Hawaii","HNL"],["Tampa International Airport","Tampa, Florida","TPA"],["Portland International Airport","Portland, Oregon","PDX"]]
-for i in airport[5:]:
+for i in airport:
     # time.sleep(10)
     kk = [[15, 17], [15, 22]]
     for k in kk:
@@ -199,7 +199,7 @@ for i in airport[5:]:
                 # print(pay_later_total)
                 print('-'.center(100,'-'))
                 # break
-                data = [datetime.now().strftime('%m/%d/%Y'), start_date,end_date, i[1], i[0], i[0], i[2], car_class.text, car_name.text,None,None,None,None, None,None, pay_later_price,pay_later_price_unit]
+                data = [datetime.now().strftime('%m/%d/%Y'), start_date,end_date, i[1], i[0], i[0], i[2], car_class.text, car_name.text,None,None,None,None, None,None, pay_later_price,pay_later_price_unit,'Alamo']
                 car_data.append(data)
 
             browser.close()
