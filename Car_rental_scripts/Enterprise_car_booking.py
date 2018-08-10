@@ -19,21 +19,23 @@ car_data_headers = ['Date', 'pickup_date', 'return_date','Location', 'Airport na
 car_data = []
 
 startTime = time.time()
-browser = webdriver.Firefox()
-browser.maximize_window()
+
 
 airport = [["location-1018611","ATL","Hartsfield–Jackson Atlanta International Airport","Atlanta, Georgia"],["location-1018840","ORD","Chicago O'Hare International Airport","Chicago, Illinois"],["location-1019178","lax","Los Angeles International Airport","Los Angeles, California"],["location-1018959","DFW","Dallas/Fort Worth International Airport","Dallas–Fort Worth Metroplex, Texas"],["location-1018781","JFK","John F. Kennedy International Airport","New York, New York"],["location-1018991","DEN","Denver International Airport","Denver, Colorado"],["location-1019129","SFO","San Francisco International Airport","San Francisco, California"],["location-1019084","LAS","McCarran International Airport","Las Vegas, Nevada"],["location-1018702","CLT","Charlotte Douglas International Airport","Charlotte, North Carolina"],["location-1018659","MIA","Miami International Airport","Miami, Florida"],["location-1018543","PHX","Phoenix Sky Harbor International Airport","Phoenix, Arizona"],["location-1018952","IAH","George Bush Intercontinental Airport","Houston, Texas"],["location-1019155","SEA","Seattle–Tacoma International Airport","SeaTac, Washington"],["location-1018631","MCO","Orlando International Airport","Orlando, Florida"],["location-1018780","EWR","Newark Liberty International Airport","Newark, New Jersey"],["location-1018849","MSP","Minneapolis–Saint Paul International Airport","Minneapolis–Saint Paul, Minnesota"],["location-1018717","BOS","Logan International Airport","Boston, Massachusetts"],["location-1018860","DTW","Detroit Metropolitan Airport","Romulus, Michigan"],["location-1018727","PHL","Philadelphia International Airport","Philadelphia, Pennsylvania"],["location-1018775","LGA","LaGuardia Airport","New York, New York"],["location-1018658","FLL","Fort Lauderdale–Hollywood International Airport","Fort Lauderdale, Florida"],["location-1018734","BWI","Baltimore–Washington International Airport","Linthicum, Maryland"],["location-1018724","DCA","Ronald Reagan Washington National Airport","Arlington, Virginia"],["location-1018838","MDW","Chicago Midway International Airport","Chicago, Illinois"],["location-1018893","SLC","Salt Lake City International Airport","Salt Lake City, Utah"],["location-1018719","IAD","Washington Dulles International Airport","Dulles, Virginia"],["location-1019129","SAN","San Diego International Airport","San Diego, California"],["location-1019091","HNL","Daniel K. Inouye International Airport","Honolulu, Hawaii"],["location-1018670","TPA","Tampa International Airport","Tampa, Florida"],["location-1019164","PDX","Portland International Airport","Portland, Oregon"]]
-for i in airport:
+for i in airport[2:]:
     for k in [[15, 17], [15, 22]]:
         print(i[2])
 
         try:
+
             start_date = (datetime.now() + timedelta(days=k[0])).strftime('%Y%m%d')
             end_date = (datetime.now() + timedelta(days=k[1])).strftime('%Y%m%d')
             print(start_date, end_date)
             pickip_date = (datetime.now() + timedelta(days=k[0])).strftime('%m/%d/%Y')
             return_date = (datetime.now() + timedelta(days=k[1])).strftime('%m/%d/%Y')
             print('https://www.enterprise.com/en/home.html')
+            browser = webdriver.Firefox()
+            browser.maximize_window()
             browser.get('https://www.enterprise.com/en/home.html')
             time.sleep(8)
             try:
@@ -87,7 +89,10 @@ for i in airport:
             except:
                 pass
             time.sleep(4)
-            browser.find_element_by_xpath('//*[@id="pickupLocationTextBox"]').clear()
+            try:
+                browser.find_element_by_xpath('//*[@id="pickupLocationTextBox"]').clear()
+            except:
+                pass
             time.sleep(4)
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
@@ -103,10 +108,13 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
-            browser.find_element_by_xpath('//*[@id="pickupLocationTextBox"]').send_keys(i[1])
-            time.sleep(5)
-            element = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, i[0])))
-            element.click()
+            try:
+                browser.find_element_by_xpath('//*[@id="pickupLocationTextBox"]').send_keys(i[1])
+                time.sleep(5)
+                element = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, i[0])))
+                element.click()
+            except:
+                pass
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -121,9 +129,15 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
-            browser.find_element_by_xpath('//*[@id="pickupCalendarFocusable"]').click()
-            browser.find_element_by_xpath("//tbody[contains(@class, 'days cf')]//span[contains(@class, 'day-number') and contains(@data-reactid,"+str(start_date)+")]").click()
-            time.sleep(5)
+
+            #DATE
+
+            try:
+                browser.find_element_by_xpath('//*[@id="pickupCalendarFocusable"]').click()
+                browser.find_element_by_xpath("//tbody[contains(@class, 'days cf')]//span[contains(@class, 'day-number') and contains(@data-reactid,"+str(start_date)+")]").click()
+                time.sleep(5)
+            except:
+                pass
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -138,9 +152,12 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
-            browser.find_element_by_xpath('//*[@id="dropoffCalendarFocusable"]').click()
-            browser.find_element_by_xpath("//tbody[contains(@class, 'days cf')]//span[contains(@class, 'day-number') and contains(@data-reactid,"+str(end_date)+")]").click()
-            time.sleep(5)
+            try:
+                browser.find_element_by_xpath('//*[@id="dropoffCalendarFocusable"]').click()
+                browser.find_element_by_xpath("//tbody[contains(@class, 'days cf')]//span[contains(@class, 'day-number') and contains(@data-reactid,"+str(end_date)+")]").click()
+                time.sleep(5)
+            except:
+                pass
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -155,7 +172,10 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
-            browser.find_element_by_xpath('//*[@id="continueButton"]').click()
+            try:
+                browser.find_element_by_xpath('//*[@id="continueButton"]').click()
+            except:
+                pass
             try:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
@@ -214,17 +234,18 @@ for i in airport:
                 per_day_later = re.search('\$ [0-9\.,]+', per_day_later.text) if per_day_later is not None else None
                 per_day_later = per_day_later.group(0) if per_day_later is not None else None
                 print(per_day_later)
-                data = [datetime.now().strftime('%m/%d/%Y'), pickip_date, return_date, i[1], i[2], i[2], i[1], car_class.text,
+                data = [datetime.now().strftime('%m/%d/%Y'), pickip_date, return_date, i[3], i[2], i[2], i[1], car_class.text,
                         car_name.text,None, None, None, None, per_day_later, per_day_later_unit,
                         pay_later_total, pay_later_total_unit,'Enterprise']
                 car_data.append(data)
 
-            time.sleep(5)
+            browser.close()
 
+            time.sleep(5)
         except Exception as e:
             print(e)
-    break
-browser.close()
+
+
 
 
 print(tabulate(car_data))
@@ -232,6 +253,3 @@ df = pd.DataFrame(car_data,columns=car_data_headers)
 print(df)
 df.to_excel('enterprise.xlsx', index=False)
 print('Time = ', (time.time()-startTime)/60)
-
-
-#acsMainInvite > a:nth-child(2)
