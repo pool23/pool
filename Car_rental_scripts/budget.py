@@ -203,23 +203,16 @@ for j in [todate, todate1]:
             print(len(to_date_list))
             print(len(sold_out))
     driver.delete_all_cookies()
-with open('budget.csv', 'a') as f:
-    df = pd.DataFrame({'Scrape_Date': datetime.datetime.today().strftime('%d/%m/%Y'), 'Location_Code': port,
-                       'Class_Name': carname, 'Sold_Out': sold_out,
-                       'Pay_Now_Amount': paynow, 'Pay_Later_Amount': paylater, 'Vehicle_Name': vehical_name,
-                       'Pickup_Date': start_date_list, 'Return_Date': to_date_list,
-                       'Selected_Location': Selected_Location,
-                       'Location': loc, 'Airport_Name': air_port})
-    #  print(df)
-    # Rearranging columns according to requirement
-    df = df[["Scrape_Date", "Pickup_Date", "Return_Date", "Location", "Airport_Name", "Selected_Location",
-                 "Location_Code","Sold_Out", "Class_Name", "Vehicle_Name", 'Pay_Now_Amount', 'Pay_Later_Amount']]
-    # df = df[["Site", "Day", "Month", "Year", 'City', 'Location', 'State', 'Country']]
-    df.to_csv(f, header= False, index=False)
-h=["Scrape_Date", "Pickup_Date", "Return_Date", "Location", "Airport_Name", "Selected_Location",
-                 "Location_Code","Sold_Out", "Class_Name", "Vehicle_Name", 'Pay_Now_Amount', 'Pay_Later_Amount']
-df1 = pd.DataFrame(df.values, columns=h)
-df1.to_excel('budget.xlsx', index=False)
 driver.close()
-
-
+df = pd.DataFrame({'Date': datetime.datetime.today().strftime('%d/%m/%Y'), 'Location Code': port,
+                   'className': carname, 'Sold_Out': sold_out,
+                   'Pay_Now_Amount': paynow, 'payLaterAmount': paylater, 'vehicleName': vehical_name,
+                   'pickup_date': start_date_list, 'return_date': to_date_list,
+                   'selected_location': Selected_Location,
+                   'Location': loc, 'Airport name': air_port})
+#  print(df)
+# Rearranging columns according to requirement
+df = df.reindex(columns =["Date", "pickup_date", "return_date", "Location", "Airport name", "selected_location",
+             "Location Code", "className", "vehicleName", 'payLaterAmount',  'Pay_Now_Amount', "Sold_Out", "sitename"])
+# df = df[["Site", "Day", "Month", "Year", 'City', 'Location', 'State', 'Country']]
+df.to_excel('budget.xlsx', index=False)
