@@ -88,7 +88,7 @@ for i in airport:
             pay_later_total,pay_later_total_unit = (pay_later_total.group(1),pay_later_total.group(2)) if pay_later_total is not None else (None,None)
             print(pay_later_total)
             print(pay_later_total_unit)
-            data = [datetime.now().strftime('%m/%d/%Y'), pickup_date, return_date, i[1], i[2], i[2], i[1],car_class.text,
+            data = [datetime.now().strftime('%m/%d/%Y'), pickup_date, return_date, i[1], i[0], i[0], i[2],car_class.text,
                     car_name.text, None, None, None, None, per_day_later,per_day_later_unit,pay_later_total, pay_later_total_unit,'National']
             car_data.append(data)
         # except Exception as e:
