@@ -60,7 +60,7 @@ for i in airport:
             #POPUP
             try:
 
-                browser.find_element_by_xpath('/html/body/div[12]/div/div/div/div[2]/div/div[2]/div/button').click()
+                browser.find_element_by_css_selector('body > div:nth-child(27) > div > div > div > div.modal__body > div > div.login-or-guest-modal__info-container > div > button').click()
             except:
                 pass
             time.sleep(10)
