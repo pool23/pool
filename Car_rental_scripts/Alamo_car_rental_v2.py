@@ -34,8 +34,8 @@ for i in airport:
     kk = [[15, 17], [15, 22]]
     for k in kk:
         print(i[2])
-    #
         try:
+
             start_date = (datetime.now() + timedelta(days=k[0])).strftime('%m/%d/%Y')
             end_date = (datetime.now() + timedelta(days=k[1])).strftime('%m/%d/%Y')
             print(start_date,end_date)
@@ -45,89 +45,95 @@ for i in airport:
             browser.maximize_window()
             browser.get('https://www.alamo.com/en_US/car-rental/home.html') #https://www.alamo.com/en_US/car-rental/reservation/aboutYourTrip.html
             time.sleep(5)
-            # browser.delete_all_cookies()
-            # browser.refresh()
-            # time.sleep(5)
+
             try:
                 browser.find_element_by_xpath('/html/body/div[3]/div/p/a[1]/img').click()
             except :
                 pass
-            # size = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='_content_alamo_en_US_car_rental_reservation_startReservation_jcr_content_cq_colctrl_lt30_c1_start_pickUpLocation_searchCriteria']")))
-            # size.send_keys(i[2])
+
+            #LOCATION
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_pickUpLocation_searchCriteria"]').clear()
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_pickUpLocation_searchCriteria"]').send_keys(i[2])
 
+            #POPUP
             try:
                 browser.find_element_by_xpath('/html/body/div[3]/div/p/a[1]/img').click()
             except:
                 pass
 
             time.sleep(3)
+
+            #LOCATION
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_pickUpLocation_searchCriteria"]').send_keys(Keys.ARROW_DOWN)
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_pickUpLocation_searchCriteria"]').send_keys(Keys.RETURN)
             time.sleep(2)
             browser.find_element_by_css_selector('#_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_countryOfResidenceResident').click()
             time.sleep(3)
+
+            #POPUP
             try:
                 browser.find_element_by_xpath('/html/body/div[3]/div/p/a[1]/img').click()
             except:
                 pass
 
+            #PICKUP_DATE
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_pickUpDateTime_date"]').send_keys(start_date)
+
+            #RETURN_DATE
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_dropOffDateTime_date"]').send_keys(end_date)
             browser.find_element_by_xpath('//*[@id="_content_alamo_en_US_car_rental_home_jcr_content_reservationStart_dropOffDateTime_date"]').send_keys(Keys.RETURN)
             time.sleep(5)
+
+            #SCROLL_DOWN
             browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(3)
+
+            #POPUP
             try:
                 browser.find_element_by_xpath('/html/body/div[3]/div/p/a[1]/img').click()
             except:
                 pass
 
             time.sleep(3)
-            # element = WebDriverWait(browser, 10).until(EC.element_located_to_be_selected((By.CSS_SELECTOR,'button.a-btn:nth-child(2)')))
-            # element.click()
-            browser.find_element_by_css_selector('button.a-btn:nth-child(2)').click()
-            time.sleep(5)
 
-
+            #SUBMIT_BUTTON
+            try:
+                browser.find_element_by_css_selector('button.a-btn:nth-child(2)').click()
+                time.sleep(5)
+            except:
+                pass
+            #SOLD_OUT POPUP
             try:
 
-                if 'sold out'.lower() in browser.page_source:
+                if 'sold out'.lower() in browser.page_source.lower():
+                    print('sold_out')
                     browser.close()
                     continue
 
             except:
                 pass
+
+            #POPUP
             try:
                 browser.find_element_by_xpath('/html/body/div[3]/div/p/a[1]/img').click()
             except :
                 pass
 
             print(browser.current_url)
-            # browser.refresh()
-            # time.sleep(5)
-            # for j in range(5):
+
+            time.sleep(5)
+            #PAGE_SOURCE
             jsoup = BeautifulSoup(browser.page_source)
-            #     if jsoup.find('ul', attrs={'class': 'carList'}) is not None:
-            #         break
-            #     else:
-            #         browser.refresh()
-            #         time.sleep(10)
-            #         print('-------------------------')
-            #
+            lis = jsoup.find('section',attrs={'class':'blockPrimary'}).find('ul', attrs={'class': 'carList'}).find_all('li',attrs={'class':re.compile('\w*')})
 
-            # kk.append(k)
-            # browser.close()
-
-            # lis = jsoup.find('ul', attrs={'class': 'carList'})
-            for li in jsoup.find('ul', attrs={'class': 'carList'}).find_all('li',attrs={'class':re.compile('\w*')}):
+            for li in lis:
                 # print(li)
                 car_class = li.find('div', attrs={'class':'carDetails'}).find('h2')
                 print(car_class.text)
                 car_name = li.find('div', attrs={'class':'vehiclesSimilar'}).find('span')
                 print(car_name.text)
 
+                #UNCOMMENT_OR_COMMENT_ACCORDING_CLASS_NAME
                 # pay_later_price = li.find('div',attrs = {'class':'priceInfoDetails'})
                 # pay_later_price = pay_later_price.find('div',attrs={'class':'price qcca pkgRate'}).find('p') if pay_later_price is not None else None
                 # pay_later_price_unit = re.search('[ A-Za-z]+',pay_later_price.text) if pay_later_price is not None else None
@@ -208,38 +214,19 @@ for i in airport:
                 pay_later_total = pay_later_total.group(0) if pay_later_total is not None else None
                 print(pay_later_total)
                 print('-'.center(100,'-'))
-                # break
+
                 data = [datetime.now().strftime('%m/%d/%Y'), start_date,end_date, i[1], i[0], i[0], i[2], car_class.text, car_name.text,per_day_now,per_day_now_unit,pay_now_total,pay_now_total_unit,per_day_later,per_day_later_unit, pay_later_total,pay_later_total_unit,'Alamo']
                 car_data.append(data)
 
             browser.close()
 
+
         except Exception as e:
             print(e)
-
-
-
-
-
 
 
 print(tabulate(car_data))
 df = pd.DataFrame(car_data,columns=car_data_headers)
 print(df)
-df.to_excel('alamo.xlsx', index=False)
+df.to_excel('Alamo.xlsx', index=False)
 print('Time = ', (time.time()-startTime)/60)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
