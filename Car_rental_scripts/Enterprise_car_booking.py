@@ -22,8 +22,8 @@ startTime = time.time()
 
 
 airport = [["location-1018611","ATL","Hartsfield–Jackson Atlanta International Airport","Atlanta, Georgia"],["location-1018840","ORD","Chicago O'Hare International Airport","Chicago, Illinois"],["location-1019178","lax","Los Angeles International Airport","Los Angeles, California"],["location-1018959","DFW","Dallas/Fort Worth International Airport","Dallas–Fort Worth Metroplex, Texas"],["location-1018781","JFK","John F. Kennedy International Airport","New York, New York"],["location-1018991","DEN","Denver International Airport","Denver, Colorado"],["location-1019129","SFO","San Francisco International Airport","San Francisco, California"],["location-1019084","LAS","McCarran International Airport","Las Vegas, Nevada"],["location-1018702","CLT","Charlotte Douglas International Airport","Charlotte, North Carolina"],["location-1018659","MIA","Miami International Airport","Miami, Florida"],["location-1018543","PHX","Phoenix Sky Harbor International Airport","Phoenix, Arizona"],["location-1018952","IAH","George Bush Intercontinental Airport","Houston, Texas"],["location-1019155","SEA","Seattle–Tacoma International Airport","SeaTac, Washington"],["location-1018631","MCO","Orlando International Airport","Orlando, Florida"],["location-1018780","EWR","Newark Liberty International Airport","Newark, New Jersey"],["location-1018849","MSP","Minneapolis–Saint Paul International Airport","Minneapolis–Saint Paul, Minnesota"],["location-1018717","BOS","Logan International Airport","Boston, Massachusetts"],["location-1018860","DTW","Detroit Metropolitan Airport","Romulus, Michigan"],["location-1018727","PHL","Philadelphia International Airport","Philadelphia, Pennsylvania"],["location-1018775","LGA","LaGuardia Airport","New York, New York"],["location-1018658","FLL","Fort Lauderdale–Hollywood International Airport","Fort Lauderdale, Florida"],["location-1018734","BWI","Baltimore–Washington International Airport","Linthicum, Maryland"],["location-1018724","DCA","Ronald Reagan Washington National Airport","Arlington, Virginia"],["location-1018838","MDW","Chicago Midway International Airport","Chicago, Illinois"],["location-1018893","SLC","Salt Lake City International Airport","Salt Lake City, Utah"],["location-1018719","IAD","Washington Dulles International Airport","Dulles, Virginia"],["location-1019129","SAN","San Diego International Airport","San Diego, California"],["location-1019091","HNL","Daniel K. Inouye International Airport","Honolulu, Hawaii"],["location-1018670","TPA","Tampa International Airport","Tampa, Florida"],["location-1019164","PDX","Portland International Airport","Portland, Oregon"]]
-for i in airport:
-    for k in [[15, 17], [15, 22]]:
+for i in airport[24:]:
+    for k in [[15, 17], [15, 22]][1:]:
         print(i[2])
 
         try:
@@ -38,6 +38,7 @@ for i in airport:
             browser.maximize_window()
             browser.get('https://www.enterprise.com/en/home.html')
             time.sleep(8)
+            # POPUP
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -108,13 +109,17 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
+
+
+            #LOCATION
             try:
                 browser.find_element_by_xpath('//*[@id="pickupLocationTextBox"]').send_keys(i[1])
-                time.sleep(5)
+                time.sleep(8)
                 element = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, i[0])))
                 element.click()
             except:
                 pass
+            # POPUP
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -130,7 +135,7 @@ for i in airport:
             except:
                 pass
 
-            #DATE
+            #PICKUP_DATE
 
             try:
                 browser.find_element_by_xpath('//*[@id="pickupCalendarFocusable"]').click()
@@ -138,6 +143,8 @@ for i in airport:
                 time.sleep(5)
             except:
                 pass
+
+            # POPUP
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -152,12 +159,16 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
+
+            #RETURN_DATE
             try:
                 browser.find_element_by_xpath('//*[@id="dropoffCalendarFocusable"]').click()
                 browser.find_element_by_xpath("//tbody[contains(@class, 'days cf')]//span[contains(@class, 'day-number') and contains(@data-reactid,"+str(end_date)+")]").click()
                 time.sleep(5)
             except:
                 pass
+
+            # POPUP
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
@@ -172,10 +183,14 @@ for i in airport:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
                 pass
+
+            #SUBMIT_BUTTON
             try:
                 browser.find_element_by_xpath('//*[@id="continueButton"]').click()
             except:
                 pass
+
+            # POPUP
             try:
                 browser.find_element_by_class_name('acsInviteButton acsDeclineButton').click()
             except:
@@ -190,7 +205,19 @@ for i in airport:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
             except:
                 pass
-            time.sleep(10)
+            time.sleep(5)
+            try:
+
+                if 'no vehicles available'.lower() in browser.page_source.lower():
+                    print('sold_out')
+                    browser.close()
+                    continue
+
+            except:
+                pass
+            time.sleep(5)
+
+            #PAGE_SOURCE
             jsoup = BeautifulSoup(browser.page_source)
             try:
                 browser.find_element_by_css_selector('#acsMainInvite > a:nth-child(2)').click()
@@ -239,10 +266,15 @@ for i in airport:
                         car_name.text,None, None, None, None, per_day_later, per_day_later_unit,
                         pay_later_total, pay_later_total_unit,'Enterprise']
                 car_data.append(data)
+
+
             time.sleep(5)
             browser.close()
+
+
         except Exception as e:
             print(e)
+    break
 
 
 
@@ -250,5 +282,5 @@ for i in airport:
 print(tabulate(car_data))
 df = pd.DataFrame(car_data,columns=car_data_headers)
 print(df)
-df.to_excel('Enterprise.xlsx', index=False)
+df.to_excel('test_enterprise.xlsx', index=False)
 print('Time = ', (time.time()-startTime)/60)
