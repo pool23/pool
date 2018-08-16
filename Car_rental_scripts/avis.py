@@ -4,17 +4,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 import pandas as pd
-import datetime
+from datetime import datetime
+from datetime import timedelta
 
+start_date = (datetime.now() + timedelta(days=15)).strftime('%m/%d/%Y')
+todate = (datetime.now() + timedelta(days=17)).strftime('%m/%d/%Y')
+todate1 = (datetime.now() + timedelta(days=22)).strftime('%m/%d/%Y')
 
-now = datetime.datetime.today().day
-# d1 = now + int(2)
-cd1 = now + int(15)
-todate = cd1 + int(2)
-todate1 = cd1 + int(7)
-
-# to_date2 = datetime.datetime.today().replace(day = d2)
-# print(to_date2.strftime('%m/%d/%Y'))
 carname = []
 paylater =[]
 paynow = []
@@ -63,10 +59,6 @@ file = ['ATL', 'ORD', 'LAX', 'DFW', 'JFK', 'DEN', 'SFO', 'LAS', 'CLT', 'MIA', 'P
         'DTW', 'PHL', 'LGA', 'FLL', 'BWI', 'DCA', 'MDW', 'SLC', 'IAD', 'SAN', 'HNL', 'TPA', 'PDX']
 for j in [todate, todate1]:
     for i in file:
-        # st_date = datetime.datetime.today().replace(day = cd1)
-        start_date = datetime.datetime.today().replace(day=cd1).strftime('%m/%d/%Y')
-        # to_date = datetime.datetime.today().replace(day = cd1)
-        to_date = datetime.datetime.today().replace(day=j).strftime('%m/%d/%Y')
         i = i.strip()
         driver.get('https://www.avis.com/en/home')
         driver.find_element_by_xpath('//*[@id="PicLoc_value"]').clear()
@@ -83,7 +75,7 @@ for j in [todate, todate1]:
         driver.find_element_by_xpath('//*[@id="from"]').clear()
         driver.find_element_by_xpath('//*[@id="to"]').clear()
         date_pick_start = driver.find_element_by_xpath('//*[@id="from"]').send_keys(start_date)
-        date_pick_end = driver.find_element_by_xpath('//*[@id="to"]').send_keys(to_date)
+        date_pick_end = driver.find_element_by_xpath('//*[@id="to"]').send_keys(j)
         try:
             wait = WebDriverWait(driver, 25)
             wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="calendarclose"]')))
@@ -136,7 +128,7 @@ for j in [todate, todate1]:
                     loc.append(d[i][0]['Location'])
                     air_port.append(d[i][0]['Airport_Name'])
                     start_date_list.append(start_date)
-                    to_date_list.append(to_date)
+                    to_date_list.append(j)
                 for cp in pay_later:
                     paylater.append(cp)
                 for pl in p_now:
@@ -166,7 +158,7 @@ for j in [todate, todate1]:
                     loc.append(d[i][0]['Location'])
                     air_port.append(d[i][0]['Airport_Name'])
                     start_date_list.append(start_date)
-                    to_date_list.append(to_date)
+                    to_date_list.append(j)
                 for cp in pay_later:
                     paylater.append(cp)
                 for pl in p_now:
@@ -197,7 +189,7 @@ for j in [todate, todate1]:
             loc.append(d[i][0]['Location'])
             air_port.append(d[i][0]['Airport_Name'])
             start_date_list.append(start_date)
-            to_date_list.append(to_date)
+            to_date_list.append(j)
             print(len(carname))
             print(len(paynow))
             print(len(paylater))
@@ -211,7 +203,7 @@ for j in [todate, todate1]:
             print(len(sold_out))
     driver.delete_all_cookies()
 driver.close()
-df = pd.DataFrame({'Date': datetime.datetime.today().strftime('%d/%m/%Y'), 'Location Code': port,
+df = pd.DataFrame({'Date': datetime.today().strftime('%d/%m/%Y'), 'Location Code': port,
                    'className': carname, 'Sold_Out': sold_out,
                    'Pay_Now_Amount': paynow, 'payLaterAmount': paylater, 'vehicleName': vehical_name,
                    'pickup_date': start_date_list, 'return_date': to_date_list,
@@ -222,4 +214,4 @@ df = pd.DataFrame({'Date': datetime.datetime.today().strftime('%d/%m/%Y'), 'Loca
 df = df.reindex(columns =["Date", "pickup_date", "return_date", "Location", "Airport name", "selected_location",
              "Location Code", "className", "vehicleName", 'payLaterAmount',  'Pay_Now_Amount', "Sold_Out", "sitename"])
 # df = df[["Site", "Day", "Month", "Year", 'City', 'Location', 'State', 'Country']]
-df.to_excel('avis.xlsx', index=False)
+df.to_excel('avis.xlsx',)
