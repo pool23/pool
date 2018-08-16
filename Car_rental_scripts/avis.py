@@ -7,10 +7,13 @@ import pandas as pd
 from datetime import datetime
 from datetime import timedelta
 
+
 start_date = (datetime.now() + timedelta(days=15)).strftime('%m/%d/%Y')
 todate = (datetime.now() + timedelta(days=17)).strftime('%m/%d/%Y')
 todate1 = (datetime.now() + timedelta(days=22)).strftime('%m/%d/%Y')
 
+# to_date2 = datetime.datetime.today().replace(day = d2)
+# print(to_date2.strftime('%m/%d/%Y'))
 carname = []
 paylater =[]
 paynow = []
@@ -56,15 +59,15 @@ start_date_list = []
 to_date_list = []
 driver = webdriver.Firefox()
 file = ['ATL', 'ORD', 'LAX', 'DFW', 'JFK', 'DEN', 'SFO', 'LAS', 'CLT', 'MIA', 'PHX', 'SEA', 'MCO', 'EWR', 'MSP', 'BOS',
-        'DTW', 'PHL', 'LGA', 'FLL', 'BWI', 'DCA', 'MDW', 'SLC', 'IAD', 'SAN', 'HNL', 'TPA', 'PDX']
+        'DTW', 'PHL', 'LGA', 'FLL', 'BWI', 'DCA', 'MDW', 'SLC', 'IAD', 'SAN', 'HNL', 'TPA', 'PDX', 'IAH']
 for j in [todate, todate1]:
     for i in file:
         i = i.strip()
         driver.get('https://www.avis.com/en/home')
         driver.find_element_by_xpath('//*[@id="PicLoc_value"]').clear()
         h_val = driver.find_element_by_xpath('//*[@id="PicLoc_value"]')
-        time.sleep(3)
         h_val.send_keys(i)
+        time.sleep(3)
         wait = WebDriverWait(driver, 10)
         wait.until(EC.visibility_of_element_located(
             (By.XPATH, '//*[@id="PicLoc_dropdown"]/div[3]/div[1]/div[2]/div/div/span/span[1]')))
@@ -91,32 +94,46 @@ for j in [todate, todate1]:
             wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="res-home-select-car"]')))
             driver.find_element_by_xpath('//*[@id="res-home-select-car"]').click()
         try:
-            time.sleep(3)
+            time.sleep(10)
             try:
-                wait = WebDriverWait(driver, 10)
+                wait = WebDriverWait(driver, 25)
                 wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "ftrcartxt")))
-                car_name = driver.find_element_by_css_selector('#reservation-partial > div > div > div.vehicle-availability > section:nth-child(7) > div.step2dtl > div > div.col-sm-5.ftrcardtl > div > h3')
-                print(car_name.get_attribute('innerHTML'))
-                p_later = driver.find_element_by_css_selector('#reservation-partial > div > div > div.vehicle-availability > section:nth-child(7) > div.step2dtl > div > div.col-sm-5.ftrcardtl > div > div:nth-child(6) > div.payatcntr.col-xs-6 > p')
-                print(p_later.get_attribute('innerText'))
-                all_cars_name = [link.find_element_by_tag_name('h3').get_attribute('innerHTML') for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
-                all_cars_name.append(car_name.get_attribute('innerHTML'))
-                v_name = driver.find_element_by_css_selector('#reservation-partial > div > div > div.vehicle-availability > section:nth-child(7) > div.step2dtl > div > div.col-sm-5.ftrcardtl > div > p')
-                print(v_name.get_attribute('innerText'))
-                v_n = [link.find_element_by_xpath(".//p[@class ='featurecartxt similar-car']").text for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
-                v_n.append(v_name.get_attribute('innerText'))
-                print(v_n)
-                pay_later = [link.find_element_by_xpath(".//div[p/@class ='payamntp']").get_attribute('innerText').rstrip('\n\nPay at Counter') for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
-                pay_later.append(p_later.get_attribute('innerText'))
-                pay_now = driver.find_element_by_css_selector('#reservation-partial > div > div > div.vehicle-availability > section:nth-child(7) > div.step2dtl > div > div.col-sm-5.ftrcardtl > div > div:nth-child(6) > div.paynow.col-xs-6 > p.payamntr > price')
-                print(pay_now.get_attribute('innerText'))
+                car_name = driver.find_element_by_xpath(
+                    '//*[@id="reservation-partial"]/div/div/div[2]/section[3]/div[1]/div/div[2]/div/h3').get_attribute('innerHTML')
+                print(car_name)
+                carname.append(car_name)
+                p_later = driver.find_element_by_xpath(
+                    '//*[@id="reservation-partial"]/div/div/div[2]/section[3]/div[1]/div/div[2]/div/div[2]/div[1]/p').get_attribute('innerText')
+                print(p_later)
+                paylater.append(p_later)
+                all_cars_name = [link.find_element_by_tag_name('h3').get_attribute('innerHTML') for link in
+                                 driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
+                v_name = driver.find_element_by_xpath(
+                    '//*[@id="reservation-partial"]/div/div/div[2]/section[3]/div[1]/div/div[2]/div/p')
+                vehical_name.append(v_name.get_attribute('innerText'))
+                v_n = [link.find_element_by_xpath(".//p[@class ='featurecartxt similar-car']").text for link in
+                       driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
+                pay_later = [
+                    link.find_element_by_xpath(".//div[p/@class ='payamntp']").get_attribute('innerText').rstrip(
+                        '\n\nPay at Counter') for link in
+                    driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
+                pay_now = driver.find_element_by_xpath(
+                    '//*[@id="reservation-partial"]/div/div/div[2]/section[3]/div[1]/div/div[2]/div/div[2]/div[2]/p[1]/price').get_attribute('innerText')
+                print(pay_now)
+                sold_out.append('Available')
+                port.append(i)
+                Selected_Location.append(l_se)
+                loc.append(d[i][0]['Location'])
+                air_port.append(d[i][0]['Airport_Name'])
+                start_date_list.append(start_date)
+                to_date_list.append(j)
+                paynow.append(pay_now)
                 p_now = []
                 for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section'):
                     try:
                         p_now.append(link.find_element_by_tag_name('price').get_attribute('innerText'))
                     except:
                         p_now.append('NAN')
-                p_now.append(pay_now.get_attribute('innerText'))
                 print(all_cars_name)
                 print('Pay_Later', pay_later)
                 print('pay_now', p_now)
@@ -136,8 +153,12 @@ for j in [todate, todate1]:
                 for vn in v_n:
                     vehical_name.append(vn)
             except:
-                all_cars_name = [link.find_element_by_tag_name('h3').get_attribute('innerHTML') for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
-                pay_later = [link.find_element_by_xpath(".//div[p/@class ='payamntp']").get_attribute('innerText').rstrip('\n\nPay at Counter') for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
+                all_cars_name = [link.find_element_by_tag_name('h3').get_attribute('innerHTML') for link in
+                                 driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
+                pay_later = [
+                    link.find_element_by_xpath(".//div[p/@class ='payamntp']").get_attribute('innerText').rstrip(
+                        '\n\nPay at Counter') for link in
+                    driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
                 p_now = []
                 for link in driver.find_elements_by_class_name('step2dtl-avilablecar-section'):
                     try:
@@ -145,7 +166,8 @@ for j in [todate, todate1]:
                     except:
                         p_now.append('NAN')
                 wait = WebDriverWait(driver, 10)
-                wait.until(EC.visibility_of_element_located((By.XPATH, ".//p[@class ='featurecartxt similar-car']")))
+                wait.until(
+                    EC.visibility_of_element_located((By.XPATH, ".//p[@class ='featurecartxt similar-car']")))
                 v_n = [link.find_element_by_xpath(".//p[@class ='featurecartxt similar-car']").text for link in
                        driver.find_elements_by_class_name('step2dtl-avilablecar-section')]
 
@@ -165,8 +187,14 @@ for j in [todate, todate1]:
                     paynow.append(pl)
                 for vn in v_n:
                     vehical_name.append(vn)
+            print(carname)
             print(paynow)
+            print(paylater)
             print(vehical_name)
+            # print(port)
+            # print(Selected_Location)
+            # print(loc)
+            # print(air_port)
             print(len(carname))
             print(len(paynow))
             print(len(paylater))
@@ -201,17 +229,17 @@ for j in [todate, todate1]:
             print(len(start_date_list))
             print(len(to_date_list))
             print(len(sold_out))
-    driver.delete_all_cookies()
+        # driver.delete_all_cookies()
 driver.close()
 df = pd.DataFrame({'Date': datetime.today().strftime('%d/%m/%Y'), 'Location Code': port,
                    'className': carname, 'Sold_Out': sold_out,
                    'Pay_Now_Amount': paynow, 'payLaterAmount': paylater, 'vehicleName': vehical_name,
                    'pickup_date': start_date_list, 'return_date': to_date_list,
                    'selected_location': Selected_Location,
-                   'Location': loc, 'Airport name': air_port})
+                   'Location': loc, 'Airport name': air_port, 'sitename':'Avis.com'})
 #  print(df)
 # Rearranging columns according to requirement
 df = df.reindex(columns =["Date", "pickup_date", "return_date", "Location", "Airport name", "selected_location",
              "Location Code", "className", "vehicleName", 'payLaterAmount',  'Pay_Now_Amount', "Sold_Out", "sitename"])
 # df = df[["Site", "Day", "Month", "Year", 'City', 'Location', 'State', 'Country']]
-df.to_excel('avis.xlsx',)
+df.to_excel('Avis.xlsx', index=False)
