@@ -22,7 +22,6 @@ for i in airport:
     for k in [[15, 17], [15, 22]]:
         print(i[2])
         try:
-
             start_date = (datetime.now() + timedelta(days=k[0])).strftime('%B %d')
             start_day = str(int(start_date.split()[-1]))
             start_month = str(start_date.split()[0])
@@ -37,7 +36,17 @@ for i in airport:
             print('https://www.nationalcar.com/en_US/car-rental/reservation/startReservation.html')
             #LOAD_URL
             browser.get('https://beta.nationalcar.com/en/car-rental.html?icid=ab-_-gotoBeta-_-startReservation&mboxSession=0eaa7efb533c477c867d509501fcf163&adobe_mc_ref=&adobe_mc_sdid=SDID%3D6272ABCE4665E897-5DDDAFA7C8B6B6A5%7CMCORGID%3D30545A0C536B768C0A490D44%2540AdobeOrg%7CTS%3D1533887357')
-            time.sleep(5)
+            time.sleep(8)
+
+            #POPUP
+            try:
+                browser.find_element_by_xpath('//*[@id="acsMainInvite"]/a').click()
+            except:
+                pass
+            try:
+                browser.find_element_by_css_selector('#acsMainInvite > a').click()
+            except:
+                pass
 
             #LOCATION
             browser.find_element_by_xpath('//*[@id="search-autocomplete__input-PICKUP"]').clear()
@@ -56,19 +65,37 @@ for i in airport:
 
             #SUBMIT
             browser.find_element_by_css_selector('#booking-widget-inputs > div.booking-widget__right-column > div > button').click()
-            # time.sleep(5)
+            time.sleep(5)
             #POPUP
             try:
 
+                browser.find_element_by_css_selector('.login-or-guest-modal__info-container-cta > button:nth-child(1)').click()
+            except:
+                pass
+            try:
                 browser.find_element_by_css_selector('body > div:nth-child(27) > div > div > div > div.modal__body > div > div.login-or-guest-modal__info-container > div > button').click()
+            except:
+                pass
+            time.sleep(3)
+            try:
+
+                if 'no vehicles available'.lower() in browser.page_source.lower():
+                    print('sold_out')
+                    # browser.close()
+                    continue
+
             except:
                 pass
             time.sleep(10)
 
+
             #PAGE_SOURCE
             jsoup = BeautifulSoup(browser.page_source)
+
             car_details = jsoup.find('div',attrs={'class':'vehicle-list'})
+            # print('------------------------------')
             for cars in car_details:
+                # print('++++++++++++++++++++++++++++')
                 car_class = cars.find('div',attrs={'class':'vehicle__content'}).find('h2', attrs={'class':'vehicle__type-name'})
                 print(car_class.text)
                 car_name = cars.find('p', attrs={'class':'vehicle__type-desc'})
@@ -90,12 +117,16 @@ for i in airport:
                 data = [datetime.now().strftime('%m/%d/%Y'), pickup_date, return_date, i[1], i[0], i[0], i[2],car_class.text,
                         car_name.text, None, None, None, None, per_day_later,per_day_later_unit,pay_later_total, pay_later_total_unit,'National']
                 car_data.append(data)
+
+
         except Exception as e:
             print(e)
 
 
 
+
 browser.close()
+
 
 print(tabulate(car_data))
 df = pd.DataFrame(car_data,columns=car_data_headers)
