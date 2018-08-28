@@ -1,0 +1,11 @@
+
+I have collected a list of URLs for each county in the states where there were 350 redfin listings.
+
+I also did VA, as I think they will be close to, or over 350 soon.
+
+Can you use these URLs to collect the data, then aggregate to the state level in the table you send.
+
+I only need the individual house data on the red Redfin listings (TRUE) and not the non-redfin, green listings (false).
+
+Can you please also collect the county level aggregates for home prices, number of listings, etc.
+
