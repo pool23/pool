@@ -22,7 +22,7 @@ neededBanks = {
     "Synchrony Bank":"SYNCHRONY",
     "Wells Fargo":"WELLS FARGO",
     "SunTrust":"SUNTRUST BANKS INC",
-    "Visit Ally Bank site":"ALLY",
+    "Visit Ally Bank  site":"ALLY",
     "Visit Citibank, N. A. site":"CITIGROUP INC"
 
 }
@@ -51,95 +51,75 @@ for case in cases:
     driver.find_element_by_css_selector('button.--primary').click()     #//*[@id="search"]/ul/li[8]/button
     # driver.find_element_by_xpath('//*[@id="search"]/ul/li[8]/button').click()
     time.sleep(5)
+
+
+    while True:
+        try:
+
+            time.sleep(3)
+            element = driver.find_element_by_xpath("//tr[@class='+text-center']//button[@class='offer__expand-offers-button button --secondary --small +mg-top-sm']")#.click()
+            driver.execute_script("arguments[0].click();", element)
+            print("@@@@@@@@")
+            time.sleep(3)
+        except Exception as e:
+            print(e)
+            break
+
     jsoup = BeautifulSoup(driver.page_source)
-    # result = jsoup.find('div', attrs={'class': 'offers-list-wrap'})
-    table_list = jsoup.find_all('table', attrs={'class':'table --bordered-rows offers-list +mg-bottom-lg +mg-bottom-none'})
+    result = jsoup.find('div', attrs={'class':'offers-list-expanded-wrap rate-table'})
+    table_list = result.find_all('table')
+
     for table in table_list:
+        # print(table)
+
         trs = table.find('tbody').find_all('tr')
+
         for tr in trs:
+            print('-'.center(100, '-'))
             try:
-
-                Bank_name = tr.find('img')
-                print(Bank_name['alt'])
-                Bank_product_name = tr.find('td').find('div',attrs = {'class':'offer__fees-text offer__text --small'}).find('span').text
-                print(Bank_product_name)
-                Rate = tr.find('td').find('div', attrs = {'class':'offer__rate-caption +mg-bottom-sm +pointer'}).text
-                print(Rate)
-                Apr = tr.find('td').find('div', attrs = {'class':'numeral --beta +mg-bottom-xs +pointer'}).text
-                print(Apr)
-                # Year = re.search('[0-9]',Bank_product_name)
-                # print(Year)
-                if Bank_name['alt'].strip() in neededBanks:
-
-                    if Bank_name['alt'].strip() in online_bank:
-                        Bank_Offer_Feature = 'Online'
+                divs = tr.find_all('div', attrs={'class':re.compile('offer__column|offer__payment')})
+                print(len(divs))
+                if len(divs) >= 3:
+                    h4 = divs[0].find('h4')
+                    if h4 is None:
+                        h4 = divs[0].find('img')['alt']
                     else:
-                        Bank_Offer_Feature = 'Offline'
-                    a = [neededBanks[Bank_name['alt'].strip()], Bank_product_name.strip(), None, Bank_Offer_Feature, None,'Interest_Type', re.search('[0-9\.]+', Rate.strip()).group(0), re.search('[0-9\.]*',Apr.strip()).group(0), case[0] - case[1]]
-                    print(a)
-                    Excel_Table.append(a)
+                        h4 = h4.text
+                    Bank_name = h4.strip()
+                    bank_product_name = divs[0].find('div', attrs={'class':re.compile('offer__fees')})
+                    bank_product_name = bank_product_name.text.split('|')[0] if bank_product_name is not None else None
+                    apr = divs[1].find('div', attrs={'data-test':re.compile('apr')})
+                    apr = apr.text if apr is not None else None
 
+                    rate = divs[1].find('div', attrs={'data-test': re.compile('rate')})
+                    rate = rate.text if rate is not None else None
 
+                    print('Bank_name = ', Bank_name)
+                    print('bank_product_name = ', bank_product_name)
+                    print('apr = ', apr)
+                    print('rate = ', rate)
 
+                    if Bank_name in neededBanks:
 
-
+                        if Bank_name in online_bank:
+                            Bank_Offer_Feature = 'Online'
+                        else:
+                            Bank_Offer_Feature = 'Offline'
+                        a = [neededBanks[Bank_name.strip()], bank_product_name.strip(), None, Bank_Offer_Feature, None,'Interest_Type', rate.strip(),apr.strip(), case[0] - case[1]]
+                        print(a)
+                        Excel_Table.append(a)
 
             except Exception as e:
                 print(e)
 
 
-    # t = 0
-    # for table in table_list:
-    #     t = t + len(table.find_all('tr'))
-    #     for tr in table.find_all('tr'):
-    #
-    #         try:
-    #             # tds = tr.find('td').find_all('div', attrs={'class': re.compile('grid-cell')})
-    #             # if len(tds) == 5:
-    #             #     tds.insert(1, 2)
-    #             # Bank_name = tds[0].find('h4').text.replace('\n', ' ') if tds[0].find('h4') is not None else None
-    #             # if Bank_name is None:
 
-
-
-                # Rate = re.sub('[^0-9.,$/a-zA-Z% ]', '', tds[2].find('span').text.replace('\n', ' '))
-                # Year = tds[2].find('p').text.strip()
-                # Apr = re.sub('[^0-9.,$/a-zA-Z% ]', '', tds[3].find('span').text.replace('\n', ' '))
-
-                # Bank_name = tr.find('figure', attrs={'class':'advertiser-logo_wrapper +pointer'})
-                # print(Bank_name)
-                # if 'www.brimg.net/system/img/inst/8189_hires_logo_2x.png' in Bank_name:
-                #     Bank_name = 'CITIGROUP INC'
-                # elif 'www.brimg.net/system/img/inst/10271_hires_logo_2x.png' in Bank_name:
-                #     Bank_name = 'ALLY'
-                # print(Bank_name)
-                # Rate = tr.find('td').find('div').find('div')[1].find_all('div')[1] #re.sub('[^0-9.,$/a-zA-Z% ]', '',
-                # print(Rate)
-                # Apr = tr.find('td').find('div').find_all('div')[1].find_all('div')[0]  #re.sub('[^0-9.,$/a-zA-Z% ]', '',
-                # print(Apr)
-                # Year = tr.find.find('td').find('div', attrs={'class':'rate-table__row-child grid --equal-height --align-spread +pd-left-xs'}).find_all('div')[0].find('span')
-                # print(Year)
-
-                # Rate = re.sub('[^0-9.,$/a-zA-Z% ]', '', tr.find('span', attrs={'class':'expanded-offer__rate'}))
-                # Apr = re.sub('[^0-9.,$/a-zA-Z% ]', '', tr.find('span', text='APR').parent.parent.text)
-                # Year = tr.find('p', text=re.compile('year')).text
-                #
-                #
-                # #             print([Bank_name, Rate, Apr, Amount])
-                #
-
-
-            #
-
-
+#
 driver.close()
 print(len(Excel_Table))
 print(tabulate(Excel_Table))
 # print('total length', t)
 df = pd.DataFrame(Excel_Table, columns=table_headers)
-
-# df['Interest'] = df['Interest'].apply(lambda x: re.sub('[^0-9%.]','',x.split('%')[0])+'%' if '%' in x else None)
-# df['APR'] = df['APR'].apply(lambda x: re.sub('[^0-9%.]','',x.split('%')[0])+'%' if '%' in x else None)
 
 df['Interest_Type'] = df['Bank_Product_Name'].apply(lambda x: 'Fixed' if 'fixed' in x.lower() else 'Variable')
 df['Term (Y)'] = df['Term (Y)'].apply(lambda x: re.sub('[^0-9.]','',re.findall('\d.*yr',str(x),re.IGNORECASE)[0]) if len(re.findall('\d.*yr',str(x),re.IGNORECASE))>=1 else None)
